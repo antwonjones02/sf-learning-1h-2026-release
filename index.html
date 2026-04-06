@@ -16,24 +16,52 @@
     </div>
   </header>
 
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">1H 2026 Release Strategy</h1>
+      <p class="hero-subtitle">34 features across 4 categories &mdash; plus 20 additional from SAP documentation.</p>
+      <div class="hero-pills">
+        <span class="hero-pill pill-action">29 require action</span>
+        <span class="hero-pill-sep">&middot;</span>
+        <span class="hero-pill pill-new">15 new features</span>
+        <span class="hero-pill-sep">&middot;</span>
+        <span class="hero-pill pill-dep">5 deprecations</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alert Banner -->
+  <div class="alert-banner" id="alertBanner" role="alert">
+    <div class="alert-inner">
+      <span class="alert-icon">&#9888;</span>
+      <span class="alert-text">2 critical deprecations require immediate action &mdash; <a href="#" id="alertLink">Token Server deletion Nov 20, 2026</a></span>
+      <button class="alert-dismiss" aria-label="Dismiss alert" id="alertDismiss">&times;</button>
+    </div>
+  </div>
+
   <main class="container">
     <!-- Summary Stats -->
     <div class="stats-grid">
-      <div class="stat-card" data-cat="universal">
-        <div class="stat-number">14</div>
+      <div class="stat-card" data-cat="universal" role="button" tabindex="0" aria-label="Filter to Universal features">
+        <div class="stat-number">10</div>
         <div class="stat-label">Universal</div>
+        <div class="stat-sublabel">Automatically On</div>
       </div>
-      <div class="stat-card" data-cat="optin">
-        <div class="stat-number">31</div>
+      <div class="stat-card" data-cat="optin" role="button" tabindex="0" aria-label="Filter to Opt-In features">
+        <div class="stat-number">15</div>
         <div class="stat-label">Opt-In</div>
+        <div class="stat-sublabel">Customer Configured</div>
       </div>
-      <div class="stat-card" data-cat="premium">
+      <div class="stat-card" data-cat="premium" role="button" tabindex="0" aria-label="Filter to Premium features">
         <div class="stat-number">4</div>
         <div class="stat-label">Premium</div>
+        <div class="stat-sublabel">Restricted / Licensed</div>
       </div>
-      <div class="stat-card" data-cat="deprecation">
+      <div class="stat-card" data-cat="deprecation" role="button" tabindex="0" aria-label="Filter to Deprecation features">
         <div class="stat-number">5</div>
         <div class="stat-label">Deprecation</div>
+        <div class="stat-sublabel">End of Life</div>
       </div>
     </div>
 
@@ -48,7 +76,7 @@
         </div>
         <div class="timeline-node">
           <div class="timeline-dot"></div>
-          <div class="timeline-date">May 15–16</div>
+          <div class="timeline-date">May 15&ndash;16</div>
           <div class="timeline-label">Production</div>
         </div>
         <div class="timeline-node critical">
@@ -59,15 +87,47 @@
       </div>
     </div>
 
-    <!-- Filter Bar -->
-    <div class="filter-bar">
-      <label>Filter:</label>
-      <button class="filter-btn active" data-filter="all">All (54)</button>
-      <button class="filter-btn" data-filter="universal">Universal (14)</button>
-      <button class="filter-btn" data-filter="optin">Opt-In (31)</button>
-      <button class="filter-btn" data-filter="premium">Premium (4)</button>
-      <button class="filter-btn" data-filter="deprecation">Deprecation (5)</button>
-      <input type="text" class="search-input" placeholder="Search features…" id="searchInput">
+    <!-- Enhanced Filter Bar -->
+    <div class="filter-bar" id="filterBar">
+      <div class="filter-row filter-row-cats">
+        <button class="filter-btn active" data-filter="all">All (54)</button>
+        <button class="filter-btn" data-filter="universal">Universal (10)</button>
+        <button class="filter-btn" data-filter="optin">Opt-In (15)</button>
+        <button class="filter-btn" data-filter="premium">Premium (4)</button>
+        <button class="filter-btn" data-filter="deprecation">Deprecation (5)</button>
+        <button class="filter-btn" data-filter="additional">Additional (20)</button>
+      </div>
+      <div class="filter-row filter-row-controls">
+        <div class="filter-select-group">
+          <label class="filter-select-label" for="filterImpact">Impact</label>
+          <select id="filterImpact" class="filter-select">
+            <option value="all">All</option>
+            <option value="critical">Critical</option>
+            <option value="major">Major</option>
+            <option value="minor">Minor</option>
+          </select>
+        </div>
+        <div class="filter-select-group">
+          <label class="filter-select-label" for="filterType">Type</label>
+          <select id="filterType" class="filter-select">
+            <option value="all">All</option>
+            <option value="new">New</option>
+            <option value="changed">Changed</option>
+            <option value="deprecated">Deprecated</option>
+          </select>
+        </div>
+        <div class="filter-select-group">
+          <label class="filter-select-label" for="filterAction">Action</label>
+          <select id="filterAction" class="filter-select">
+            <option value="all">All</option>
+            <option value="action">Action Required</option>
+            <option value="noaction">No Action Required</option>
+          </select>
+        </div>
+        <input type="text" class="search-input" placeholder="Search features&hellip;" id="searchInput">
+        <span class="filter-count" id="filterCount">Showing 54 of 54 features</span>
+        <a href="#" class="filter-reset" id="filterReset">Reset Filters</a>
+      </div>
     </div>
 
     <!-- Category Sections -->
@@ -75,121 +135,309 @@
       <div class="category-header">
         <div class="category-dot" style="background:#1B7340"></div>
         <h2>Universal</h2>
-        <span class="category-count">14 features &middot; Automatically On</span>
+        <span class="category-count">10 features &middot; Automatically On</span>
       </div>
       <div class="feature-list">
-        <a href="features/keyword-search-on-view-all-pages.html" class="feature-card" data-cat="universal" data-name="keyword search on view all pages">
-        <div class="feature-name">Keyword Search on View All Pages</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">No action required</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card" data-cat="universal" data-impact="minor" data-type="new" data-action="noaction" data-name="keyword search on view all pages">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Keyword Search on View All Pages</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/multiple-employments-rest-api-enhancements.html" class="feature-card" data-cat="universal" data-name="multiple employments rest api enhancements">
-        <div class="feature-name">Multiple Employments REST API Enhancements</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">No action required</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Learners can now search their learning activities — assignments, task observations, training requests, surveys, and bookmarks — by title or ID on the View All pages. Filtering by learning type is also supported.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Reduces time learners spend scrolling through long lists to find specific assignments. Improves self-service and reduces help desk tickets.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — this is automatically enabled. No risk.</p>
+            </div>
+            <a href="features/keyword-search-on-view-all-pages.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/curricula-status-in-mobile-apps.html" class="feature-card" data-cat="universal" data-name="curricula status in mobile apps">
-        <div class="feature-name">Curricula Status in Mobile Apps</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">No action required</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact major">Major</span>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-name="multiple employments rest api enhancements">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Multiple Employments REST API Enhancements</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/manager-actions-and-sf-182-access-in-team-view.html" class="feature-card" data-cat="universal" data-name="manager actions and sf-182 access in team view">
-        <div class="feature-name">Manager Actions and SF-182 Access in Team View</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Communicate to managers</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact major">Major</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The Multiple Employments REST API now provides structured responses, supports $select for retrieving specific fields, and introduces the actingAs parameter.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Enables more efficient integrations for organizations with employees who hold multiple roles. Reduces data transfer overhead.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically applied. Existing integrations continue to work.</p>
+            </div>
+            <a href="features/multiple-employments-rest-api-enhancements.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/pre-calculated-program-completion-data-in-reports.html" class="feature-card" data-cat="universal" data-name="pre-calculated program completion data in reports">
-        <div class="feature-name">Pre-Calculated Program Completion Data in Reports</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec warn">Update legacy reports</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact major">Major</span>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="noaction" data-name="curricula status in mobile apps">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Curricula Status in Mobile Apps</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/team-view-role-selection-changes.html" class="feature-card" data-cat="universal" data-name="team view role selection changes">
-        <div class="feature-name">Team View Role Selection Changes</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Communicate to managers</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact major">Major</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Learners can now view their curricula assignments and track compliance status directly in the SAP SuccessFactors Mobile iOS and Android apps.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Frontline and field workers who primarily use mobile can now monitor their compliance status on the go, reducing overdue assignments.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled for mobile users.</p>
+            </div>
+            <a href="features/curricula-status-in-mobile-apps.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/validated-learning-apps-for-android.html" class="feature-card" data-cat="universal" data-name="validated learning apps for android">
-        <div class="feature-name">Validated Learning Apps for Android</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable for regulated teams</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact major">Major</span>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-name="manager actions and sf-182 access in team view">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Manager Actions and SF-182 Access in Team View</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Communicate to managers</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/removal-of-new-learning-experience-banner-in-mobile.html" class="feature-card" data-cat="universal" data-name="removal of new learning experience banner in mobile">
-        <div class="feature-name">Removal of New Learning Experience Banner in Mobile</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">No action required</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Managers can now register team members for learning, perform withdrawal and removal actions, and access SF-182 requests, reports, and curricula status directly from Team View.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Streamlines the manager experience and increases manager engagement in team development. Reduces administrative friction.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled. Managers will see new capabilities immediately.</p>
+            </div>
+            <a href="features/manager-actions-and-sf-182-access-in-team-view.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/new-manage-super-admin-access-tool.html" class="feature-card" data-cat="universal" data-name="new manage super admin access tool">
-        <div class="feature-name">New Manage Super Admin Access Tool</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Train admin team</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact major">Major</span>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-name="pre-calculated program completion data in reports">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Pre-Calculated Program Completion Data in Reports</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec warn">Update legacy reports</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/connectors-now-process-future-termination-dates.html" class="feature-card" data-cat="universal" data-name="connectors now process future termination dates">
-        <div class="feature-name">Connectors Now Process Future Termination Dates</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">No action required</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Administrators can now access pre-calculated program completion percentages in Data Extract Services. The legacy GetProgramCompletionPercentage operator is deprecated.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Significantly faster and more reliable reporting on program completion. Eliminates performance issues with large program reports.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled. Begin transitioning any reports that use the legacy operator.</p>
+            </div>
+            <a href="features/pre-calculated-program-completion-data-in-reports.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/sender-display-name-update-for-notification-emails.html" class="feature-card" data-cat="universal" data-name="sender display name update for notification emails">
-        <div class="feature-name">Sender Display Name Update for Notification Emails</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">No action required</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-name="team view role selection changes">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Team View Role Selection Changes</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Communicate to managers</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/minor-visual-changes-in-1h-2026.html" class="feature-card" data-cat="universal" data-name="minor visual changes in 1h 2026">
-        <div class="feature-name">Minor Visual Changes in 1H 2026</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">No action required</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Managers can now switch between available roles — such as Alternate Manager or HR Business Partner — using a new tab-based interface on the Team View page.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Improves usability for managers who oversee teams in multiple capacities. Cleaner interface reduces confusion.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically applied. The new interface replaces the old one.</p>
+            </div>
+            <a href="features/team-view-role-selection-changes.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/learning-permissions-delivered-for-later-release.html" class="feature-card" data-cat="universal" data-name="learning permissions delivered for later release">
-        <div class="feature-name">Learning Permissions Delivered for Later Release</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">No action required</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-name="validated learning apps for android">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Validated Learning Apps for Android</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable for regulated teams</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/search-results-improvement-for-german-compound-words.html" class="feature-card" data-cat="universal" data-name="search results improvement for german compound words">
-        <div class="feature-name">Search Results Improvement for German Compound Words</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">No action required</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The SAP Validated Learning and SAP Validated Learning Preview apps are now available for Android mobile devices.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Extends compliance-grade mobile learning to a much larger user base. Critical for organizations in life sciences, manufacturing, and other regulated sectors.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically available in app stores.</p>
+            </div>
+            <a href="features/validated-learning-apps-for-android.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-name="removal of new learning experience banner in mobile">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Removal of New Learning Experience Banner in Mobile</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The New Learning Experience switch and informational banner have been removed from the mobile apps.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Signals that the new Learning experience is now the standard. Cleaner mobile interface with less visual clutter.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically applied.</p>
+            </div>
+            <a href="features/removal-of-new-learning-experience-banner-in-mobile.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-name="new manage super admin access tool">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">New Manage Super Admin Access Tool</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Train admin team</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Administrators can now manage super admins for both Learning and Platform from a unified access management page. The old tool is split into two: Manage Super Admin Access and Manage RBP Admin Access.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Simplifies security administration and provides clearer separation between super admin and RBP admin functions.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically applied. Admins should familiarize themselves with the new tool location.</p>
+            </div>
+            <a href="features/new-manage-super-admin-access-tool.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-name="minor visual changes in 1h 2026">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Minor Visual Changes in 1H 2026</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Numerous minor visual enhancements across the platform to align with SAP's updated design system.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Creates a more consistent and polished user experience across the platform.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically applied.</p>
+            </div>
+            <a href="features/minor-visual-changes-in-1h-2026.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
       </div>
     </section>
 
@@ -197,257 +445,459 @@
       <div class="category-header">
         <div class="category-dot" style="background:#2070B0"></div>
         <h2>Opt-In</h2>
-        <span class="category-count">31 features &middot; Customer Configured</span>
+        <span class="category-count">15 features &middot; Customer Configured</span>
       </div>
       <div class="feature-list">
-        <a href="features/quick-access-to-learning-details-on-home-page.html" class="feature-card" data-cat="optin" data-name="quick access to learning details on home page">
-        <div class="feature-name">Quick Access to Learning Details on Home Page</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-name="quick access to learning details on home page">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Quick Access to Learning Details on Home Page</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/reset-e-signature-pin-on-learning-home-page.html" class="feature-card" data-cat="optin" data-name="reset e-signature pin on learning home page">
-        <div class="feature-name">Reset E-Signature PIN on Learning Home Page</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Learners can view additional learning details for courses, programs, classes, and curricula directly on the Learning home page without navigating to the details page.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Reduces navigation clicks and helps learners make faster decisions about what to take next. Improves the self-service learning experience.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Learners continue navigating away from the home page to see details — more clicks, more friction, lower engagement.</p>
+            </div>
+            <a href="features/quick-access-to-learning-details-on-home-page.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/redesigned-program-and-curricula-pages.html" class="feature-card" data-cat="optin" data-name="redesigned program and curricula pages">
-        <div class="feature-name">Redesigned Program and Curricula Pages</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact major">Major</span>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="reset e-signature pin on learning home page">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Reset E-Signature PIN on Learning Home Page</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/setting-to-require-manager-for-task-observation.html" class="feature-card" data-cat="optin" data-name="setting to require manager for task observation">
-        <div class="feature-name">Setting to Require Manager for Task Observation</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable for regulated roles</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Learners can securely reset their e-signature PIN using a Forgot My PIN option directly from the Learning home page.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Reduces admin workload from PIN reset tickets. Unblocks learners who are stuck on compliance-critical e-signature activities.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Learners who forget their PIN remain blocked until an admin manually resets it. Delays compliance completion.</p>
+            </div>
+            <a href="features/reset-e-signature-pin-on-learning-home-page.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/prerequisite-and-approval-enforcement-for-programs.html" class="feature-card" data-cat="optin" data-name="prerequisite and approval enforcement for programs">
-        <div class="feature-name">Prerequisite and Approval Enforcement for Programs</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="changed" data-action="action" data-name="redesigned program and curricula pages">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Redesigned Program and Curricula Pages</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/enhanced-retraining-experience-for-curricula.html" class="feature-card" data-cat="optin" data-name="enhanced retraining experience for curricula">
-        <div class="feature-name">Enhanced Retraining Experience for Curricula</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Learners can access a redesigned interface to view program details, curriculum details, and curricula status from the Learning home page.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Improves the learner experience for programs and curricula, which are often the most complex learning structures. Better visibility into progress.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Learners remain on the older, less intuitive interface. Missed opportunity to improve engagement with structured learning paths.</p>
+            </div>
+            <a href="features/redesigned-program-and-curricula-pages.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/enhancements-to-external-learning-events.html" class="feature-card" data-cat="optin" data-name="enhancements to external learning events">
-        <div class="feature-name">Enhancements to External Learning Events</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact major">Major</span>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-name="setting to require manager for task observation">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Setting to Require Manager for Task Observation</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable for regulated roles</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/add-open-content-network-items-to-default-library.html" class="feature-card" data-cat="optin" data-name="add open content network items to default library">
-        <div class="feature-name">Add Open Content Network Items to Default Library</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>A new task checklist setting requires task observations to be completed by the learner's primary manager.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Strengthens compliance controls by ensuring the right person validates task completion. Critical for regulated environments.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Anyone with observer access can validate tasks — potentially undermining compliance rigor in regulated workflows.</p>
+            </div>
+            <a href="features/setting-to-require-manager-for-task-observation.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/credit-hours-in-open-content-network-odata-api.html" class="feature-card" data-cat="optin" data-name="credit hours in open content network odata api">
-        <div class="feature-name">Credit Hours in Open Content Network OData API</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable if using credit hours</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="prerequisite and approval enforcement for programs">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Prerequisite and Approval Enforcement for Programs</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/set-duration-for-online-items-in-bulk.html" class="feature-card" data-cat="optin" data-name="set duration for online items in bulk">
-        <div class="feature-name">Set Duration for Online Items in Bulk</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Administrators can now enforce item-level prerequisites and approvals for courses within programs.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Ensures learners complete required steps in order. Prevents skipping ahead in structured development paths.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Learners can bypass prerequisites within programs, undermining the intended learning path design.</p>
+            </div>
+            <a href="features/prerequisite-and-approval-enforcement-for-programs.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/retain-item-details-in-curricula-during-revisions.html" class="feature-card" data-cat="optin" data-name="retain item details in curricula during revisions">
-        <div class="feature-name">Retain Item Details in Curricula During Revisions</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="enhanced retraining experience for curricula">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Enhanced Retraining Experience for Curricula</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/assisted-skills-association-with-ocn-items-ga.html" class="feature-card" data-cat="optin" data-name="assisted skills association with ocn items — ga">
-        <div class="feature-name">Assisted Skills Association With OCN Items — GA</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact major">Major</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The retraining experience for curriculum requirements on the Learning home page has been enhanced with clear compliance visibility and easier tracking.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Compliance-critical retraining becomes more transparent. Reduces overdue retraining by making it harder to miss.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Retraining visibility remains limited. Higher risk of missed retraining deadlines and compliance gaps.</p>
+            </div>
+            <a href="features/enhanced-retraining-experience-for-curricula.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/mobile-app-support-for-observer-search.html" class="feature-card" data-cat="optin" data-name="mobile app support for observer search">
-        <div class="feature-name">Mobile App Support for Observer Search</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact ">Minor</span>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="changed" data-action="action" data-name="enhancements to external learning events">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Enhancements to External Learning Events</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/data-anonymization-for-external-learners-in-instance-refresh.html" class="feature-card" data-cat="optin" data-name="data anonymization for external learners in instance refresh">
-        <div class="feature-name">Data Anonymization for External Learners in Instance Refresh</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact major">Major</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>New fields have been added to the External Event entity, allowing learners, managers, and administrators to capture more comprehensive information when logging external learning.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Creates a more complete picture of employee development, including learning that happens outside the LMS.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>External learning records remain basic. Organization loses visibility into the full scope of employee development.</p>
+            </div>
+            <a href="features/enhancements-to-external-learning-events.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/enhancements-to-analytic-cards-on-home-page.html" class="feature-card" data-cat="optin" data-name="enhancements to analytic cards on home page">
-        <div class="feature-name">Enhancements to Analytic Cards on Home Page</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="add open content network items to default library">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Add Open Content Network Items to Default Library</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/enhanced-support-for-secondary-instructors-in-vls.html" class="feature-card" data-cat="optin" data-name="enhanced support for secondary instructors in vls">
-        <div class="feature-name">Enhanced Support for Secondary Instructors in VLS</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable if using VLS</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Administrators can configure a default library for each Open Content Network (OCN) provider to automatically assign imported items to a specific library.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Reduces administrative effort and ensures consistent content organization. Makes third-party content easier to find and manage.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>OCN items land without library assignment, requiring manual sorting. Content becomes harder to govern and discover.</p>
+            </div>
+            <a href="features/add-open-content-network-items-to-default-library.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/new-advanced-settings-for-zoom-vls.html" class="feature-card" data-cat="optin" data-name="new advanced settings for zoom vls">
-        <div class="feature-name">New Advanced Settings for Zoom VLS</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable if using Zoom</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact ">Minor</span>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="credit hours in open content network odata api">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Credit Hours in Open Content Network OData API</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable if using credit hours</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/configuration-to-hide-enhanced-search-filters.html" class="feature-card" data-cat="optin" data-name="configuration to hide enhanced search filters">
-        <div class="feature-name">Configuration to Hide Enhanced Search Filters</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable selectively</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The OCN OData API now supports creditHours when posting OCN items to SAP SuccessFactors Learning.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Enables accurate credit tracking for professional development and continuing education requirements.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Credit hours must be manually entered for OCN content. Time-consuming and error-prone.</p>
+            </div>
+            <a href="features/credit-hours-in-open-content-network-odata-api.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/employments-tab-visible-with-system-default-role.html" class="feature-card" data-cat="optin" data-name="employments tab visible with system default role">
-        <div class="feature-name">Employments Tab Visible with System Default Role</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="set duration for online items in bulk">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Set Duration for Online Items in Bulk</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/enhanced-visibility-for-custom-page-content.html" class="feature-card" data-cat="optin" data-name="enhanced visibility for custom page content">
-        <div class="feature-name">Enhanced Visibility for Custom Page Content</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable if using custom pages</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Administrators can now add or update duration for multiple online learning items at once through the Item Connector.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Saves significant admin time when managing large content libraries. Ensures duration data is consistent for reporting.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Duration updates remain one-at-a-time. Heavy administrative burden for large catalogs.</p>
+            </div>
+            <a href="features/set-duration-for-online-items-in-bulk.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/enhancements-to-user-merge-process.html" class="feature-card" data-cat="optin" data-name="enhancements to user merge process">
-        <div class="feature-name">Enhancements to User Merge Process</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="retain item details in curricula during revisions">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Retain Item Details in Curricula During Revisions</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/auto-purge-archived-connector-input-files.html" class="feature-card" data-cat="optin" data-name="auto-purge archived connector input files">
-        <div class="feature-name">Auto-Purge Archived Connector Input Files</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Initial and retraining assignment data for items in a curriculum is now preserved during item revisions through the Item Connector.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Prevents loss of compliance-critical data during routine content updates. Protects training history integrity.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Item revisions may still clear assignment data within curricula, creating compliance tracking gaps.</p>
+            </div>
+            <a href="features/retain-item-details-in-curricula-during-revisions.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/bulk-delete-unused-icontent-files.html" class="feature-card" data-cat="optin" data-name="bulk delete unused icontent files">
-        <div class="feature-name">Bulk Delete Unused iContent Files</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-name="assisted skills association with ocn items — ga">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Assisted Skills Association With OCN Items — GA</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/change-assignment-due-dates-from-team-view.html" class="feature-card" data-cat="optin" data-name="change assignment due dates from team view">
-        <div class="feature-name">Change Assignment Due Dates from Team View</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The AI-assisted skills association feature for Open Content Network items, previously in early adoption, is now generally available.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Scales skills tagging across large third-party content libraries. Enables skills-based learning recommendations.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Skills must be manually tagged to OCN items — impractical at scale. Skills-based recommendations remain incomplete.</p>
+            </div>
+            <a href="features/assisted-skills-association-with-ocn-items-ga.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/class-withdrawal-directly-from-team-view.html" class="feature-card" data-cat="optin" data-name="class withdrawal directly from team view">
-        <div class="feature-name">Class Withdrawal Directly from Team View</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact ">Minor</span>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-name="mobile app support for observer search">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Mobile App Support for Observer Search</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/team-view-display-enhancements.html" class="feature-card" data-cat="optin" data-name="team view display enhancements">
-        <div class="feature-name">Team View Display Enhancements</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Learners can now search for and add task observers directly in the SAP SuccessFactors Mobile iOS and Android apps.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Unblocks mobile-first learners who need to complete task observations in the field.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Mobile learners cannot assign observers, forcing them to use desktop for this step.</p>
+            </div>
+            <a href="features/mobile-app-support-for-observer-search.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/support-for-integer-and-decimal-custom-fields.html" class="feature-card" data-cat="optin" data-name="support for integer and decimal custom fields">
-        <div class="feature-name">Support for Integer and Decimal Custom Fields</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable if needed</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact ">Minor</span>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-name="data anonymization for external learners in instance refresh">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Data Anonymization for External Learners in Instance Refresh</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/upcoming-classes-in-enhanced-search.html" class="feature-card" data-cat="optin" data-name="upcoming classes in enhanced search">
-        <div class="feature-name">Upcoming Classes in Enhanced Search</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Administrators can now anonymize Learning data for external learners during instance refresh operations to protect personally identifiable information in non-production instances.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Strengthens data privacy compliance (GDPR, CCPA) by ensuring PII is not exposed in test environments.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>External learner PII may persist in non-production instances, creating compliance and privacy exposure.</p>
+            </div>
+            <a href="features/data-anonymization-for-external-learners-in-instance-refresh.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/updated-learning-cross-domain-proxlet.html" class="feature-card" data-cat="optin" data-name="updated learning cross-domain proxlet">
-        <div class="feature-name">Updated Learning Cross-Domain Proxlet</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="enhancements to analytic cards on home page">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Enhancements to Analytic Cards on Home Page</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/custom-cards-in-new-learning-experience-ios-and-android.html" class="feature-card" data-cat="optin" data-name="custom cards in new learning experience — ios and android">
-        <div class="feature-name">Custom Cards in New Learning Experience — iOS and Android</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable if using custom cards</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact ">Minor</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>New enhancements to analytic cards include a Total Learning Hours card and new administration options for managing cards on the latest home page.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Gives leaders quick visibility into learning engagement metrics without running reports.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Leadership misses a quick engagement metric. Admins have less control over the home page experience.</p>
+            </div>
+            <a href="features/enhancements-to-analytic-cards-on-home-page.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/manager-ability-to-remove-items-user-settings-page.html" class="feature-card" data-cat="optin" data-name="manager ability to remove items — user settings page">
-        <div class="feature-name">Manager Ability to Remove Items — User Settings Page</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact ">Minor</span>
-        </div>
-      </a>
+      </div>
       </div>
     </section>
 
@@ -458,38 +908,126 @@
         <span class="category-count">4 features &middot; Restricted / Licensed</span>
       </div>
       <div class="feature-list">
-        <a href="features/ai-assisted-ratings-for-inferred-skills.html" class="feature-card" data-cat="premium" data-name="ai-assisted ratings for inferred skills">
-        <div class="feature-name">AI-Assisted Ratings for Inferred Skills</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec warn">Evaluate with SAP rep</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact major">Major</span>
+        <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-name="ai-assisted ratings for inferred skills">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">AI-Assisted Ratings for Inferred Skills</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec warn">Evaluate with SAP rep</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/review-ai-inferred-skills-before-associating.html" class="feature-card" data-cat="premium" data-name="review ai-inferred skills before associating">
-        <div class="feature-name">Review AI-Inferred Skills Before Associating</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec warn">Evaluate with SAP rep</span>
-          <span class="badge badge-type">Changed</span>
-          <span class="badge badge-impact major">Major</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Generative AI can now extract skill proficiency ratings for skills that were inferred through the AI-assisted skills inference feature.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Accelerates skills taxonomy development at scale. Enables more precise skills-based learning recommendations.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Skills are tagged without proficiency levels — limiting the precision of skills-based recommendations and gap analysis.</p>
+            </div>
+            <a href="features/ai-assisted-ratings-for-inferred-skills.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/updates-to-extended-ai-locales.html" class="feature-card" data-cat="premium" data-name="updates to extended ai locales">
-        <div class="feature-name">Updates to Extended AI Locales</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec warn">Evaluate with SAP rep</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact major">Major</span>
+      </div>
+      <div class="feature-card" data-cat="premium" data-impact="major" data-type="changed" data-action="action" data-name="review ai-inferred skills before associating">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Review AI-Inferred Skills Before Associating</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec warn">Evaluate with SAP rep</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/person-centric-experience-for-multiple-employments.html" class="feature-card" data-cat="premium" data-name="person-centric experience for multiple employments">
-        <div class="feature-name">Person-Centric Experience for Multiple Employments</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec warn">Contact Product Support</span>
-          <span class="badge badge-type">New</span>
-          <span class="badge badge-impact major">Major</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Administrators can create skills inference requests, monitor progress, and review AI-inferred skills and ratings before associating them with learning items.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Ensures quality control over AI-generated skills associations. Builds trust in automated tagging.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No ability to leverage AI for skills tagging. Manual tagging remains the only option — slow and inconsistent.</p>
+            </div>
+            <a href="features/review-ai-inferred-skills-before-associating.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
+      </div>
+      <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-name="updates to extended ai locales">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Updates to Extended AI Locales</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec warn">Evaluate with SAP rep</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Generative AI now supports additional locales for translation, and AI-translated locales can be used in more areas across the suite.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Expands AI-powered content translation to a broader global workforce. Reduces manual translation costs.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Content translation remains manual for unsupported locales. Higher cost and slower time-to-market for global content.</p>
+            </div>
+            <a href="features/updates-to-extended-ai-locales.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-name="person-centric experience for multiple employments">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Person-Centric Experience for Multiple Employments</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec warn">Contact Product Support</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Administrators can now manage assignments, completions, history, and employment data at the person level for learners with multiple employments in Employee Central.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Eliminates duplicate assignments and confusion for employees who hold multiple roles. Gives a single view of learning history.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Employees with multiple roles continue to see fragmented learning records. Higher admin burden to reconcile.</p>
+            </div>
+            <a href="features/person-centric-experience-for-multiple-employments.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
       </div>
     </section>
 
@@ -500,91 +1038,1020 @@
         <span class="category-count">5 features &middot; End of Life</span>
       </div>
       <div class="feature-list">
-        <a href="features/horizon-visual-theme-opt-in-setting-deleted.html" class="feature-card" data-cat="deprecation" data-name="horizon visual theme opt-in setting — deleted">
-        <div class="feature-name">Horizon Visual Theme Opt-In Setting — Deleted</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec critical">Prepare for Horizon</span>
-          <span class="badge badge-type">Deprecated</span>
-          <span class="badge badge-impact major">Major</span>
+        <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-name="horizon visual theme opt-in setting — deleted">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Horizon Visual Theme Opt-In Setting — Deleted</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec critical">Prepare for Horizon</span>
+              <span class="badge badge-type">Deprecated</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/deprecation-of-successfactors-learning-token-server.html" class="feature-card" data-cat="deprecation" data-name="deprecation of successfactors learning token server">
-        <div class="feature-name">Deprecation of SuccessFactors Learning Token Server</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec critical">Migrate to OAuth NOW</span>
-          <span class="badge badge-type">Deprecated</span>
-          <span class="badge badge-impact critical">Critical</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The Horizon visual theme opt-in setting for Learning is deleted as of May 15, 2026. All Learning environments will automatically use the Horizon visual theme.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Standardizes the user experience across all Learning environments. Ensures consistency with the broader SAP design direction.</p>
+            </div>
+            <div class="accordion-section risk-critical">
+              <h4>Risk of Inaction</h4>
+              <p>No choice — this is automatic. Organizations still on the legacy theme will be migrated.</p>
+            </div>
+            <a href="features/horizon-visual-theme-opt-in-setting-deleted.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/deprecation-of-free-of-charge-subscriptions.html" class="feature-card" data-cat="deprecation" data-name="deprecation of free-of-charge subscriptions">
-        <div class="feature-name">Deprecation of Free-of-Charge Subscriptions</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec warn">Plan migration</span>
-          <span class="badge badge-type">Deprecated</span>
-          <span class="badge badge-impact major">Major</span>
+      </div>
+      <div class="feature-card" data-cat="deprecation" data-impact="critical" data-type="deprecated" data-action="action" data-name="deprecation of successfactors learning token server">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Deprecation of SuccessFactors Learning Token Server</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec critical">Migrate to OAuth NOW</span>
+              <span class="badge badge-type">Deprecated</span>
+              <span class="badge badge-impact critical">Critical</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
-      <a href="features/deprecation-of-legacy-learning-search.html" class="feature-card" data-cat="deprecation" data-name="deprecation of legacy learning search">
-        <div class="feature-name">Deprecation of Legacy Learning Search</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec ">Enable Enhanced Search</span>
-          <span class="badge badge-type">Deprecated</span>
-          <span class="badge badge-impact major">Major</span>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The Learning token server will reach end of maintenance on November 17, 2023 and will be deleted on November 20, 2026.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>After November 2026, any integrations using the legacy token server will break. This is a hard deadline.</p>
+            </div>
+            <div class="accordion-section risk-critical">
+              <h4>Risk of Inaction</h4>
+              <p>Critical: All integrations using the legacy token server will fail after November 20, 2026.</p>
+            </div>
+            <a href="features/deprecation-of-successfactors-learning-token-server.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
         </div>
-      </a>
-      <a href="features/deprecation-of-webex-training-center-support.html" class="feature-card" data-cat="deprecation" data-name="deprecation of webex training center support">
-        <div class="feature-name">Deprecation of Webex Training Center Support</div>
-        <div class="feature-meta">
-          <span class="badge badge-rec critical">Migrate VLS vendor</span>
-          <span class="badge badge-type">Deprecated</span>
-          <span class="badge badge-impact critical">Critical</span>
+      </div>
+      <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-name="deprecation of free-of-charge subscriptions">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Deprecation of Free-of-Charge Subscriptions</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec warn">Plan migration</span>
+              <span class="badge badge-type">Deprecated</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
         </div>
-      </a>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The ability to create free-of-charge subscriptions to override all pricing within a library will be deleted on May 14, 2027.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>If your organization uses this feature, you need to plan a migration to the new pricing model before the deletion date.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Pricing overrides will stop working in May 2027. Plan now to avoid disruption.</p>
+            </div>
+            <a href="features/deprecation-of-free-of-charge-subscriptions.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-name="deprecation of legacy learning search">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Deprecation of Legacy Learning Search</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable Enhanced Search</span>
+              <span class="badge badge-type">Deprecated</span>
+              <span class="badge badge-impact major">Major</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The legacy Learning search experience will reach end of maintenance on November 14, 2025 and will be deleted on May 14, 2027.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Enhanced Search provides better relevance, filtering, and performance. The legacy search will cease to function.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Legacy search will be removed in May 2027. Begin transition to Enhanced Search now.</p>
+            </div>
+            <a href="features/deprecation-of-legacy-learning-search.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="deprecation" data-impact="critical" data-type="deprecated" data-action="action" data-name="deprecation of webex training center support">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Deprecation of Webex Training Center Support</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec critical">Migrate VLS vendor</span>
+              <span class="badge badge-type">Deprecated</span>
+              <span class="badge badge-impact critical">Critical</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Support for Webex Training Center as a virtual learning vendor in SAP SuccessFactors Learning is ending November 2026.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>If your organization uses Webex Training Center for virtual classes, you need to migrate to Webex Meetings, Zoom, or Teams.</p>
+            </div>
+            <div class="accordion-section risk-critical">
+              <h4>Risk of Inaction</h4>
+              <p>Virtual learning sessions using Webex Training Center will stop working after November 2026.</p>
+            </div>
+            <a href="features/deprecation-of-webex-training-center-support.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Additional Features -->
+    
+    <section class="category-section additional-section" data-category="additional">
+      <div class="category-header additional-header">
+        <div class="category-dot" style="background:#6B7280"></div>
+        <h2>Additional Features</h2>
+        <span class="category-count">20 features &middot; Sourced from SAP Documentation</span>
+      </div>
+      <p class="additional-note">The following features were identified from SAP&rsquo;s official release documentation but were not included in the original release notes extract. They are listed here for awareness.</p>
+      <div class="feature-list">
+        <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-name="connectors now process future termination dates">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Connectors Now Process Future Termination Dates</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Learning connectors now process user records that have future termination dates, ensuring data remains synchronized before the termination takes effect.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Prevents data gaps for employees in their notice period. Ensures learning assignments and completions are properly tracked through end of employment.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically applied.</p>
+            </div>
+            <a href="features/connectors-now-process-future-termination-dates.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-name="sender display name update for notification emails">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Sender Display Name Update for Notification Emails</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The sender display name for Learning notification emails has been updated to provide clearer identification of the sending system.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Reduces the chance that learners ignore or spam-filter legitimate Learning notifications. Improves email open rates.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically applied.</p>
+            </div>
+            <a href="features/sender-display-name-update-for-notification-emails.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-name="learning permissions delivered for later release">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Learning Permissions Delivered for Later Release</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>New permission settings are being delivered in this release but are intended for use in a future release.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>No immediate impact, but administrators should be aware these exist. Do not modify these permissions until SAP provides guidance.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — do not modify these permissions prematurely.</p>
+            </div>
+            <a href="features/learning-permissions-delivered-for-later-release.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-name="search results improvement for german compound words">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Search Results Improvement for German Compound Words</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Enhanced search now properly handles German compound words, returning more accurate results for German-speaking users.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Critical for organizations with German-speaking learner populations. Improves discoverability of learning content.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically applied.</p>
+            </div>
+            <a href="features/search-results-improvement-for-german-compound-words.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="enhanced support for secondary instructors in vls">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Enhanced Support for Secondary Instructors in VLS</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable if using VLS</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Virtual learning sessions now support enhanced management of secondary instructors alongside primary instructors.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Important for organizations running large virtual classes with co-facilitators. Improves session coordination.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Secondary instructor management remains limited, requiring workarounds for co-facilitated sessions.</p>
+            </div>
+            <a href="features/enhanced-support-for-secondary-instructors-in-vls.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-name="new advanced settings for zoom vls">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">New Advanced Settings for Zoom VLS</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable if using Zoom</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>New advanced settings are available to manage Zoom virtual learning sessions with more granular control.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Reduces friction in Zoom-based training delivery. Gives admins finer control over the virtual classroom experience.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Zoom session management remains basic. May require manual workarounds for specific settings.</p>
+            </div>
+            <a href="features/new-advanced-settings-for-zoom-vls.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-name="configuration to hide enhanced search filters">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Configuration to Hide Enhanced Search Filters</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable selectively</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Administrators can now configure which enhanced search filters are visible to learners.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Simplifies the search experience by removing irrelevant filters. Cleaner interface for learners.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>All filters remain visible, potentially cluttering the search experience with unused options.</p>
+            </div>
+            <a href="features/configuration-to-hide-enhanced-search-filters.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="employments tab visible with system default role">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Employments Tab Visible with System Default Role</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The Employments tab is now visible when users are operating under the system default role.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Ensures consistent access to employment data regardless of role assignment. Reduces confusion for users.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Users on the default role cannot see employment data — potential support tickets and confusion.</p>
+            </div>
+            <a href="features/employments-tab-visible-with-system-default-role.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="enhanced visibility for custom page content">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Enhanced Visibility for Custom Page Content</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable if using custom pages</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Custom page content now has improved visibility and rendering on the Learning home page.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Organizations that use custom pages for communications, resources, or branded content will see better engagement.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Custom content remains less visible. Lower engagement with organization-specific learning resources.</p>
+            </div>
+            <a href="features/enhanced-visibility-for-custom-page-content.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="enhancements to user merge process">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Enhancements to User Merge Process</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The user merge process has been improved with better handling of edge cases and data integrity.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Critical for organizations that frequently merge user accounts — better data integrity and fewer merge failures.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>User merges may still encounter edge cases that require manual intervention.</p>
+            </div>
+            <a href="features/enhancements-to-user-merge-process.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="auto-purge archived connector input files">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Auto-Purge Archived Connector Input Files</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Archived connector input files are now automatically purged after a defined retention period.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Reduces storage bloat and simplifies system maintenance. Keeps the connector file area manageable.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Archived files continue to pile up, consuming storage and making troubleshooting harder.</p>
+            </div>
+            <a href="features/auto-purge-archived-connector-input-files.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="bulk delete unused icontent files">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Bulk Delete Unused iContent Files</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Administrators can now bulk delete unused iContent files from Learning Administration.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Frees up storage and reduces catalog clutter. Makes content management more efficient.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Unused content files accumulate, consuming storage and cluttering the admin interface.</p>
+            </div>
+            <a href="features/bulk-delete-unused-icontent-files.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-name="change assignment due dates from team view">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Change Assignment Due Dates from Team View</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Managers can now change assignment due dates for their team members directly from the Team View page.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Empowers managers to make real-time adjustments based on workload and priorities without admin support tickets.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Managers must submit requests to admins for due date changes. Slower, more friction.</p>
+            </div>
+            <a href="features/change-assignment-due-dates-from-team-view.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-name="class withdrawal directly from team view">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Class Withdrawal Directly from Team View</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Managers can now withdraw team members from classes directly from the Team View page.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Speeds up class management and frees seats faster when team priorities change.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Managers must navigate elsewhere or contact admin to withdraw team members from classes.</p>
+            </div>
+            <a href="features/class-withdrawal-directly-from-team-view.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="team view display enhancements">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Team View Display Enhancements</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Visual and usability improvements to the Team View page for a better manager experience.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Managers spend significant time in Team View. A better experience improves efficiency and adoption.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Managers remain on the older, less refined Team View interface.</p>
+            </div>
+            <a href="features/team-view-display-enhancements.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-name="support for integer and decimal custom fields">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Support for Integer and Decimal Custom Fields</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable if needed</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Custom fields for the User entity now support Integer and Decimal data types.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Enables more precise user data tracking for scenarios like certification scores, experience levels, or custom metrics.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Numeric data must be stored as text — limiting sorting, filtering, and reporting capabilities.</p>
+            </div>
+            <a href="features/support-for-integer-and-decimal-custom-fields.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-name="upcoming classes in enhanced search">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Upcoming Classes in Enhanced Search</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Enhanced search results now include upcoming class schedules, allowing learners to find and register for classes more easily.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Learners can find and register for classes without leaving search results. Reduces drop-off in the registration process.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Learners must navigate to individual class pages to see schedules — more friction.</p>
+            </div>
+            <a href="features/upcoming-classes-in-enhanced-search.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="updated learning cross-domain proxlet">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Updated Learning Cross-Domain Proxlet</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The Learning cross-domain proxlet has been updated for improved compatibility and security.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Ensures continued functionality and improved security for cross-domain Learning features.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Potential compatibility issues with cross-domain features in future releases.</p>
+            </div>
+            <a href="features/updated-learning-cross-domain-proxlet.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-name="custom cards in new learning experience — ios and android">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Custom Cards in New Learning Experience — iOS and Android</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable if using custom cards</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Custom cards built for the new Learning experience are now supported in the mobile iOS and Android apps.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Extends custom branding and targeted content to mobile learners. Consistent experience across devices.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Mobile learners miss organization-specific cards and content shown to desktop users.</p>
+            </div>
+            <a href="features/custom-cards-in-new-learning-experience-ios-and-android.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="manager ability to remove items — user settings page">
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Manager Ability to Remove Items — User Settings Page</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The setting that controls whether managers can remove learning items from their team members' assignments is now available on the User Settings page.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Easier for administrators to manage this important permission setting.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Configuration remains in the previous, less intuitive location.</p>
+            </div>
+            <a href="features/manager-ability-to-remove-items-user-settings-page.html" class="view-details-link">View Full Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faqSection">
+      <h2 class="faq-section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-0">
+            <span class="faq-question">What does 'Universal' mean?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-0" aria-hidden="true">
+            <p>Universal features are enabled automatically for all customers. No admin action is required — they will appear in your system after the release goes live.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-1">
+            <span class="faq-question">What does 'Opt-In' mean?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-1" aria-hidden="true">
+            <p>Opt-In features are available but must be manually enabled by a system administrator. Review each feature and decide whether to enable it for your organization.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-2">
+            <span class="faq-question">What does 'Premium' mean?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-2" aria-hidden="true">
+            <p>Premium features require additional licensing or are restricted to specific product editions. Contact your SAP account representative to discuss availability and pricing.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-3">
+            <span class="faq-question">What does 'Deprecation' mean?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-3" aria-hidden="true">
+            <p>Deprecation means a feature is being removed or has reached end of life. Migration or alternative action is typically required before the removal deadline.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-4">
+            <span class="faq-question">When do these changes go live?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-4" aria-hidden="true">
+            <p>Preview environments receive the update on April 13, 2026. Production systems go live May 15–16, 2026. The Token Server hard-delete deadline is November 20, 2026.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-5">
+            <span class="faq-question">What is the Token Server deprecation?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-5" aria-hidden="true">
+            <p>The SAP SuccessFactors Learning Token Server will be permanently deleted on November 20, 2026. Any integrations still using legacy token-based authentication will break. All organizations must complete migration to OAuth 2.0 before this date. This is the highest-priority action item in this release.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-6">
+            <span class="faq-question">How should our team use this site?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-6" aria-hidden="true">
+            <p>Start by reviewing the alert banner and critical deprecations. Then use the filters to focus on features that require action. Review each relevant feature with your team, paying attention to the 'Risk of Inaction' section. Share this site with system admins, learning admins, and integration teams.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-7">
+            <span class="faq-question">Who should review these features?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-7" aria-hidden="true">
+            <p>System administrators, learning administrators, integration and development teams, and any business stakeholders responsible for the SAP SuccessFactors Learning module.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    SAP SuccessFactors Learning &middot; 1H 2026 Release Strategy &middot; Internal Use Only
+    <div>SAP SuccessFactors Learning &middot; 1H 2026 Release Strategy &middot; Internal Use Only</div>
+    <div class="footer-dates">Last updated: April 2026 &middot; Preview: April 13 &middot; Production: May 15&ndash;16</div>
   </footer>
 
-  <script>
-    // Filter buttons
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        document.querySelectorAll('.category-section').forEach(sec => {
-          sec.style.display = (filter === 'all' || sec.dataset.category === filter) ? '' : 'none';
-        });
-      });
-    });
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
 
-    // Search
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', () => {
-      const q = searchInput.value.toLowerCase().trim();
-      document.querySelectorAll('.feature-card').forEach(card => {
-        const name = card.dataset.name || '';
-        card.style.display = (!q || name.includes(q)) ? '' : 'none';
-      });
-      // Show category sections that have visible cards
-      document.querySelectorAll('.category-section').forEach(sec => {
-        const visibleCards = sec.querySelectorAll('.feature-card[style=""], .feature-card:not([style])');
-        const hasVisible = Array.from(sec.querySelectorAll('.feature-card')).some(c => c.style.display !== 'none');
-        sec.style.display = hasVisible ? '' : 'none';
-      });
-      // Reset filter buttons
-      if (q) {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
-        document.querySelectorAll('.category-section').forEach(sec => {
-          const hasVisible = Array.from(sec.querySelectorAll('.feature-card')).some(c => c.style.display !== 'none');
-          sec.style.display = hasVisible ? '' : 'none';
+  <script>
+    (function() {
+      // ===== Alert Banner =====
+      var alertBanner = document.getElementById('alertBanner');
+      var alertDismiss = document.getElementById('alertDismiss');
+      var alertLink = document.getElementById('alertLink');
+      
+      if (alertDismiss) {
+        alertDismiss.addEventListener('click', function() {
+          alertBanner.style.display = 'none';
         });
       }
-    });
+      
+      if (alertLink) {
+        alertLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          // Activate deprecation filter
+          document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+          document.querySelector('.filter-btn[data-filter="deprecation"]').classList.add('active');
+          applyFilters();
+          document.getElementById('filterBar').scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+
+      // ===== Stat Card Clicks =====
+      document.querySelectorAll('.stat-card').forEach(function(card) {
+        card.addEventListener('click', function() {
+          var cat = card.dataset.cat;
+          document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+          var targetBtn = document.querySelector('.filter-btn[data-filter="' + cat + '"]');
+          if (targetBtn) targetBtn.classList.add('active');
+          applyFilters();
+          document.getElementById('filterBar').scrollIntoView({ behavior: 'smooth' });
+        });
+        card.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+        });
+      });
+
+      // ===== Filter Logic (AND combination) =====
+      var filterBtns = document.querySelectorAll('.filter-btn');
+      var filterImpact = document.getElementById('filterImpact');
+      var filterType = document.getElementById('filterType');
+      var filterAction = document.getElementById('filterAction');
+      var searchInput = document.getElementById('searchInput');
+      var filterCount = document.getElementById('filterCount');
+      var filterReset = document.getElementById('filterReset');
+      var allCards = document.querySelectorAll('.feature-card');
+      var allSections = document.querySelectorAll('.category-section');
+
+      filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          applyFilters();
+        });
+      });
+
+      filterImpact.addEventListener('change', applyFilters);
+      filterType.addEventListener('change', applyFilters);
+      filterAction.addEventListener('change', applyFilters);
+      searchInput.addEventListener('input', applyFilters);
+
+      filterReset.addEventListener('click', function(e) {
+        e.preventDefault();
+        filterBtns.forEach(function(b) { b.classList.remove('active'); });
+        document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+        filterImpact.value = 'all';
+        filterType.value = 'all';
+        filterAction.value = 'all';
+        searchInput.value = '';
+        applyFilters();
+      });
+
+      function applyFilters() {
+        var activeCat = document.querySelector('.filter-btn.active');
+        var catVal = activeCat ? activeCat.dataset.filter : 'all';
+        var impactVal = filterImpact.value;
+        var typeVal = filterType.value;
+        var actionVal = filterAction.value;
+        var searchVal = searchInput.value.toLowerCase().trim();
+        var visibleCount = 0;
+
+        allCards.forEach(function(card) {
+          var show = true;
+          if (catVal !== 'all' && card.dataset.cat !== catVal) show = false;
+          if (impactVal !== 'all' && card.dataset.impact !== impactVal) show = false;
+          if (typeVal !== 'all' && card.dataset.type !== typeVal) show = false;
+          if (actionVal !== 'all' && card.dataset.action !== actionVal) show = false;
+          if (searchVal && !(card.dataset.name || '').includes(searchVal)) show = false;
+          card.style.display = show ? '' : 'none';
+          if (show) visibleCount++;
+        });
+
+        // Show/hide category sections based on visible cards
+        allSections.forEach(function(sec) {
+          var hasVisible = Array.from(sec.querySelectorAll('.feature-card')).some(function(c) {
+            return c.style.display !== 'none';
+          });
+          sec.style.display = hasVisible ? '' : 'none';
+        });
+
+        filterCount.textContent = 'Showing ' + visibleCount + ' of 54 features';
+      }
+
+      // ===== Accordion Expand/Collapse on Feature Cards =====
+      document.querySelectorAll('.feature-card-header').forEach(function(hdr) {
+        hdr.addEventListener('click', function() {
+          var card = hdr.closest('.feature-card');
+          var body = card.querySelector('.feature-card-body');
+          var isOpen = hdr.getAttribute('aria-expanded') === 'true';
+
+          if (isOpen) {
+            hdr.setAttribute('aria-expanded', 'false');
+            body.setAttribute('aria-hidden', 'true');
+            card.classList.remove('expanded');
+          } else {
+            hdr.setAttribute('aria-expanded', 'true');
+            body.setAttribute('aria-hidden', 'false');
+            card.classList.add('expanded');
+          }
+        });
+
+        hdr.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hdr.click(); }
+        });
+      });
+
+      // ===== FAQ Accordion =====
+      document.querySelectorAll('.faq-trigger').forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+          var item = trigger.closest('.faq-item');
+          var answer = item.querySelector('.faq-answer');
+          var isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+          if (isOpen) {
+            trigger.setAttribute('aria-expanded', 'false');
+            answer.setAttribute('aria-hidden', 'true');
+            item.classList.remove('open');
+          } else {
+            trigger.setAttribute('aria-expanded', 'true');
+            answer.setAttribute('aria-hidden', 'false');
+            item.classList.add('open');
+          }
+        });
+      });
+
+      // ===== Back to Top Button =====
+      var backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
   </script>
 </body>
 </html>
