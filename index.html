@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAP SuccessFactors Learning | 1H 2026 Release Strategy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./index.html" style="color:inherit;text-decoration:none">
+        <div class="header-title">SAP SuccessFactors Learning <span>| 1H 2026 Release Strategy</span></div>
+      </a>
+      <div class="header-badge">1H 2026</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Summary Stats -->
+    <div class="stats-grid">
+      <div class="stat-card" data-cat="universal">
+        <div class="stat-number">14</div>
+        <div class="stat-label">Universal</div>
+      </div>
+      <div class="stat-card" data-cat="optin">
+        <div class="stat-number">31</div>
+        <div class="stat-label">Opt-In</div>
+      </div>
+      <div class="stat-card" data-cat="premium">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Premium</div>
+      </div>
+      <div class="stat-card" data-cat="deprecation">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Deprecation</div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline-bar">
+      <h2>Release Timeline</h2>
+      <div class="timeline-track">
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">April 13</div>
+          <div class="timeline-label">Preview</div>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">May 15–16</div>
+          <div class="timeline-label">Production</div>
+        </div>
+        <div class="timeline-node critical">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Nov 20</div>
+          <div class="timeline-label">Token Delete</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <label>Filter:</label>
+      <button class="filter-btn active" data-filter="all">All (54)</button>
+      <button class="filter-btn" data-filter="universal">Universal (14)</button>
+      <button class="filter-btn" data-filter="optin">Opt-In (31)</button>
+      <button class="filter-btn" data-filter="premium">Premium (4)</button>
+      <button class="filter-btn" data-filter="deprecation">Deprecation (5)</button>
+      <input type="text" class="search-input" placeholder="Search features…" id="searchInput">
+    </div>
+
+    <!-- Category Sections -->
+    <section class="category-section" data-category="universal">
+      <div class="category-header">
+        <div class="category-dot" style="background:#1B7340"></div>
+        <h2>Universal</h2>
+        <span class="category-count">14 features &middot; Automatically On</span>
+      </div>
+      <div class="feature-list">
+        <a href="features/keyword-search-on-view-all-pages.html" class="feature-card" data-cat="universal" data-name="keyword search on view all pages">
+        <div class="feature-name">Keyword Search on View All Pages</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">No action required</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/multiple-employments-rest-api-enhancements.html" class="feature-card" data-cat="universal" data-name="multiple employments rest api enhancements">
+        <div class="feature-name">Multiple Employments REST API Enhancements</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">No action required</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/curricula-status-in-mobile-apps.html" class="feature-card" data-cat="universal" data-name="curricula status in mobile apps">
+        <div class="feature-name">Curricula Status in Mobile Apps</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">No action required</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/manager-actions-and-sf-182-access-in-team-view.html" class="feature-card" data-cat="universal" data-name="manager actions and sf-182 access in team view">
+        <div class="feature-name">Manager Actions and SF-182 Access in Team View</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Communicate to managers</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/pre-calculated-program-completion-data-in-reports.html" class="feature-card" data-cat="universal" data-name="pre-calculated program completion data in reports">
+        <div class="feature-name">Pre-Calculated Program Completion Data in Reports</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec warn">Update legacy reports</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/team-view-role-selection-changes.html" class="feature-card" data-cat="universal" data-name="team view role selection changes">
+        <div class="feature-name">Team View Role Selection Changes</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Communicate to managers</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/validated-learning-apps-for-android.html" class="feature-card" data-cat="universal" data-name="validated learning apps for android">
+        <div class="feature-name">Validated Learning Apps for Android</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable for regulated teams</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/removal-of-new-learning-experience-banner-in-mobile.html" class="feature-card" data-cat="universal" data-name="removal of new learning experience banner in mobile">
+        <div class="feature-name">Removal of New Learning Experience Banner in Mobile</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">No action required</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/new-manage-super-admin-access-tool.html" class="feature-card" data-cat="universal" data-name="new manage super admin access tool">
+        <div class="feature-name">New Manage Super Admin Access Tool</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Train admin team</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/connectors-now-process-future-termination-dates.html" class="feature-card" data-cat="universal" data-name="connectors now process future termination dates">
+        <div class="feature-name">Connectors Now Process Future Termination Dates</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">No action required</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/sender-display-name-update-for-notification-emails.html" class="feature-card" data-cat="universal" data-name="sender display name update for notification emails">
+        <div class="feature-name">Sender Display Name Update for Notification Emails</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">No action required</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/minor-visual-changes-in-1h-2026.html" class="feature-card" data-cat="universal" data-name="minor visual changes in 1h 2026">
+        <div class="feature-name">Minor Visual Changes in 1H 2026</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">No action required</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/learning-permissions-delivered-for-later-release.html" class="feature-card" data-cat="universal" data-name="learning permissions delivered for later release">
+        <div class="feature-name">Learning Permissions Delivered for Later Release</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">No action required</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/search-results-improvement-for-german-compound-words.html" class="feature-card" data-cat="universal" data-name="search results improvement for german compound words">
+        <div class="feature-name">Search Results Improvement for German Compound Words</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">No action required</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      </div>
+    </section>
+
+    <section class="category-section" data-category="optin">
+      <div class="category-header">
+        <div class="category-dot" style="background:#2070B0"></div>
+        <h2>Opt-In</h2>
+        <span class="category-count">31 features &middot; Customer Configured</span>
+      </div>
+      <div class="feature-list">
+        <a href="features/quick-access-to-learning-details-on-home-page.html" class="feature-card" data-cat="optin" data-name="quick access to learning details on home page">
+        <div class="feature-name">Quick Access to Learning Details on Home Page</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/reset-e-signature-pin-on-learning-home-page.html" class="feature-card" data-cat="optin" data-name="reset e-signature pin on learning home page">
+        <div class="feature-name">Reset E-Signature PIN on Learning Home Page</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/redesigned-program-and-curricula-pages.html" class="feature-card" data-cat="optin" data-name="redesigned program and curricula pages">
+        <div class="feature-name">Redesigned Program and Curricula Pages</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/setting-to-require-manager-for-task-observation.html" class="feature-card" data-cat="optin" data-name="setting to require manager for task observation">
+        <div class="feature-name">Setting to Require Manager for Task Observation</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable for regulated roles</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/prerequisite-and-approval-enforcement-for-programs.html" class="feature-card" data-cat="optin" data-name="prerequisite and approval enforcement for programs">
+        <div class="feature-name">Prerequisite and Approval Enforcement for Programs</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/enhanced-retraining-experience-for-curricula.html" class="feature-card" data-cat="optin" data-name="enhanced retraining experience for curricula">
+        <div class="feature-name">Enhanced Retraining Experience for Curricula</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/enhancements-to-external-learning-events.html" class="feature-card" data-cat="optin" data-name="enhancements to external learning events">
+        <div class="feature-name">Enhancements to External Learning Events</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/add-open-content-network-items-to-default-library.html" class="feature-card" data-cat="optin" data-name="add open content network items to default library">
+        <div class="feature-name">Add Open Content Network Items to Default Library</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/credit-hours-in-open-content-network-odata-api.html" class="feature-card" data-cat="optin" data-name="credit hours in open content network odata api">
+        <div class="feature-name">Credit Hours in Open Content Network OData API</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable if using credit hours</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/set-duration-for-online-items-in-bulk.html" class="feature-card" data-cat="optin" data-name="set duration for online items in bulk">
+        <div class="feature-name">Set Duration for Online Items in Bulk</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/retain-item-details-in-curricula-during-revisions.html" class="feature-card" data-cat="optin" data-name="retain item details in curricula during revisions">
+        <div class="feature-name">Retain Item Details in Curricula During Revisions</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/assisted-skills-association-with-ocn-items-ga.html" class="feature-card" data-cat="optin" data-name="assisted skills association with ocn items — ga">
+        <div class="feature-name">Assisted Skills Association With OCN Items — GA</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/mobile-app-support-for-observer-search.html" class="feature-card" data-cat="optin" data-name="mobile app support for observer search">
+        <div class="feature-name">Mobile App Support for Observer Search</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/data-anonymization-for-external-learners-in-instance-refresh.html" class="feature-card" data-cat="optin" data-name="data anonymization for external learners in instance refresh">
+        <div class="feature-name">Data Anonymization for External Learners in Instance Refresh</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/enhancements-to-analytic-cards-on-home-page.html" class="feature-card" data-cat="optin" data-name="enhancements to analytic cards on home page">
+        <div class="feature-name">Enhancements to Analytic Cards on Home Page</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/enhanced-support-for-secondary-instructors-in-vls.html" class="feature-card" data-cat="optin" data-name="enhanced support for secondary instructors in vls">
+        <div class="feature-name">Enhanced Support for Secondary Instructors in VLS</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable if using VLS</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/new-advanced-settings-for-zoom-vls.html" class="feature-card" data-cat="optin" data-name="new advanced settings for zoom vls">
+        <div class="feature-name">New Advanced Settings for Zoom VLS</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable if using Zoom</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/configuration-to-hide-enhanced-search-filters.html" class="feature-card" data-cat="optin" data-name="configuration to hide enhanced search filters">
+        <div class="feature-name">Configuration to Hide Enhanced Search Filters</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable selectively</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/employments-tab-visible-with-system-default-role.html" class="feature-card" data-cat="optin" data-name="employments tab visible with system default role">
+        <div class="feature-name">Employments Tab Visible with System Default Role</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/enhanced-visibility-for-custom-page-content.html" class="feature-card" data-cat="optin" data-name="enhanced visibility for custom page content">
+        <div class="feature-name">Enhanced Visibility for Custom Page Content</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable if using custom pages</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/enhancements-to-user-merge-process.html" class="feature-card" data-cat="optin" data-name="enhancements to user merge process">
+        <div class="feature-name">Enhancements to User Merge Process</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/auto-purge-archived-connector-input-files.html" class="feature-card" data-cat="optin" data-name="auto-purge archived connector input files">
+        <div class="feature-name">Auto-Purge Archived Connector Input Files</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/bulk-delete-unused-icontent-files.html" class="feature-card" data-cat="optin" data-name="bulk delete unused icontent files">
+        <div class="feature-name">Bulk Delete Unused iContent Files</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/change-assignment-due-dates-from-team-view.html" class="feature-card" data-cat="optin" data-name="change assignment due dates from team view">
+        <div class="feature-name">Change Assignment Due Dates from Team View</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/class-withdrawal-directly-from-team-view.html" class="feature-card" data-cat="optin" data-name="class withdrawal directly from team view">
+        <div class="feature-name">Class Withdrawal Directly from Team View</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/team-view-display-enhancements.html" class="feature-card" data-cat="optin" data-name="team view display enhancements">
+        <div class="feature-name">Team View Display Enhancements</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/support-for-integer-and-decimal-custom-fields.html" class="feature-card" data-cat="optin" data-name="support for integer and decimal custom fields">
+        <div class="feature-name">Support for Integer and Decimal Custom Fields</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable if needed</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/upcoming-classes-in-enhanced-search.html" class="feature-card" data-cat="optin" data-name="upcoming classes in enhanced search">
+        <div class="feature-name">Upcoming Classes in Enhanced Search</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/updated-learning-cross-domain-proxlet.html" class="feature-card" data-cat="optin" data-name="updated learning cross-domain proxlet">
+        <div class="feature-name">Updated Learning Cross-Domain Proxlet</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/custom-cards-in-new-learning-experience-ios-and-android.html" class="feature-card" data-cat="optin" data-name="custom cards in new learning experience — ios and android">
+        <div class="feature-name">Custom Cards in New Learning Experience — iOS and Android</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable if using custom cards</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      <a href="features/manager-ability-to-remove-items-user-settings-page.html" class="feature-card" data-cat="optin" data-name="manager ability to remove items — user settings page">
+        <div class="feature-name">Manager Ability to Remove Items — User Settings Page</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact ">Minor</span>
+        </div>
+      </a>
+      </div>
+    </section>
+
+    <section class="category-section" data-category="premium">
+      <div class="category-header">
+        <div class="category-dot" style="background:#D4760A"></div>
+        <h2>Premium</h2>
+        <span class="category-count">4 features &middot; Restricted / Licensed</span>
+      </div>
+      <div class="feature-list">
+        <a href="features/ai-assisted-ratings-for-inferred-skills.html" class="feature-card" data-cat="premium" data-name="ai-assisted ratings for inferred skills">
+        <div class="feature-name">AI-Assisted Ratings for Inferred Skills</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec warn">Evaluate with SAP rep</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/review-ai-inferred-skills-before-associating.html" class="feature-card" data-cat="premium" data-name="review ai-inferred skills before associating">
+        <div class="feature-name">Review AI-Inferred Skills Before Associating</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec warn">Evaluate with SAP rep</span>
+          <span class="badge badge-type">Changed</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/updates-to-extended-ai-locales.html" class="feature-card" data-cat="premium" data-name="updates to extended ai locales">
+        <div class="feature-name">Updates to Extended AI Locales</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec warn">Evaluate with SAP rep</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/person-centric-experience-for-multiple-employments.html" class="feature-card" data-cat="premium" data-name="person-centric experience for multiple employments">
+        <div class="feature-name">Person-Centric Experience for Multiple Employments</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec warn">Contact Product Support</span>
+          <span class="badge badge-type">New</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      </div>
+    </section>
+
+    <section class="category-section" data-category="deprecation">
+      <div class="category-header">
+        <div class="category-dot" style="background:#CC0033"></div>
+        <h2>Deprecation</h2>
+        <span class="category-count">5 features &middot; End of Life</span>
+      </div>
+      <div class="feature-list">
+        <a href="features/horizon-visual-theme-opt-in-setting-deleted.html" class="feature-card" data-cat="deprecation" data-name="horizon visual theme opt-in setting — deleted">
+        <div class="feature-name">Horizon Visual Theme Opt-In Setting — Deleted</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec critical">Prepare for Horizon</span>
+          <span class="badge badge-type">Deprecated</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/deprecation-of-successfactors-learning-token-server.html" class="feature-card" data-cat="deprecation" data-name="deprecation of successfactors learning token server">
+        <div class="feature-name">Deprecation of SuccessFactors Learning Token Server</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec critical">Migrate to OAuth NOW</span>
+          <span class="badge badge-type">Deprecated</span>
+          <span class="badge badge-impact critical">Critical</span>
+        </div>
+      </a>
+      <a href="features/deprecation-of-free-of-charge-subscriptions.html" class="feature-card" data-cat="deprecation" data-name="deprecation of free-of-charge subscriptions">
+        <div class="feature-name">Deprecation of Free-of-Charge Subscriptions</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec warn">Plan migration</span>
+          <span class="badge badge-type">Deprecated</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/deprecation-of-legacy-learning-search.html" class="feature-card" data-cat="deprecation" data-name="deprecation of legacy learning search">
+        <div class="feature-name">Deprecation of Legacy Learning Search</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec ">Enable Enhanced Search</span>
+          <span class="badge badge-type">Deprecated</span>
+          <span class="badge badge-impact major">Major</span>
+        </div>
+      </a>
+      <a href="features/deprecation-of-webex-training-center-support.html" class="feature-card" data-cat="deprecation" data-name="deprecation of webex training center support">
+        <div class="feature-name">Deprecation of Webex Training Center Support</div>
+        <div class="feature-meta">
+          <span class="badge badge-rec critical">Migrate VLS vendor</span>
+          <span class="badge badge-type">Deprecated</span>
+          <span class="badge badge-impact critical">Critical</span>
+        </div>
+      </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    SAP SuccessFactors Learning &middot; 1H 2026 Release Strategy &middot; Internal Use Only
+  </footer>
+
+  <script>
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.category-section').forEach(sec => {
+          sec.style.display = (filter === 'all' || sec.dataset.category === filter) ? '' : 'none';
+        });
+      });
+    });
+
+    // Search
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase().trim();
+      document.querySelectorAll('.feature-card').forEach(card => {
+        const name = card.dataset.name || '';
+        card.style.display = (!q || name.includes(q)) ? '' : 'none';
+      });
+      // Show category sections that have visible cards
+      document.querySelectorAll('.category-section').forEach(sec => {
+        const visibleCards = sec.querySelectorAll('.feature-card[style=""], .feature-card:not([style])');
+        const hasVisible = Array.from(sec.querySelectorAll('.feature-card')).some(c => c.style.display !== 'none');
+        sec.style.display = hasVisible ? '' : 'none';
+      });
+      // Reset filter buttons
+      if (q) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+        document.querySelectorAll('.category-section').forEach(sec => {
+          const hasVisible = Array.from(sec.querySelectorAll('.feature-card')).some(c => c.style.display !== 'none');
+          sec.style.display = hasVisible ? '' : 'none';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
