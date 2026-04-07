@@ -139,6 +139,25 @@
       </div>
     </div>
 
+    <!-- Export Toolbar -->
+    <div class="export-bar" id="exportBar">
+      <div class="export-bar-left">
+        <label class="export-select-all-label" onclick="event.stopPropagation()">
+          <input type="checkbox" id="selectAllCheckbox" aria-label="Select all visible features">
+          <span class="checkbox-custom"></span>
+          <span class="select-all-text">Select All</span>
+        </label>
+        <span class="export-count" id="exportCount">0 selected</span>
+      </div>
+      <div class="export-bar-right">
+        <button class="export-btn" id="exportCSVBtn" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export to CSV
+        </button>
+        <button class="export-clear-btn" id="exportClearBtn">Clear Selection</button>
+      </div>
+    </div>
+
     <!-- Category Sections -->
     <section class="category-section" data-category="universal">
       <div class="category-header">
@@ -147,7 +166,11 @@
         <span class="category-count">10 features &middot; Automatically On</span>
       </div>
       <div class="feature-list">
-        <div class="feature-card" data-cat="universal" data-impact="minor" data-type="new" data-action="noaction" data-exp="enduser" data-name="keyword search on view all pages">
+        <div class="feature-card" data-cat="universal" data-impact="minor" data-type="new" data-action="noaction" data-exp="enduser" data-name="keyword search on view all pages" data-csv-name="Keyword Search on View All Pages" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Learners can now search their learning activities — assignments, task observations, training requests, surveys, and bookmarks — by title or ID on the View All pages. Filtering by learning type is also supported." data-csv-why="Reduces time learners spend scrolling through long lists to find specific assignments. Improves self-service and reduces help desk tickets." data-csv-risk="No action needed — this is automatically enabled. No risk." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/477c23006a59476fae497d16e3839acb.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Keyword Search on View All Pages for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Keyword Search on View All Pages</div>
@@ -181,7 +204,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="multiple employments rest api enhancements">
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="multiple employments rest api enhancements" data-csv-name="Multiple Employments REST API Enhancements" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="The Multiple Employments REST API now provides structured responses, supports $select for retrieving specific fields, and introduces the actingAs parameter." data-csv-why="Enables more efficient integrations for organizations with employees who hold multiple roles. Reduces data transfer overhead." data-csv-risk="No action needed — automatically applied. Existing integrations continue to work." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f9d2b98dd626428b98728a31fd1172de.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Multiple Employments REST API Enhancements for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Multiple Employments REST API Enhancements</div>
@@ -215,7 +242,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="noaction" data-exp="enduser,admin" data-name="curricula status in mobile apps">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="noaction" data-exp="enduser,admin" data-name="curricula status in mobile apps" data-csv-name="Curricula Status in Mobile Apps" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="No action required" data-csv-desc="Learners can now view their curricula assignments and track compliance status directly in the SAP SuccessFactors Mobile iOS and Android apps." data-csv-why="Frontline and field workers who primarily use mobile can now monitor their compliance status on the go, reducing overdue assignments." data-csv-risk="No action needed — automatically enabled for mobile users." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/cbdec2e2efc743ed9c9e0f1f9cd4fa9f.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Curricula Status in Mobile Apps for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Curricula Status in Mobile Apps</div>
@@ -249,7 +280,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin,manager" data-name="manager actions and sf-182 access in team view">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin,manager" data-name="manager actions and sf-182 access in team view" data-csv-name="Manager Actions and SF-182 Access in Team View" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Communicate to managers" data-csv-desc="Managers can now register team members for learning, perform withdrawal and removal actions, and access SF-182 requests, reports, and curricula status directly from Team View." data-csv-why="Streamlines the manager experience and increases manager engagement in team development. Reduces administrative friction." data-csv-risk="No action needed — automatically enabled. Managers will see new capabilities immediately." data-csv-exp="Admin, Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d3dcd1741e9d4a78876d2aaa9097262c.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Manager Actions and SF-182 Access in Team View for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Manager Actions and SF-182 Access in Team View</div>
@@ -283,7 +318,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin,manager" data-name="pre-calculated program completion data in reports">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin,manager" data-name="pre-calculated program completion data in reports" data-csv-name="Pre-Calculated Program Completion Data in Reports" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Update legacy reports" data-csv-desc="Administrators can now access pre-calculated program completion percentages in Data Extract Services. The legacy GetProgramCompletionPercentage operator is deprecated." data-csv-why="Significantly faster and more reliable reporting on program completion. Eliminates performance issues with large program reports." data-csv-risk="No action needed — automatically enabled. Begin transitioning any reports that use the legacy operator." data-csv-exp="Admin, Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/4b6ec73a2ebb449580269944fc930ad9.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Pre-Calculated Program Completion Data in Reports for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Pre-Calculated Program Completion Data in Reports</div>
@@ -317,7 +356,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="manager" data-name="team view role selection changes">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="manager" data-name="team view role selection changes" data-csv-name="Team View Role Selection Changes" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Communicate to managers" data-csv-desc="Managers can now switch between available roles — such as Alternate Manager or HR Business Partner — using a new tab-based interface on the Team View page." data-csv-why="Improves usability for managers who oversee teams in multiple capacities. Cleaner interface reduces confusion." data-csv-risk="No action needed — automatically applied. The new interface replaces the old one." data-csv-exp="Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/ac61e68684df4240963237791e133be5.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Team View Role Selection Changes for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Team View Role Selection Changes</div>
@@ -351,7 +394,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="enduser" data-name="validated learning apps for android">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="enduser" data-name="validated learning apps for android" data-csv-name="Validated Learning Apps for Android" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Enable for regulated teams" data-csv-desc="The SAP Validated Learning and SAP Validated Learning Preview apps are now available for Android mobile devices." data-csv-why="Extends compliance-grade mobile learning to a much larger user base. Critical for organizations in life sciences, manufacturing, and other regulated sectors." data-csv-risk="No action needed — automatically available in app stores." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d731489ed2f64a899bfad584df4883b5.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Validated Learning Apps for Android for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Validated Learning Apps for Android</div>
@@ -385,7 +432,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser" data-name="removal of new learning experience banner in mobile">
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser" data-name="removal of new learning experience banner in mobile" data-csv-name="Removal of New Learning Experience Banner in Mobile" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="The New Learning Experience switch and informational banner have been removed from the mobile apps." data-csv-why="Signals that the new Learning experience is now the standard. Cleaner mobile interface with less visual clutter." data-csv-risk="No action needed — automatically applied." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/b79681a0f3ad433d8ad4202ec08fc234.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Removal of New Learning Experience Banner in Mobile for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Removal of New Learning Experience Banner in Mobile</div>
@@ -419,7 +470,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin" data-name="new manage super admin access tool">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin" data-name="new manage super admin access tool" data-csv-name="New Manage Super Admin Access Tool" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Train admin team" data-csv-desc="Administrators can now manage super admins for both Learning and Platform from a unified access management page. The old tool is split into two: Manage Super Admin Access and Manage RBP Admin Access." data-csv-why="Simplifies security administration and provides clearer separation between super admin and RBP admin functions." data-csv-risk="No action needed — automatically applied. Admins should familiarize themselves with the new tool location." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/594e3e17ea49443897956475eebebc08.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select New Manage Super Admin Access Tool for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">New Manage Super Admin Access Tool</div>
@@ -453,7 +508,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser,admin" data-name="minor visual changes in 1h 2026">
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser,admin" data-name="minor visual changes in 1h 2026" data-csv-name="Minor Visual Changes in 1H 2026" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Numerous minor visual enhancements across the platform to align with SAP's updated design system." data-csv-why="Creates a more consistent and polished user experience across the platform." data-csv-risk="No action needed — automatically applied." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/3922f18e1f8645d6b91a23f527725aa9.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Minor Visual Changes in 1H 2026 for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Minor Visual Changes in 1H 2026</div>
@@ -497,7 +556,11 @@
         <span class="category-count">15 features &middot; Customer Configured</span>
       </div>
       <div class="feature-list">
-        <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="enduser" data-name="quick access to learning details on home page">
+        <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="enduser" data-name="quick access to learning details on home page" data-csv-name="Quick Access to Learning Details on Home Page" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Learners can view additional learning details for courses, programs, classes, and curricula directly on the Learning home page without navigating to the details page." data-csv-why="Reduces navigation clicks and helps learners make faster decisions about what to take next. Improves the self-service learning experience." data-csv-risk="Learners continue navigating away from the home page to see details — more clicks, more friction, lower engagement." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f0dc2ba00ae348e78e8e4d969bd10e13.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Quick Access to Learning Details on Home Page for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Quick Access to Learning Details on Home Page</div>
@@ -531,7 +594,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser" data-name="reset e-signature pin on learning home page">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser" data-name="reset e-signature pin on learning home page" data-csv-name="Reset E-Signature PIN on Learning Home Page" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Learners can securely reset their e-signature PIN using a Forgot My PIN option directly from the Learning home page." data-csv-why="Reduces admin workload from PIN reset tickets. Unblocks learners who are stuck on compliance-critical e-signature activities." data-csv-risk="Learners who forget their PIN remain blocked until an admin manually resets it. Delays compliance completion." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f0dc2ba00ae348e78e8e4d969bd10e13.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Reset E-Signature PIN on Learning Home Page for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Reset E-Signature PIN on Learning Home Page</div>
@@ -565,7 +632,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="major" data-type="changed" data-action="action" data-exp="enduser" data-name="redesigned program and curricula pages">
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="changed" data-action="action" data-exp="enduser" data-name="redesigned program and curricula pages" data-csv-name="Redesigned Program and Curricula Pages" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Major" data-csv-rec="Enable" data-csv-desc="Learners can access a redesigned interface to view program details, curriculum details, and curricula status from the Learning home page." data-csv-why="Improves the learner experience for programs and curricula, which are often the most complex learning structures. Better visibility into progress." data-csv-risk="Learners remain on the older, less intuitive interface. Missed opportunity to improve engagement with structured learning paths." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/61597b1158794793a319d603ac9fdb66.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Redesigned Program and Curricula Pages for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Redesigned Program and Curricula Pages</div>
@@ -599,7 +670,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="manager" data-name="setting to require manager for task observation">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="manager" data-name="setting to require manager for task observation" data-csv-name="Setting to Require Manager for Task Observation" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable for regulated roles" data-csv-desc="A new task checklist setting requires task observations to be completed by the learner's primary manager." data-csv-why="Strengthens compliance controls by ensuring the right person validates task completion. Critical for regulated environments." data-csv-risk="Anyone with observer access can validate tasks — potentially undermining compliance rigor in regulated workflows." data-csv-exp="Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/df4095459a524b298d786e4a62c9dba3.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Setting to Require Manager for Task Observation for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Setting to Require Manager for Task Observation</div>
@@ -633,7 +708,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="prerequisite and approval enforcement for programs">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="prerequisite and approval enforcement for programs" data-csv-name="Prerequisite and Approval Enforcement for Programs" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Administrators can now enforce item-level prerequisites and approvals for courses within programs." data-csv-why="Ensures learners complete required steps in order. Prevents skipping ahead in structured development paths." data-csv-risk="Learners can bypass prerequisites within programs, undermining the intended learning path design." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f48d1b6e58f04f0d8e9bf33df5e126c5.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Prerequisite and Approval Enforcement for Programs for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Prerequisite and Approval Enforcement for Programs</div>
@@ -667,7 +746,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser" data-name="enhanced retraining experience for curricula">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser" data-name="enhanced retraining experience for curricula" data-csv-name="Enhanced Retraining Experience for Curricula" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="The retraining experience for curriculum requirements on the Learning home page has been enhanced with clear compliance visibility and easier tracking." data-csv-why="Compliance-critical retraining becomes more transparent. Reduces overdue retraining by making it harder to miss." data-csv-risk="Retraining visibility remains limited. Higher risk of missed retraining deadlines and compliance gaps." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/2a4c2d35c8974f18a3a72fc6e5c56e3c.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Enhanced Retraining Experience for Curricula for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Enhanced Retraining Experience for Curricula</div>
@@ -701,7 +784,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="major" data-type="changed" data-action="action" data-exp="admin" data-name="enhancements to external learning events">
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="changed" data-action="action" data-exp="admin" data-name="enhancements to external learning events" data-csv-name="Enhancements to External Learning Events" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Major" data-csv-rec="Enable" data-csv-desc="New fields have been added to the External Event entity, allowing learners, managers, and administrators to capture more comprehensive information when logging external learning." data-csv-why="Creates a more complete picture of employee development, including learning that happens outside the LMS." data-csv-risk="External learning records remain basic. Organization loses visibility into the full scope of employee development." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/4f3e64da0fa545fda602842195c20735.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Enhancements to External Learning Events for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Enhancements to External Learning Events</div>
@@ -735,7 +822,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="add open content network items to default library">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="add open content network items to default library" data-csv-name="Add Open Content Network Items to Default Library" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Administrators can configure a default library for each Open Content Network (OCN) provider to automatically assign imported items to a specific library." data-csv-why="Reduces administrative effort and ensures consistent content organization. Makes third-party content easier to find and manage." data-csv-risk="OCN items land without library assignment, requiring manual sorting. Content becomes harder to govern and discover." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/9ddc1e25e6b944749e3743e7981050e4.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Add Open Content Network Items to Default Library for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Add Open Content Network Items to Default Library</div>
@@ -769,7 +860,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="credit hours in open content network odata api">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="credit hours in open content network odata api" data-csv-name="Credit Hours in Open Content Network OData API" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable if using credit hours" data-csv-desc="The OCN OData API now supports creditHours when posting OCN items to SAP SuccessFactors Learning." data-csv-why="Enables accurate credit tracking for professional development and continuing education requirements." data-csv-risk="Credit hours must be manually entered for OCN content. Time-consuming and error-prone." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/5f085b1d97ca4e71892fc128ae684ef5.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Credit Hours in Open Content Network OData API for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Credit Hours in Open Content Network OData API</div>
@@ -803,7 +898,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="set duration for online items in bulk">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="set duration for online items in bulk" data-csv-name="Set Duration for Online Items in Bulk" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Administrators can now add or update duration for multiple online learning items at once through the Item Connector." data-csv-why="Saves significant admin time when managing large content libraries. Ensures duration data is consistent for reporting." data-csv-risk="Duration updates remain one-at-a-time. Heavy administrative burden for large catalogs." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/bca3ac0668984199879033f9558a3da6.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Set Duration for Online Items in Bulk for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Set Duration for Online Items in Bulk</div>
@@ -837,7 +936,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser,admin" data-name="retain item details in curricula during revisions">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser,admin" data-name="retain item details in curricula during revisions" data-csv-name="Retain Item Details in Curricula During Revisions" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Initial and retraining assignment data for items in a curriculum is now preserved during item revisions through the Item Connector." data-csv-why="Prevents loss of compliance-critical data during routine content updates. Protects training history integrity." data-csv-risk="Item revisions may still clear assignment data within curricula, creating compliance tracking gaps." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f4b6b3d834194e259383c50494c3befb.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Retain Item Details in Curricula During Revisions for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Retain Item Details in Curricula During Revisions</div>
@@ -871,7 +974,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-exp="admin" data-name="assisted skills association with ocn items — ga">
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-exp="admin" data-name="assisted skills association with ocn items — ga" data-csv-name="Assisted Skills Association With OCN Items — GA" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Enable" data-csv-desc="The AI-assisted skills association feature for Open Content Network items, previously in early adoption, is now generally available." data-csv-why="Scales skills tagging across large third-party content libraries. Enables skills-based learning recommendations." data-csv-risk="Skills must be manually tagged to OCN items — impractical at scale. Skills-based recommendations remain incomplete." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/e1dbfa3f709b4e63bf26c8b3e6db12be.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Assisted Skills Association With OCN Items — GA for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Assisted Skills Association With OCN Items — GA</div>
@@ -905,7 +1012,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="enduser" data-name="mobile app support for observer search">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="enduser" data-name="mobile app support for observer search" data-csv-name="Mobile App Support for Observer Search" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Learners can now search for and add task observers directly in the SAP SuccessFactors Mobile iOS and Android apps." data-csv-why="Unblocks mobile-first learners who need to complete task observations in the field." data-csv-risk="Mobile learners cannot assign observers, forcing them to use desktop for this step." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/a2dbc62f71c9436285e833e3e22d8d76.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Mobile App Support for Observer Search for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Mobile App Support for Observer Search</div>
@@ -939,7 +1050,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-exp="enduser,admin" data-name="data anonymization for external learners in instance refresh">
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-exp="enduser,admin" data-name="data anonymization for external learners in instance refresh" data-csv-name="Data Anonymization for External Learners in Instance Refresh" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Enable" data-csv-desc="Administrators can now anonymize Learning data for external learners during instance refresh operations to protect personally identifiable information in non-production instances." data-csv-why="Strengthens data privacy compliance (GDPR, CCPA) by ensuring PII is not exposed in test environments." data-csv-risk="External learner PII may persist in non-production instances, creating compliance and privacy exposure." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/e759e8819b004a71a8f2bcbd3b1b690e.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Data Anonymization for External Learners in Instance Refresh for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Data Anonymization for External Learners in Instance Refresh</div>
@@ -973,7 +1088,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser,admin" data-name="enhancements to analytic cards on home page">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser,admin" data-name="enhancements to analytic cards on home page" data-csv-name="Enhancements to Analytic Cards on Home Page" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="New enhancements to analytic cards include a Total Learning Hours card and new administration options for managing cards on the latest home page." data-csv-why="Gives leaders quick visibility into learning engagement metrics without running reports." data-csv-risk="Leadership misses a quick engagement metric. Admins have less control over the home page experience." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/bb6cac2cf6334604b16027cefd7c4d84.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Enhancements to Analytic Cards on Home Page for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Enhancements to Analytic Cards on Home Page</div>
@@ -1017,7 +1136,11 @@
         <span class="category-count">4 features &middot; Restricted / Licensed</span>
       </div>
       <div class="feature-list">
-        <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-exp="admin" data-name="ai-assisted ratings for inferred skills">
+        <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-exp="admin" data-name="ai-assisted ratings for inferred skills" data-csv-name="AI-Assisted Ratings for Inferred Skills" data-csv-cat="Premium" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Evaluate with SAP rep" data-csv-desc="Generative AI can now extract skill proficiency ratings for skills that were inferred through the AI-assisted skills inference feature." data-csv-why="Accelerates skills taxonomy development at scale. Enables more precise skills-based learning recommendations." data-csv-risk="Skills are tagged without proficiency levels — limiting the precision of skills-based recommendations and gap analysis." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/7dcdb01a55fa47968046723467708dd0.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select AI-Assisted Ratings for Inferred Skills for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">AI-Assisted Ratings for Inferred Skills</div>
@@ -1051,7 +1174,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="premium" data-impact="major" data-type="changed" data-action="action" data-exp="admin" data-name="review ai-inferred skills before associating">
+      <div class="feature-card" data-cat="premium" data-impact="major" data-type="changed" data-action="action" data-exp="admin" data-name="review ai-inferred skills before associating" data-csv-name="Review AI-Inferred Skills Before Associating" data-csv-cat="Premium" data-csv-type="Changed" data-csv-impact="Major" data-csv-rec="Evaluate with SAP rep" data-csv-desc="Administrators can create skills inference requests, monitor progress, and review AI-inferred skills and ratings before associating them with learning items." data-csv-why="Ensures quality control over AI-generated skills associations. Builds trust in automated tagging." data-csv-risk="No ability to leverage AI for skills tagging. Manual tagging remains the only option — slow and inconsistent." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/51ae7a1e3cef492cb602243788191b6d.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Review AI-Inferred Skills Before Associating for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Review AI-Inferred Skills Before Associating</div>
@@ -1085,7 +1212,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-exp="enduser,admin" data-name="updates to extended ai locales">
+      <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-exp="enduser,admin" data-name="updates to extended ai locales" data-csv-name="Updates to Extended AI Locales" data-csv-cat="Premium" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Evaluate with SAP rep" data-csv-desc="Generative AI now supports additional locales for translation, and AI-translated locales can be used in more areas across the suite." data-csv-why="Expands AI-powered content translation to a broader global workforce. Reduces manual translation costs." data-csv-risk="Content translation remains manual for unsupported locales. Higher cost and slower time-to-market for global content." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d9a180847a0b4c4d93b0423dcad06a25.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Updates to Extended AI Locales for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Updates to Extended AI Locales</div>
@@ -1119,7 +1250,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-exp="enduser" data-name="person-centric experience for multiple employments">
+      <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-exp="enduser" data-name="person-centric experience for multiple employments" data-csv-name="Person-Centric Experience for Multiple Employments" data-csv-cat="Premium" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Contact Product Support" data-csv-desc="Administrators can now manage assignments, completions, history, and employment data at the person level for learners with multiple employments in Employee Central." data-csv-why="Eliminates duplicate assignments and confusion for employees who hold multiple roles. Gives a single view of learning history." data-csv-risk="Employees with multiple roles continue to see fragmented learning records. Higher admin burden to reconcile." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d6c2b6aaada9451b930d88fc429fee20.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Person-Centric Experience for Multiple Employments for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Person-Centric Experience for Multiple Employments</div>
@@ -1163,7 +1298,11 @@
         <span class="category-count">5 features &middot; End of Life</span>
       </div>
       <div class="feature-list">
-        <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-exp="enduser,admin" data-name="horizon visual theme opt-in setting — deleted">
+        <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-exp="enduser,admin" data-name="horizon visual theme opt-in setting — deleted" data-csv-name="Horizon Visual Theme Opt-In Setting — Deleted" data-csv-cat="Deprecation" data-csv-type="Deprecated" data-csv-impact="Major" data-csv-rec="Prepare for Horizon" data-csv-desc="The Horizon visual theme opt-in setting for Learning is deleted as of May 15, 2026. All Learning environments will automatically use the Horizon visual theme." data-csv-why="Standardizes the user experience across all Learning environments. Ensures consistency with the broader SAP design direction." data-csv-risk="No choice — this is automatic. Organizations still on the legacy theme will be migrated." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/70c23c2b0500429ca17c9b148adc16dc.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Horizon Visual Theme Opt-In Setting — Deleted for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Horizon Visual Theme Opt-In Setting — Deleted</div>
@@ -1197,7 +1336,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="deprecation" data-impact="critical" data-type="deprecated" data-action="action" data-exp="admin" data-name="deprecation of successfactors learning token server">
+      <div class="feature-card" data-cat="deprecation" data-impact="critical" data-type="deprecated" data-action="action" data-exp="admin" data-name="deprecation of successfactors learning token server" data-csv-name="Deprecation of SuccessFactors Learning Token Server" data-csv-cat="Deprecation" data-csv-type="Deprecated" data-csv-impact="Critical" data-csv-rec="Migrate to OAuth NOW" data-csv-desc="The Learning token server will reach end of maintenance on November 17, 2023 and will be deleted on November 20, 2026." data-csv-why="After November 2026, any integrations using the legacy token server will break. This is a hard deadline." data-csv-risk="Critical: All integrations using the legacy token server will fail after November 20, 2026." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/527174fdddc64102910258133d32b2ae.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Deprecation of SuccessFactors Learning Token Server for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Deprecation of SuccessFactors Learning Token Server</div>
@@ -1231,7 +1374,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-exp="admin" data-name="deprecation of free-of-charge subscriptions">
+      <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-exp="admin" data-name="deprecation of free-of-charge subscriptions" data-csv-name="Deprecation of Free-of-Charge Subscriptions" data-csv-cat="Deprecation" data-csv-type="Deprecated" data-csv-impact="Major" data-csv-rec="Plan migration" data-csv-desc="The ability to create free-of-charge subscriptions to override all pricing within a library will be deleted on May 14, 2027." data-csv-why="If your organization uses this feature, you need to plan a migration to the new pricing model before the deletion date." data-csv-risk="Pricing overrides will stop working in May 2027. Plan now to avoid disruption." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/517d6ec5a5ed460b8ce27d3cf5951560.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Deprecation of Free-of-Charge Subscriptions for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Deprecation of Free-of-Charge Subscriptions</div>
@@ -1265,7 +1412,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-exp="enduser,admin" data-name="deprecation of legacy learning search">
+      <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-exp="enduser,admin" data-name="deprecation of legacy learning search" data-csv-name="Deprecation of Legacy Learning Search" data-csv-cat="Deprecation" data-csv-type="Deprecated" data-csv-impact="Major" data-csv-rec="Enable Enhanced Search" data-csv-desc="The legacy Learning search experience will reach end of maintenance on November 14, 2025 and will be deleted on May 14, 2027." data-csv-why="Enhanced Search provides better relevance, filtering, and performance. The legacy search will cease to function." data-csv-risk="Legacy search will be removed in May 2027. Begin transition to Enhanced Search now." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/302b6334085a40b1a6d6ecdc8f5d5319.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Deprecation of Legacy Learning Search for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Deprecation of Legacy Learning Search</div>
@@ -1299,7 +1450,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="deprecation" data-impact="critical" data-type="deprecated" data-action="action" data-exp="admin" data-name="deprecation of webex training center support">
+      <div class="feature-card" data-cat="deprecation" data-impact="critical" data-type="deprecated" data-action="action" data-exp="admin" data-name="deprecation of webex training center support" data-csv-name="Deprecation of Webex Training Center Support" data-csv-cat="Deprecation" data-csv-type="Deprecated" data-csv-impact="Critical" data-csv-rec="Migrate VLS vendor" data-csv-desc="Support for Webex Training Center as a virtual learning vendor in SAP SuccessFactors Learning is ending November 2026." data-csv-why="If your organization uses Webex Training Center for virtual classes, you need to migrate to Webex Meetings, Zoom, or Teams." data-csv-risk="Virtual learning sessions using Webex Training Center will stop working after November 2026." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/41fa1e7ac19042eb88d62cddb40267ea.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Deprecation of Webex Training Center Support for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Deprecation of Webex Training Center Support</div>
@@ -1346,7 +1501,11 @@
       </div>
       <p class="additional-note">The following features were identified from SAP&rsquo;s official release documentation but were not included in the original release notes extract. They are listed here for awareness.</p>
       <div class="feature-list">
-        <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="connectors now process future termination dates">
+        <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="connectors now process future termination dates" data-csv-name="Connectors Now Process Future Termination Dates" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Learning connectors now process user records that have future termination dates, ensuring data remains synchronized before the termination takes effect." data-csv-why="Prevents data gaps for employees in their notice period. Ensures learning assignments and completions are properly tracked through end of employment." data-csv-risk="No action needed — automatically applied." data-csv-exp="Admin" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Connectors Now Process Future Termination Dates for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Connectors Now Process Future Termination Dates</div>
@@ -1380,7 +1539,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="sender display name update for notification emails">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="sender display name update for notification emails" data-csv-name="Sender Display Name Update for Notification Emails" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="The sender display name for Learning notification emails has been updated to provide clearer identification of the sending system." data-csv-why="Reduces the chance that learners ignore or spam-filter legitimate Learning notifications. Improves email open rates." data-csv-risk="No action needed — automatically applied." data-csv-exp="Admin" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Sender Display Name Update for Notification Emails for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Sender Display Name Update for Notification Emails</div>
@@ -1414,7 +1577,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="learning permissions delivered for later release">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="learning permissions delivered for later release" data-csv-name="Learning Permissions Delivered for Later Release" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="New permission settings are being delivered in this release but are intended for use in a future release." data-csv-why="No immediate impact, but administrators should be aware these exist. Do not modify these permissions until SAP provides guidance." data-csv-risk="No action needed — do not modify these permissions prematurely." data-csv-exp="Admin" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Learning Permissions Delivered for Later Release for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Learning Permissions Delivered for Later Release</div>
@@ -1448,7 +1615,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser" data-name="search results improvement for german compound words">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser" data-name="search results improvement for german compound words" data-csv-name="Search Results Improvement for German Compound Words" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Enhanced search now properly handles German compound words, returning more accurate results for German-speaking users." data-csv-why="Critical for organizations with German-speaking learner populations. Improves discoverability of learning content." data-csv-risk="No action needed — automatically applied." data-csv-exp="End User" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Search Results Improvement for German Compound Words for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Search Results Improvement for German Compound Words</div>
@@ -1482,7 +1653,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="enhanced support for secondary instructors in vls">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="enhanced support for secondary instructors in vls" data-csv-name="Enhanced Support for Secondary Instructors in VLS" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable if using VLS" data-csv-desc="Virtual learning sessions now support enhanced management of secondary instructors alongside primary instructors." data-csv-why="Important for organizations running large virtual classes with co-facilitators. Improves session coordination." data-csv-risk="Secondary instructor management remains limited, requiring workarounds for co-facilitated sessions." data-csv-exp="Admin" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Enhanced Support for Secondary Instructors in VLS for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Enhanced Support for Secondary Instructors in VLS</div>
@@ -1516,7 +1691,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="admin" data-name="new advanced settings for zoom vls">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="admin" data-name="new advanced settings for zoom vls" data-csv-name="New Advanced Settings for Zoom VLS" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable if using Zoom" data-csv-desc="New advanced settings are available to manage Zoom virtual learning sessions with more granular control." data-csv-why="Reduces friction in Zoom-based training delivery. Gives admins finer control over the virtual classroom experience." data-csv-risk="Zoom session management remains basic. May require manual workarounds for specific settings." data-csv-exp="Admin" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select New Advanced Settings for Zoom VLS for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">New Advanced Settings for Zoom VLS</div>
@@ -1550,7 +1729,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="enduser,admin" data-name="configuration to hide enhanced search filters">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="enduser,admin" data-name="configuration to hide enhanced search filters" data-csv-name="Configuration to Hide Enhanced Search Filters" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable selectively" data-csv-desc="Administrators can now configure which enhanced search filters are visible to learners." data-csv-why="Simplifies the search experience by removing irrelevant filters. Cleaner interface for learners." data-csv-risk="All filters remain visible, potentially cluttering the search experience with unused options." data-csv-exp="End User, Admin" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Configuration to Hide Enhanced Search Filters for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Configuration to Hide Enhanced Search Filters</div>
@@ -1584,7 +1767,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="employments tab visible with system default role">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="employments tab visible with system default role" data-csv-name="Employments Tab Visible with System Default Role" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="The Employments tab is now visible when users are operating under the system default role." data-csv-why="Ensures consistent access to employment data regardless of role assignment. Reduces confusion for users." data-csv-risk="Users on the default role cannot see employment data — potential support tickets and confusion." data-csv-exp="Admin" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Employments Tab Visible with System Default Role for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Employments Tab Visible with System Default Role</div>
@@ -1618,7 +1805,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="enhanced visibility for custom page content">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="enhanced visibility for custom page content" data-csv-name="Enhanced Visibility for Custom Page Content" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable if using custom pages" data-csv-desc="Custom page content now has improved visibility and rendering on the Learning home page." data-csv-why="Organizations that use custom pages for communications, resources, or branded content will see better engagement." data-csv-risk="Custom content remains less visible. Lower engagement with organization-specific learning resources." data-csv-exp="Admin" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Enhanced Visibility for Custom Page Content for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Enhanced Visibility for Custom Page Content</div>
@@ -1652,7 +1843,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="enhancements to user merge process">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="enhancements to user merge process" data-csv-name="Enhancements to User Merge Process" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="The user merge process has been improved with better handling of edge cases and data integrity." data-csv-why="Critical for organizations that frequently merge user accounts — better data integrity and fewer merge failures." data-csv-risk="User merges may still encounter edge cases that require manual intervention." data-csv-exp="Admin" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Enhancements to User Merge Process for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Enhancements to User Merge Process</div>
@@ -1686,7 +1881,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="auto-purge archived connector input files">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="auto-purge archived connector input files" data-csv-name="Auto-Purge Archived Connector Input Files" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Archived connector input files are now automatically purged after a defined retention period." data-csv-why="Reduces storage bloat and simplifies system maintenance. Keeps the connector file area manageable." data-csv-risk="Archived files continue to pile up, consuming storage and making troubleshooting harder." data-csv-exp="Admin" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Auto-Purge Archived Connector Input Files for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Auto-Purge Archived Connector Input Files</div>
@@ -1720,7 +1919,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="bulk delete unused icontent files">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="bulk delete unused icontent files" data-csv-name="Bulk Delete Unused iContent Files" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Administrators can now bulk delete unused iContent files from Learning Administration." data-csv-why="Frees up storage and reduces catalog clutter. Makes content management more efficient." data-csv-risk="Unused content files accumulate, consuming storage and cluttering the admin interface." data-csv-exp="Admin" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Bulk Delete Unused iContent Files for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Bulk Delete Unused iContent Files</div>
@@ -1754,7 +1957,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="manager" data-name="change assignment due dates from team view">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="manager" data-name="change assignment due dates from team view" data-csv-name="Change Assignment Due Dates from Team View" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Managers can now change assignment due dates for their team members directly from the Team View page." data-csv-why="Empowers managers to make real-time adjustments based on workload and priorities without admin support tickets." data-csv-risk="Managers must submit requests to admins for due date changes. Slower, more friction." data-csv-exp="Manager" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Change Assignment Due Dates from Team View for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Change Assignment Due Dates from Team View</div>
@@ -1788,7 +1995,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="manager" data-name="class withdrawal directly from team view">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="manager" data-name="class withdrawal directly from team view" data-csv-name="Class Withdrawal Directly from Team View" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Managers can now withdraw team members from classes directly from the Team View page." data-csv-why="Speeds up class management and frees seats faster when team priorities change." data-csv-risk="Managers must navigate elsewhere or contact admin to withdraw team members from classes." data-csv-exp="Manager" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Class Withdrawal Directly from Team View for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Class Withdrawal Directly from Team View</div>
@@ -1822,7 +2033,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="manager" data-name="team view display enhancements">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="manager" data-name="team view display enhancements" data-csv-name="Team View Display Enhancements" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Visual and usability improvements to the Team View page for a better manager experience." data-csv-why="Managers spend significant time in Team View. A better experience improves efficiency and adoption." data-csv-risk="Managers remain on the older, less refined Team View interface." data-csv-exp="Manager" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Team View Display Enhancements for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Team View Display Enhancements</div>
@@ -1856,7 +2071,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="admin" data-name="support for integer and decimal custom fields">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="admin" data-name="support for integer and decimal custom fields" data-csv-name="Support for Integer and Decimal Custom Fields" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable if needed" data-csv-desc="Custom fields for the User entity now support Integer and Decimal data types." data-csv-why="Enables more precise user data tracking for scenarios like certification scores, experience levels, or custom metrics." data-csv-risk="Numeric data must be stored as text — limiting sorting, filtering, and reporting capabilities." data-csv-exp="Admin" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Support for Integer and Decimal Custom Fields for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Support for Integer and Decimal Custom Fields</div>
@@ -1890,7 +2109,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="enduser" data-name="upcoming classes in enhanced search">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="enduser" data-name="upcoming classes in enhanced search" data-csv-name="Upcoming Classes in Enhanced Search" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Enhanced search results now include upcoming class schedules, allowing learners to find and register for classes more easily." data-csv-why="Learners can find and register for classes without leaving search results. Reduces drop-off in the registration process." data-csv-risk="Learners must navigate to individual class pages to see schedules — more friction." data-csv-exp="End User" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Upcoming Classes in Enhanced Search for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Upcoming Classes in Enhanced Search</div>
@@ -1924,7 +2147,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="updated learning cross-domain proxlet">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="updated learning cross-domain proxlet" data-csv-name="Updated Learning Cross-Domain Proxlet" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="The Learning cross-domain proxlet has been updated for improved compatibility and security." data-csv-why="Ensures continued functionality and improved security for cross-domain Learning features." data-csv-risk="Potential compatibility issues with cross-domain features in future releases." data-csv-exp="Admin" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Updated Learning Cross-Domain Proxlet for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Updated Learning Cross-Domain Proxlet</div>
@@ -1958,7 +2185,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="admin" data-name="custom cards in new learning experience — ios and android">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="admin" data-name="custom cards in new learning experience — ios and android" data-csv-name="Custom Cards in New Learning Experience — iOS and Android" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable if using custom cards" data-csv-desc="Custom cards built for the new Learning experience are now supported in the mobile iOS and Android apps." data-csv-why="Extends custom branding and targeted content to mobile learners. Consistent experience across devices." data-csv-risk="Mobile learners miss organization-specific cards and content shown to desktop users." data-csv-exp="Admin" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Custom Cards in New Learning Experience — iOS and Android for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Custom Cards in New Learning Experience — iOS and Android</div>
@@ -1992,7 +2223,11 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="manager" data-name="manager ability to remove items — user settings page">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="manager" data-name="manager ability to remove items — user settings page" data-csv-name="Manager Ability to Remove Items — User Settings Page" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="The setting that controls whether managers can remove learning items from their team members' assignments is now available on the User Settings page." data-csv-why="Easier for administrators to manage this important permission setting." data-csv-risk="Configuration remains in the previous, less intuitive location." data-csv-exp="Manager" data-csv-link="">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Manager Ability to Remove Items — User Settings Page for export">
+          <span class="checkbox-custom"></span>
+        </label>
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Manager Ability to Remove Items — User Settings Page</div>
@@ -2370,6 +2605,105 @@
       });
       backToTop.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // ===== CSV Export with Selectable Checkboxes =====
+      var allCheckboxes = document.querySelectorAll('.feature-checkbox');
+      var selectAllCb = document.getElementById('selectAllCheckbox');
+      var exportCount = document.getElementById('exportCount');
+      var exportCSVBtn = document.getElementById('exportCSVBtn');
+      var exportClearBtn = document.getElementById('exportClearBtn');
+      var exportBar = document.getElementById('exportBar');
+
+      function updateExportState() {
+        var checked = document.querySelectorAll('.feature-checkbox:checked');
+        var count = checked.length;
+        exportCount.textContent = count + ' selected';
+        exportCSVBtn.disabled = count === 0;
+        var btt = document.getElementById('backToTop');
+        if (count > 0) {
+          exportBar.classList.add('has-selection');
+          exportBar.classList.add('visible');
+          if (btt) btt.style.bottom = '88px';
+        } else {
+          exportBar.classList.remove('has-selection');
+          exportBar.classList.remove('visible');
+          if (btt) btt.style.bottom = '';
+        }
+        // Update select-all state
+        var visibleBoxes = Array.from(allCheckboxes).filter(function(cb) {
+          return cb.closest('.feature-card').style.display !== 'none';
+        });
+        var visibleChecked = visibleBoxes.filter(function(cb) { return cb.checked; });
+        selectAllCb.checked = visibleBoxes.length > 0 && visibleChecked.length === visibleBoxes.length;
+        selectAllCb.indeterminate = visibleChecked.length > 0 && visibleChecked.length < visibleBoxes.length;
+      }
+
+      allCheckboxes.forEach(function(cb) {
+        cb.addEventListener('change', updateExportState);
+      });
+
+      selectAllCb.addEventListener('change', function() {
+        var isChecked = selectAllCb.checked;
+        Array.from(allCheckboxes).forEach(function(cb) {
+          if (cb.closest('.feature-card').style.display !== 'none') {
+            cb.checked = isChecked;
+          }
+        });
+        updateExportState();
+      });
+
+      exportClearBtn.addEventListener('click', function() {
+        allCheckboxes.forEach(function(cb) { cb.checked = false; });
+        selectAllCb.checked = false;
+        selectAllCb.indeterminate = false;
+        updateExportState();
+      });
+
+      function csvEscape(val) {
+        if (!val) return '';
+        val = String(val);
+        if (val.indexOf(',') !== -1 || val.indexOf('"') !== -1 || val.indexOf('\n') !== -1) {
+          return '"' + val.replace(/"/g, '""') + '"';
+        }
+        return val;
+      }
+
+      exportCSVBtn.addEventListener('click', function() {
+        var checked = document.querySelectorAll('.feature-checkbox:checked');
+        if (checked.length === 0) return;
+
+        var headers = ['Feature Name','Category','Type','Impact','Recommendation','Experience','Description','Why It Matters','Risk of Inaction','SAP Documentation Link'];
+        var rows = [headers.map(csvEscape).join(',')];
+
+        checked.forEach(function(cb) {
+          var card = cb.closest('.feature-card');
+          var row = [
+            card.dataset.csvName || '',
+            card.dataset.csvCat || '',
+            card.dataset.csvType || '',
+            card.dataset.csvImpact || '',
+            card.dataset.csvRec || '',
+            card.dataset.csvExp || '',
+            card.dataset.csvDesc || '',
+            card.dataset.csvWhy || '',
+            card.dataset.csvRisk || '',
+            card.dataset.csvLink || ''
+          ];
+          rows.push(row.map(csvEscape).join(','));
+        });
+
+        var csvContent = rows.join('\n');
+        var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement('a');
+        link.href = url;
+        link.download = '1H_2026_Release_Features_Export.csv';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
       });
     })();
   </script>
