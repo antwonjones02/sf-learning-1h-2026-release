@@ -669,7 +669,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  margin-bottom: var(--space-4);
+  margin-bottom: 6px;
   padding: var(--space-3) var(--space-4);
   border: 1px solid var(--gray-100);
   border-radius: var(--radius-lg);
@@ -1841,7 +1841,7 @@ img { max-width: 100%; display: block; }
 .category-section.collapsed .category-body { grid-template-rows: 0fr; }
 .category-section.collapsed .category-header { margin-bottom: 0; }
 
-.category-body-inner { padding-top: var(--space-4); }
+.category-body-inner { padding-top: 4px; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
