@@ -7,12 +7,31 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="delta-topband"></div>
   <header class="site-header">
     <div class="header-inner">
       <a href="./index.html" style="color:inherit;text-decoration:none">
-        <div class="header-title">SAP SuccessFactors Learning <span>| 1H 2026 Release Strategy</span></div>
+        <div class="header-brand">
+          <img src="assets/delta-logo.png" alt="Delta Air Lines" class="delta-logo">
+          <div class="header-brand-text">
+            <span class="delta-wordmark">Delta Air Lines</span>
+            <div class="header-title">SAP SuccessFactors Learning <span>| Release Strategy</span></div>
+          </div>
+        </div>
       </a>
-      <div class="release-toggle"><span class="toggle-option active">1H 2026</span><a href="2h2025/index.html" class="toggle-option">2H 2025</a></div>
+      <div class="header-actions">
+        <span class="header-badge-internal">Internal Tool</span>
+        <div class="release-switcher" role="navigation" aria-label="Switch release">
+          <a href="./index.html" class="release-opt active" aria-current="page">
+            <span class="release-opt-label">1H 2026</span>
+            <span class="release-opt-sub">Current</span>
+          </a>
+          <a href="2h2025/index.html" class="release-opt">
+            <span class="release-opt-label">2H 2025</span>
+            <span class="release-opt-sub">Previous</span>
+          </a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -1661,7 +1680,10 @@
   </main>
 
   <footer class="site-footer">
-    <div>SAP SuccessFactors Learning &middot; 1H 2026 Release Strategy &middot; Internal Use Only</div>
+    <div class="footer-brand">
+      <img src="assets/delta-logo.png" alt="Delta Air Lines" class="footer-logo">
+    </div>
+    <div class="footer-text">SAP SuccessFactors Learning &middot; 1H 2026 Release Strategy &middot; Internal Use Only</div>
     <div class="footer-dates">Last updated: April 2026 &middot; Preview: April 13 &middot; Production: May 15&ndash;16</div>
   </footer>
 
@@ -1709,6 +1731,91 @@
           if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
         });
       });
+
+
+      // ===== Feature Summary (quick-glance description) =====
+      document.querySelectorAll('.feature-card').forEach(function(card) {
+        var desc = card.dataset.csvDesc;
+        if (!desc) return;
+        var left = card.querySelector('.feature-card-left');
+        if (!left) return;
+        var p = document.createElement('p');
+        p.className = 'feature-summary';
+        p.textContent = desc;
+        left.appendChild(p);
+      });
+
+      // ===== Collapsible Category Sections =====
+      document.querySelectorAll('.category-section').forEach(function(section) {
+        var header = section.querySelector('.category-header');
+
+        var bodyInner = document.createElement('div');
+        var body = document.createElement('div');
+        body.className = 'category-body';
+        bodyInner.className = 'category-body-inner';
+
+        Array.from(section.children).forEach(function(child) {
+          if (child !== header) bodyInner.appendChild(child);
+        });
+        body.appendChild(bodyInner);
+        section.appendChild(body);
+
+        // Live count badge — inserted after the h2
+        var dot = header.querySelector('.category-dot');
+        var dotColor = dot ? dot.style.background : '#003366';
+        var total = section.querySelectorAll('.feature-card').length;
+        var countBadge = document.createElement('span');
+        countBadge.className = 'section-live-count';
+        countBadge.style.setProperty('--badge-color', dotColor);
+        countBadge.textContent = total;
+        countBadge.dataset.total = total;
+        var h2 = header.querySelector('h2');
+        if (h2) h2.insertAdjacentElement('afterend', countBadge);
+
+        // Chevron toggle
+        var btn = document.createElement('button');
+        btn.className = 'category-toggle';
+        btn.setAttribute('tabindex', '-1');
+        btn.setAttribute('aria-hidden', 'true');
+        btn.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 8 11 13 6"/></svg>';
+        header.appendChild(btn);
+
+        header.setAttribute('role', 'button');
+        header.setAttribute('aria-expanded', 'true');
+        header.setAttribute('tabindex', '0');
+
+        function toggleSection() {
+          var collapsed = section.classList.toggle('collapsed');
+          header.setAttribute('aria-expanded', String(!collapsed));
+        }
+
+        header.addEventListener('click', toggleSection);
+        header.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleSection(); }
+        });
+      });
+
+      // Live count badge updater
+      function updateSectionBadges() {
+        document.querySelectorAll('.category-section').forEach(function(sec) {
+          var badge = sec.querySelector('.section-live-count');
+          if (!badge) return;
+          var total = parseInt(badge.dataset.total, 10);
+          var visible = Array.from(sec.querySelectorAll('.feature-card')).filter(function(c) {
+            return c.style.display !== 'none';
+          }).length;
+          var isFiltered = visible !== total;
+          var wasFiltered = badge.classList.contains('is-filtered');
+          badge.classList.toggle('is-filtered', isFiltered);
+          badge.textContent = isFiltered ? visible + ' of ' + total : total;
+          if (isFiltered !== wasFiltered || badge.dataset.last !== String(visible)) {
+            badge.classList.remove('pop');
+            void badge.offsetWidth;
+            badge.classList.add('pop');
+            badge.dataset.last = visible;
+          }
+        });
+      }
 
       // ===== Filter Logic (AND combination) =====
       var filterBtns = document.querySelectorAll('.filter-btn');
@@ -1770,12 +1877,13 @@
           if (show) visibleCount++;
         });
 
-        // Show/hide category sections based on visible cards
+        // Show/hide category sections; auto-expand when filter reveals content
         allSections.forEach(function(sec) {
           var hasVisible = Array.from(sec.querySelectorAll('.feature-card')).some(function(c) {
             return c.style.display !== 'none';
           });
           sec.style.display = hasVisible ? '' : 'none';
+          if (hasVisible) sec.classList.remove('collapsed');
         });
 
         filterCount.textContent = 'Showing ' + visibleCount + ' of ' + TOTAL_FEATURES + ' features';
