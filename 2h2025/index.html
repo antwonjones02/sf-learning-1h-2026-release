@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAP SuccessFactors Learning | 2H 2025 Release Strategy</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" style="color:inherit;text-decoration:none">
+        <div class="header-title">SAP SuccessFactors Learning <span>| 2H 2025 Release Strategy</span></div>
+      </a>
+      <div class="release-toggle">
+      <a href="../index.html" class="toggle-option">1H 2026</a>
+      <span class="toggle-option active">2H 2025</span>
+    </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">2H 2025 Release Strategy</h1>
+      <p class="hero-subtitle">32 features across 3 categories.</p>
+      <div class="hero-pills">
+        <span class="hero-pill pill-action">18 require action</span>
+        <span class="hero-pill-sep">&middot;</span>
+        <span class="hero-pill pill-new">11 new features</span>
+        <span class="hero-pill-sep">&middot;</span>
+        <span class="hero-pill pill-dep">6 deprecations</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alert Banner -->
+  <div class="alert-banner" id="alertBanner" role="alert">
+    <div class="alert-inner">
+      <span class="alert-icon">&#9888;</span>
+      <span class="alert-text">2 critical deprecations require attention &mdash; <a href="#" id="alertLink">Token Server deletion Nov 20, 2026</a></span>
+      <button class="alert-dismiss" aria-label="Dismiss alert" id="alertDismiss">&times;</button>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- Summary Stats -->
+    <div class="stats-grid">
+      <div class="stat-card" data-cat="universal" role="button" tabindex="0" aria-label="Filter to Universal features">
+        <div class="stat-number">19</div>
+        <div class="stat-label">Universal</div>
+        <div class="stat-sublabel">Automatically On</div>
+      </div>
+      <div class="stat-card" data-cat="optin" role="button" tabindex="0" aria-label="Filter to Opt-In features">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Opt-In</div>
+        <div class="stat-sublabel">Customer Configured</div>
+      </div>
+      <div class="stat-card" data-cat="deprecation" role="button" tabindex="0" aria-label="Filter to Deprecation features">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Deprecation</div>
+        <div class="stat-sublabel">End of Life</div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline-bar">
+      <h2>Release Timeline</h2>
+      <div class="timeline-track">
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">October 17</div>
+          <div class="timeline-label">Preview</div>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Nov 14&ndash;15</div>
+          <div class="timeline-label">Production</div>
+        </div>
+        <div class="timeline-node critical">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Nov 20</div>
+          <div class="timeline-label">Token Delete</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enhanced Filter Bar -->
+    <div class="filter-bar" id="filterBar">
+      <div class="filter-row filter-row-cats">
+        <button class="filter-btn active" data-filter="all">All (32)</button>
+        <button class="filter-btn" data-filter="universal">Universal (19)</button>
+        <button class="filter-btn" data-filter="optin">Opt-In (7)</button>
+        <button class="filter-btn" data-filter="deprecation">Deprecation (6)</button>
+      </div>
+      <div class="filter-row filter-row-controls">
+        <div class="filter-select-group">
+          <label class="filter-select-label" for="filterImpact">Impact</label>
+          <select id="filterImpact" class="filter-select">
+            <option value="all">All</option>
+            <option value="critical">Critical</option>
+            <option value="major">Major</option>
+            <option value="minor">Minor</option>
+          </select>
+        </div>
+        <div class="filter-select-group">
+          <label class="filter-select-label" for="filterType">Type</label>
+          <select id="filterType" class="filter-select">
+            <option value="all">All</option>
+            <option value="new">New</option>
+            <option value="changed">Changed</option>
+            <option value="deprecated">Deprecated</option>
+          </select>
+        </div>
+        <div class="filter-select-group">
+          <label class="filter-select-label" for="filterAction">Action</label>
+          <select id="filterAction" class="filter-select">
+            <option value="all">All</option>
+            <option value="action">Action Required</option>
+            <option value="noaction">No Action Required</option>
+          </select>
+        </div>
+        <div class="filter-select-group">
+          <label class="filter-select-label" for="filterExp">Experience</label>
+          <select id="filterExp" class="filter-select">
+            <option value="all">All</option>
+            <option value="enduser">End User</option>
+            <option value="admin">Admin</option>
+            <option value="manager">Manager</option>
+          </select>
+        </div>
+        <input type="text" class="search-input" placeholder="Search features&hellip;" id="searchInput">
+        <span class="filter-count" id="filterCount">Showing 32 of 32 features</span>
+        <a href="#" class="filter-reset" id="filterReset">Reset Filters</a>
+      </div>
+    </div>
+
+    <!-- Export Toolbar -->
+    <div class="export-bar" id="exportBar">
+      <div class="export-bar-left">
+        <label class="export-select-all-label" onclick="event.stopPropagation()">
+          <input type="checkbox" id="selectAllCheckbox" aria-label="Select all visible features">
+          <span class="checkbox-custom"></span>
+          <span class="select-all-text">Select All</span>
+        </label>
+        <span class="export-count" id="exportCount">0 selected</span>
+      </div>
+      <div class="export-bar-right">
+        <button class="export-btn" id="exportCSVBtn" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export to CSV
+        </button>
+        <button class="export-clear-btn" id="exportClearBtn">Clear Selection</button>
+      </div>
+    </div>
+
+    <!-- Category Sections -->
+    <section class="category-section" data-category="universal">
+      <div class="category-header">
+        <div class="category-dot" style="background:#1B7340"></div>
+        <h2>Universal</h2>
+        <span class="category-count">19 features &middot; Automatically On</span>
+      </div>
+      <div class="feature-list">
+        <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="noaction" data-exp="manager" data-name="change assignment due dates from team view" data-csv-name="Change Assignment Due Dates From Team View" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="No action required" data-csv-desc="Managers can now change assignment due dates for their direct reports directly from the Team View page, either individually or in bulk. The Change Due Dates dialog lists all assigned items for a subordinate so managers can update dates without leaving Team View. This is part of a broader redesigned Team View experience delivered in response to Customer Influence Idea 352489." data-csv-why="Managers gain a faster, self-service way to adjust learning deadlines without relying on admins, reducing friction in day-to-day learning management." data-csv-risk="No action needed — automatically enabled." data-csv-exp="Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/7f3b7b09cf6142ce9ad5459c352600ec.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Change Assignment Due Dates From Team View for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Change Assignment Due Dates From Team View</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-manager">Manager</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Managers can now change assignment due dates for their direct reports directly from the Team View page, either individually or in bulk. The Change Due Dates dialog lists all assigned items for a subordinate so managers can update dates without leaving Team View. This is part of a broader redesigned Team View experience delivered in response to Customer Influence Idea 352489.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Managers gain a faster, self-service way to adjust learning deadlines without relying on admins, reducing friction in day-to-day learning management.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/change-assignment-due-dates-from-team-view.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/7f3b7b09cf6142ce9ad5459c352600ec.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="noaction" data-exp="manager,enduser" data-name="class withdrawal directly from team view" data-csv-name="Class Withdrawal Directly from Team View" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="No action required" data-csv-desc="Managers can now withdraw learners directly from classes using Team View, either via the More Actions menu on the Team View page or the Withdraw button on the Class Details page. This replaces the previous requirement to use the bulk withdrawal tool for all manager-initiated withdrawals. Delivered in response to Customer Influence Idea 334035." data-csv-why="Managers can act quickly on class cancellations or scheduling conflicts directly from their Team View dashboard, without navigating to separate admin tools." data-csv-risk="No action needed — automatically enabled." data-csv-exp="Manager, End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/b7875049e7ed4d3ead65a0ece5a8fd10.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Class Withdrawal Directly from Team View for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Class Withdrawal Directly from Team View</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-manager">Manager</span><span class="badge badge-exp badge-exp-enduser">End User</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Managers can now withdraw learners directly from classes using Team View, either via the More Actions menu on the Team View page or the Withdraw button on the Class Details page. This replaces the previous requirement to use the bulk withdrawal tool for all manager-initiated withdrawals. Delivered in response to Customer Influence Idea 334035.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Managers can act quickly on class cancellations or scheduling conflicts directly from their Team View dashboard, without navigating to separate admin tools.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/class-withdrawal-directly-from-team-view.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/b7875049e7ed4d3ead65a0ece5a8fd10.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="noaction" data-exp="admin" data-name="employments tab visible while using system default role" data-csv-name="Employments Tab Visible While Using System Default Role" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="No action required" data-csv-desc="The Employments tab on the Learning Administration People Users page is now visible to users assigned a system default role that includes the new View User Employment permission. This tab exposes employment data for users with multiple employments. The enhancement is designed to prepare for possible adoption of the person-centric experience in a future release." data-csv-why="This groundwork enables future person-centric identity management in Learning, supporting organizations with employees holding multiple simultaneous employments." data-csv-risk="No action needed — automatically enabled." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/7f79d531ef6341efa5549f909d71e1fc.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Employments Tab Visible While Using System Default Role for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Employments Tab Visible While Using System Default Role</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The Employments tab on the Learning Administration People Users page is now visible to users assigned a system default role that includes the new View User Employment permission. This tab exposes employment data for users with multiple employments. The enhancement is designed to prepare for possible adoption of the person-centric experience in a future release.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>This groundwork enables future person-centric identity management in Learning, supporting organizations with employees holding multiple simultaneous employments.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/employments-tab-visible-while-using-system-default-role.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/7f79d531ef6341efa5549f909d71e1fc.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="changed" data-action="action" data-exp="admin,enduser" data-name="enhanced proxy access security and module selection" data-csv-name="Enhanced Proxy Access Security and Module Selection" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Major" data-csv-rec="Review and communicate" data-csv-desc="SAP has improved Proxy access security and expanded module selection options for SAP SuccessFactors Learning. Proxy users can now only access features and data explicitly granted to them, reducing the risk of unauthorized access. Admins manage proxy modules via Admin Center > Proxy Management > Grant Proxy Rights, and users can assign proxy access in Settings > Proxy > Assign Proxy." data-csv-why="Tighter proxy access controls reduce security risk by ensuring proxy users cannot access data or features beyond what is explicitly granted, supporting compliance and data governance." data-csv-risk="No action needed — automatically enabled. However, SAP recommends reviewing proxy configurations to ensure they align with the updated module list." data-csv-exp="Admin, End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/cf810ba2eea74d7cbd3de0459aa56018.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Enhanced Proxy Access Security and Module Selection for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Enhanced Proxy Access Security and Module Selection</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Review and communicate</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span><span class="badge badge-exp badge-exp-enduser">End User</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>SAP has improved Proxy access security and expanded module selection options for SAP SuccessFactors Learning. Proxy users can now only access features and data explicitly granted to them, reducing the risk of unauthorized access. Admins manage proxy modules via Admin Center &gt; Proxy Management &gt; Grant Proxy Rights, and users can assign proxy access in Settings &gt; Proxy &gt; Assign Proxy.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Tighter proxy access controls reduce security risk by ensuring proxy users cannot access data or features beyond what is explicitly granted, supporting compliance and data governance.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled. However, SAP recommends reviewing proxy configurations to ensure they align with the updated module list.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/enhanced-proxy-access-security-and-module-selection.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/cf810ba2eea74d7cbd3de0459aa56018.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="changed" data-action="noaction" data-exp="admin" data-name="support for integer and decimal custom fields for user entity" data-csv-name="Support for Integer and Decimal Custom Fields for User Entity" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Major" data-csv-rec="No action required" data-csv-desc="Admins can now create custom fields of type Integer and Decimal for the User entity, in addition to the existing String type. The new Data Type selector (String, Integer, Decimal) appears when creating or editing custom fields in System Administration > Custom Fields > Users. Integer and decimal custom fields are supported in user searches, assignment profile rules, and standard and custom reports." data-csv-why="Organizations can now store numeric data (such as headcount codes or percentages) as proper numeric types, enabling more precise filtering, dynamic assignment profiles, and richer reporting without manual data conversion." data-csv-risk="No action needed — automatically enabled." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/eb1d230c94b245f5a3ef4cce687b5c58.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Support for Integer and Decimal Custom Fields for User Entity for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Support for Integer and Decimal Custom Fields for User Entity</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Admins can now create custom fields of type Integer and Decimal for the User entity, in addition to the existing String type. The new Data Type selector (String, Integer, Decimal) appears when creating or editing custom fields in System Administration &gt; Custom Fields &gt; Users. Integer and decimal custom fields are supported in user searches, assignment profile rules, and standard and custom reports.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Organizations can now store numeric data (such as headcount codes or percentages) as proper numeric types, enabling more precise filtering, dynamic assignment profiles, and richer reporting without manual data conversion.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/support-for-integer-and-decimal-custom-fields-for-user-entity.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/eb1d230c94b245f5a3ef4cce687b5c58.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="changed" data-action="action" data-exp="enduser,admin" data-name="universal rollout of the new learning home page" data-csv-name="Universal Rollout of the New Learning Home Page" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Major" data-csv-rec="Communicate to managers" data-csv-desc="The new Learning home page is now universally enabled for all customers. The toggle that allowed learners to switch between the legacy and new experiences has been removed, as has the related default setting on the Integrated Learning Settings page. Validated Learning (vSaaS) customers are not impacted in this release and may continue using the toggle." data-csv-why="All customers now benefit from the modern Learning home page experience, standardizing the learner interface and enabling SAP to focus development effort on the new experience." data-csv-risk="No action needed — automatically enabled." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d06c129b82a247938ac753d3f8f8c7d8.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Universal Rollout of the New Learning Home Page for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Universal Rollout of the New Learning Home Page</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Communicate to managers</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span><span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The new Learning home page is now universally enabled for all customers. The toggle that allowed learners to switch between the legacy and new experiences has been removed, as has the related default setting on the Integrated Learning Settings page. Validated Learning (vSaaS) customers are not impacted in this release and may continue using the toggle.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>All customers now benefit from the modern Learning home page experience, standardizing the learner interface and enabling SAP to focus development effort on the new experience.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/universal-rollout-of-the-new-learning-home-page.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d06c129b82a247938ac753d3f8f8c7d8.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="noaction" data-exp="enduser" data-name="upcoming classes in enhanced search" data-csv-name="Upcoming Classes in Enhanced Search" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="No action required" data-csv-desc="Learners can now see upcoming class schedules directly within enhanced search results. When a search matches a course with available upcoming classes, a Show Classes option expands a list of up to five classes sorted by date, showing Date & Time, Timezone, and Facility. The list updates dynamically based on applied filters. Learners can select a class to view Class Details or navigate to the full Available Classes page. This feature replaces the calendar view from the legacy Learning experience and was requested via Customer Community Idea 325775." data-csv-why="Learners can compare class schedules, locations, and availability directly from search results, reducing the clicks needed to find and register for the right class." data-csv-risk="No action needed — automatically enabled. Requires enhanced search to be enabled." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/5ed735cba5d94113882ba3fffb6dfbad.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Upcoming Classes in Enhanced Search for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Upcoming Classes in Enhanced Search</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Learners can now see upcoming class schedules directly within enhanced search results. When a search matches a course with available upcoming classes, a Show Classes option expands a list of up to five classes sorted by date, showing Date &amp; Time, Timezone, and Facility. The list updates dynamically based on applied filters. Learners can select a class to view Class Details or navigate to the full Available Classes page. This feature replaces the calendar view from the legacy Learning experience and was requested via Customer Community Idea 325775.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Learners can compare class schedules, locations, and availability directly from search results, reducing the clicks needed to find and register for the right class.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled. Requires enhanced search to be enabled.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/upcoming-classes-in-enhanced-search.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/5ed735cba5d94113882ba3fffb6dfbad.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="changed" data-action="action" data-exp="manager,admin" data-name="enhancements to manager view in latest career worksheet" data-csv-name="Enhancements to Manager View in Latest Career Worksheet" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Major" data-csv-rec="Review and communicate" data-csv-desc="Three enhancements have been made to the manager view (Summary tab) in the latest Career Worksheet within Growth Portfolio: private-access permission is now supported so managers only see target roles when explicitly permitted; managers can now view employees' unrated skills and attributes with an Unrated tag; and managers can access linked development activities (goals, assignments, learning) for specific skills via a Development Activities link. These changes achieve feature parity with the legacy Career Worksheet." data-csv-why="Managers receive a more complete picture of employee skill readiness and development progress, enabling better coaching conversations and career planning support." data-csv-risk="No action needed — automatically enabled. Admins should review Career Worksheet template permission settings to ensure private-access is configured as intended." data-csv-exp="Manager, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/7907feff71f14adca8f9c916a8d0b419.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Enhancements to Manager View in Latest Career Worksheet for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Enhancements to Manager View in Latest Career Worksheet</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Review and communicate</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-manager">Manager</span><span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Three enhancements have been made to the manager view (Summary tab) in the latest Career Worksheet within Growth Portfolio: private-access permission is now supported so managers only see target roles when explicitly permitted; managers can now view employees' unrated skills and attributes with an Unrated tag; and managers can access linked development activities (goals, assignments, learning) for specific skills via a Development Activities link. These changes achieve feature parity with the legacy Career Worksheet.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Managers receive a more complete picture of employee skill readiness and development progress, enabling better coaching conversations and career planning support.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled. Admins should review Career Worksheet template permission settings to ensure private-access is configured as intended.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/enhancements-to-manager-view-in-latest-career-worksheet.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/7907feff71f14adca8f9c916a8d0b419.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser" data-name="bookmark experience available for learning cards on the growth portfolio" data-csv-name="Bookmark Experience Available for Learning Cards on the Growth Portfolio" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Users can now bookmark Learning items directly from the Learning cards displayed in Growth Portfolio, using the same bookmark icon available in the Learning application. Previously, the bookmark icon was not available on Learning items within Growth Portfolio." data-csv-why="Users get a seamless, consistent experience between Growth Portfolio and Learning, making it easier to save and revisit learning content directly from their development workspace." data-csv-risk="No action needed — automatically enabled." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/8c7f620dedc44db9b768328730759e72.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Bookmark Experience Available for Learning Cards on the Growth Portfolio for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Bookmark Experience Available for Learning Cards on the Growth Portfolio</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Users can now bookmark Learning items directly from the Learning cards displayed in Growth Portfolio, using the same bookmark icon available in the Learning application. Previously, the bookmark icon was not available on Learning items within Growth Portfolio.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Users get a seamless, consistent experience between Growth Portfolio and Learning, making it easier to save and revisit learning content directly from their development workspace.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/bookmark-experience-available-for-learning-cards-on-the-growth-portfolio.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/8c7f620dedc44db9b768328730759e72.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="new" data-action="noaction" data-exp="admin,enduser" data-name="configuration to hide enhanced search filters" data-csv-name="Configuration to Hide Enhanced Search Filters" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Admins can now control which search filters appear to learners on the Find Learning page by configuring the librarySearchFilter[<filter name>] settings in System Administration > Configuration > System Configuration > LIBRARY. Setting a filter value to false hides it from learners regardless of whether matching content exists. For Duration, Rating, and Price filters, a false value also removes the option from the Sort by dropdown." data-csv-why="Admins can tailor the search experience to their organization's catalog and business rules, reducing clutter and guiding learners to relevant filter options." data-csv-risk="No action needed — automatically enabled. Default behavior (all filters shown) is unchanged unless admins configure the new settings." data-csv-exp="Admin, End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/e5bfd86c424f4e2b97f1c1df44ea0c82.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Configuration to Hide Enhanced Search Filters for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Configuration to Hide Enhanced Search Filters</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span><span class="badge badge-exp badge-exp-enduser">End User</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Admins can now control which search filters appear to learners on the Find Learning page by configuring the librarySearchFilter[&lt;filter name&gt;] settings in System Administration &gt; Configuration &gt; System Configuration &gt; LIBRARY. Setting a filter value to false hides it from learners regardless of whether matching content exists. For Duration, Rating, and Price filters, a false value also removes the option from the Sort by dropdown.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Admins can tailor the search experience to their organization's catalog and business rules, reducing clutter and guiding learners to relevant filter options.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled. Default behavior (all filters shown) is unchanged unless admins configure the new settings.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/configuration-to-hide-enhanced-search-filters.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/e5bfd86c424f4e2b97f1c1df44ea0c82.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="enhanced visibility for custom page content" data-csv-name="Enhanced Visibility for Custom Page Content" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Admins can now independently control whether banners and custom cards are shown or hidden on individual custom pages, without affecting their visibility on the new Learning home page. The Enabled switch in System Administration > Application Administration > Custom Pages manages this per-page visibility. By default, visibility reflects the existing settings from the Banners and Custom Cards pages. Based on Customer Influence Idea 333734." data-csv-why="Organizations can now target different content to different audiences on custom pages without impacting the main Learning home page, enabling more precise and relevant learner experiences." data-csv-risk="No action needed — automatically enabled." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/b24c1b3d3f6e40798adcef961135e6b0.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Enhanced Visibility for Custom Page Content for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Enhanced Visibility for Custom Page Content</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Admins can now independently control whether banners and custom cards are shown or hidden on individual custom pages, without affecting their visibility on the new Learning home page. The Enabled switch in System Administration &gt; Application Administration &gt; Custom Pages manages this per-page visibility. By default, visibility reflects the existing settings from the Banners and Custom Cards pages. Based on Customer Influence Idea 333734.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Organizations can now target different content to different audiences on custom pages without impacting the main Learning home page, enabling more precise and relevant learner experiences.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/enhanced-visibility-for-custom-page-content.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/b24c1b3d3f6e40798adcef961135e6b0.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="enhancements to user merge process" data-csv-name="Enhancements to User Merge Process" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="The user merge process has been enhanced to include more data types in the merge: collections (bookmarks, recommendations, views), QuickGuides, user attributes (competencies, skills, proficiency levels), government reporting data and DIF hours, and learning completion records. Inactive users can now be merged regardless of status, and the import file size limit has been increased from 200 to 500 rows." data-csv-why="Admins managing user consolidations (such as after an acquisition or organizational change) can now perform more complete merges with less manual data reconciliation work." data-csv-risk="No action needed — automatically enabled." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/86788b34ef1e4e538ed69bf0d81427b7.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Enhancements to User Merge Process for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Enhancements to User Merge Process</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The user merge process has been enhanced to include more data types in the merge: collections (bookmarks, recommendations, views), QuickGuides, user attributes (competencies, skills, proficiency levels), government reporting data and DIF hours, and learning completion records. Inactive users can now be merged regardless of status, and the import file size limit has been increased from 200 to 500 rows.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Admins managing user consolidations (such as after an acquisition or organizational change) can now perform more complete merges with less manual data reconciliation work.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/enhancements-to-user-merge-process.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/86788b34ef1e4e538ed69bf0d81427b7.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser" data-name="improved ocn course access on mobile apps" data-csv-name="Improved OCN Course Access on Mobile Apps" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Open Content Network (OCN) courses with Single Sign-On (SSO) enabled now launch seamlessly on the SAP SuccessFactors Mobile iOS and Android apps. Learners are automatically redirected to the OCN provider platform (such as LinkedIn Learning) when launching external content, eliminating the extra manual sign-in step previously required." data-csv-why="Removing the extra authentication step streamlines the mobile learning experience, reducing friction for learners accessing third-party content on the go." data-csv-risk="No action needed — automatically enabled. Admins must have SSO configured for the verified OCN provider." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/4c213100200a4432b7b76b1df3bf5bac.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Improved OCN Course Access on Mobile Apps for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Improved OCN Course Access on Mobile Apps</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Open Content Network (OCN) courses with Single Sign-On (SSO) enabled now launch seamlessly on the SAP SuccessFactors Mobile iOS and Android apps. Learners are automatically redirected to the OCN provider platform (such as LinkedIn Learning) when launching external content, eliminating the extra manual sign-in step previously required.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Removing the extra authentication step streamlines the mobile learning experience, reducing friction for learners accessing third-party content on the go.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled. Admins must have SSO configured for the verified OCN provider.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/improved-ocn-course-access-on-mobile-apps.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/4c213100200a4432b7b76b1df3bf5bac.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="new" data-action="noaction" data-exp="admin" data-name="learning permissions delivered for use in a later release" data-csv-name="Learning Permissions Delivered For Use In A Later Release" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Four permissions — Activate Multiple Employments, View User Employment, View Person Connector, and Edit Person Connector — have been included in system default roles over recent releases to support a future person-centric experience in Learning. No functionality is activated by these permissions in this release; they can be safely ignored. These permissions support the future adoption of person-centric identity management." data-csv-why="Pre-delivering these permissions ensures system default roles are ready for upcoming person-centric Learning features when they are released, minimizing future configuration effort." data-csv-risk="No action needed — automatically enabled. These permissions can be safely ignored until the associated functionality is delivered in a future release." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/2f0e4805c3234f519de879e8639305f0.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Learning Permissions Delivered For Use In A Later Release for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Learning Permissions Delivered For Use In A Later Release</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Four permissions — Activate Multiple Employments, View User Employment, View Person Connector, and Edit Person Connector — have been included in system default roles over recent releases to support a future person-centric experience in Learning. No functionality is activated by these permissions in this release; they can be safely ignored. These permissions support the future adoption of person-centric identity management.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Pre-delivering these permissions ensures system default roles are ready for upcoming person-centric Learning features when they are released, minimizing future configuration effort.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled. These permissions can be safely ignored until the associated functionality is delivered in a future release.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/learning-permissions-delivered-for-use-in-a-later-release.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/2f0e4805c3234f519de879e8639305f0.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser,admin,manager" data-name="minor visual changes in 2h 2025" data-csv-name="Minor Visual Changes in 2H 2025" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Communicate to managers" data-csv-desc="SAP SuccessFactors has made numerous minor visual enhancements across Learning and other modules in 2H 2025, including text label changes, iconography updates, interaction pattern adjustments, and styling improvements. Notable Learning-specific changes include: learning activity ID now shown in search results; Skills filter renamed to Attributes to include Capabilities; View Class Request renamed to Remove Class Request; Enable Previous Jobs button renamed to Restore Recurring Jobs Status; and courses with upcoming classes are prioritized in Browse All results." data-csv-why="Clearer labels and more intuitive button names reduce learner and admin confusion, improving overall usability without requiring any configuration changes." data-csv-risk="No action needed — automatically enabled." data-csv-exp="End User, Admin, Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/9f3c8bfe46d74facb1d61f2799552faf.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Minor Visual Changes in 2H 2025 for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Minor Visual Changes in 2H 2025</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Communicate to managers</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span><span class="badge badge-exp badge-exp-admin">Admin</span><span class="badge badge-exp badge-exp-manager">Manager</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>SAP SuccessFactors has made numerous minor visual enhancements across Learning and other modules in 2H 2025, including text label changes, iconography updates, interaction pattern adjustments, and styling improvements. Notable Learning-specific changes include: learning activity ID now shown in search results; Skills filter renamed to Attributes to include Capabilities; View Class Request renamed to Remove Class Request; Enable Previous Jobs button renamed to Restore Recurring Jobs Status; and courses with upcoming classes are prioritized in Browse All results.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Clearer labels and more intuitive button names reduce learner and admin confusion, improving overall usability without requiring any configuration changes.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/minor-visual-changes-in-2h-2025.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/9f3c8bfe46d74facb1d61f2799552faf.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser" data-name="search results improvement for german compound words" data-csv-name="Search Results Improvement for German Compound Words" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="The enhanced search in SAP SuccessFactors Learning now splits German compound words into their individual components when learners search the Learning library. This allows the system to return results that match any part of a compound term, not only exact matches. The feature is available as of the January 27, 2026 patch following an initial delay from the 2H 2025 baseline release." data-csv-why="German-speaking learners can find relevant content more easily, even when they use either the compound form or individual component words in their search, improving learning discoverability in German-language catalogs." data-csv-risk="No action needed — automatically enabled. Requires enhanced search to be enabled." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/5076c7670ef247e78ad3e751162e3879.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Search Results Improvement for German Compound Words for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Search Results Improvement for German Compound Words</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The enhanced search in SAP SuccessFactors Learning now splits German compound words into their individual components when learners search the Learning library. This allows the system to return results that match any part of a compound term, not only exact matches. The feature is available as of the January 27, 2026 patch following an initial delay from the 2H 2025 baseline release.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>German-speaking learners can find relevant content more easily, even when they use either the compound form or individual component words in their search, improving learning discoverability in German-language catalogs.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled. Requires enhanced search to be enabled.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/search-results-improvement-for-german-compound-words.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/5076c7670ef247e78ad3e751162e3879.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="new" data-action="action" data-exp="admin,manager,enduser" data-name="sender display name update for notification emails" data-csv-name="Sender Display Name Update For Notification Emails" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Admins can now configure display names for the From field in Learning notification emails. Three new fields have been added to Global Application Settings > Mail: Admin Email Display Name (for admin notifications), User Email Display Name (for user notifications), and Default Display Name (used when the other two fields are empty). Manager names now also appear next to their email address in manager-sent notifications such as overdue training reminders. Based on Customer Influence Idea 335406." data-csv-why="Branded, recognizable sender names improve email open rates and reduce the chance that notifications are marked as spam, ensuring learners and managers receive and act on important learning communications." data-csv-risk="No action needed — automatically enabled. Default behavior is unchanged unless admins configure the new display name fields." data-csv-exp="Admin, Manager, End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/80fb80537bed44b9a549dcf04bebdac9.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Sender Display Name Update For Notification Emails for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Sender Display Name Update For Notification Emails</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span><span class="badge badge-exp badge-exp-manager">Manager</span><span class="badge badge-exp badge-exp-enduser">End User</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Admins can now configure display names for the From field in Learning notification emails. Three new fields have been added to Global Application Settings &gt; Mail: Admin Email Display Name (for admin notifications), User Email Display Name (for user notifications), and Default Display Name (used when the other two fields are empty). Manager names now also appear next to their email address in manager-sent notifications such as overdue training reminders. Based on Customer Influence Idea 335406.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Branded, recognizable sender names improve email open rates and reduce the chance that notifications are marked as spam, ensuring learners and managers receive and act on important learning communications.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled. Default behavior is unchanged unless admins configure the new display name fields.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/sender-display-name-update-for-notification-emails.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/80fb80537bed44b9a549dcf04bebdac9.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="new" data-action="noaction" data-exp="manager" data-name="team view display enhancements" data-csv-name="Team View Display Enhancements" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Several display improvements have been made to the redesigned Team View page: the default number of assignment cards loaded per view has increased from 8 to 20; Organization ID and User ID values are now shown on the user detail page for easier identification; and team hierarchy navigation has been updated with a persistent Back button (always moves up one level) and a new persistent Return to Direct Reports option. Based on Customer Influence Idea 336808." data-csv-why="Managers working with larger teams can view more assignments at once and navigate the team hierarchy more efficiently, reducing the number of clicks required to manage their team's learning." data-csv-risk="No action needed — automatically enabled." data-csv-exp="Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/9b20b0ea5cac4813aa56d761cc7123dc.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Team View Display Enhancements for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Team View Display Enhancements</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-manager">Manager</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Several display improvements have been made to the redesigned Team View page: the default number of assignment cards loaded per view has increased from 8 to 20; Organization ID and User ID values are now shown on the user detail page for easier identification; and team hierarchy navigation has been updated with a persistent Back button (always moves up one level) and a new persistent Return to Direct Reports option. Based on Customer Influence Idea 336808.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Managers working with larger teams can view more assignments at once and navigate the team hierarchy more efficiently, reducing the number of clicks required to manage their team's learning.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/team-view-display-enhancements.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/9b20b0ea5cac4813aa56d761cc7123dc.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="new" data-action="noaction" data-exp="enduser" data-name="optional curricula in the new learning experience for ios and android mobile apps" data-csv-name="Optional Curricula in the New Learning Experience for iOS and Android Mobile Apps" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Learners can now access optional learning activities from their assigned curricula and sub-curricula directly from the new Learning home screen on the SAP SuccessFactors Mobile iOS and Android apps. Admin-assigned optional activities appear in the Important Learning section; self-assigned optional activities appear in the Invest in Myself section. All items display a Curriculum label on the card." data-csv-why="Learners on mobile devices can now see and access the full range of their curriculum content, including optional items, ensuring consistent development opportunities across web and mobile." data-csv-risk="No action needed — automatically enabled. Requires the new Learning experience to be enabled and optional curricula to be configured in Learning Administration." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f7de3978dab845b394b99cffef191717.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Optional Curricula in the New Learning Experience for iOS and Android Mobile Apps for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Optional Curricula in the New Learning Experience for iOS and Android Mobile Apps</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">No action required</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Learners can now access optional learning activities from their assigned curricula and sub-curricula directly from the new Learning home screen on the SAP SuccessFactors Mobile iOS and Android apps. Admin-assigned optional activities appear in the Important Learning section; self-assigned optional activities appear in the Invest in Myself section. All items display a Curriculum label on the card.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Learners on mobile devices can now see and access the full range of their curriculum content, including optional items, ensuring consistent development opportunities across web and mobile.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>No action needed — automatically enabled. Requires the new Learning experience to be enabled and optional curricula to be configured in Learning Administration.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/optional-curricula-in-the-new-learning-experience-for-ios-and-android-mobile-apps.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f7de3978dab845b394b99cffef191717.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="category-section" data-category="optin">
+      <div class="category-header">
+        <div class="category-dot" style="background:#2070B0"></div>
+        <h2>Opt-In</h2>
+        <span class="category-count">7 features &middot; Customer Configured</span>
+      </div>
+      <div class="feature-list">
+        <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-exp="admin" data-name="bulk delete unused icontent files from learning administration" data-csv-name="Bulk Delete Unused iContent Files From Learning Administration" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Enable" data-csv-desc="Admins can now identify and bulk delete unused or irrelevant content files stored on iContent servers directly from the iContent Management page (System Administration > System Management Tools). Deleting iContent files removes the files along with any linked content objects and packages, inactivates the associated courses, and causes learners to lose in-progress course progress. Reactivation requires manual cleanup of the course structure. Based on Customer Influence Idea 267806." data-csv-why="Organizations with large content libraries can reclaim storage space and reduce iContent server volume by removing stale or unused content, improving system performance and maintainability." data-csv-risk="Without enabling this feature, unused iContent files continue to consume storage. Admins should plan carefully before deleting, as it inactivates associated courses and affects learners with in-progress work." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d444d3e964564090b34e91058fed75a6.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Bulk Delete Unused iContent Files From Learning Administration for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Bulk Delete Unused iContent Files From Learning Administration</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Admins can now identify and bulk delete unused or irrelevant content files stored on iContent servers directly from the iContent Management page (System Administration &gt; System Management Tools). Deleting iContent files removes the files along with any linked content objects and packages, inactivates the associated courses, and causes learners to lose in-progress course progress. Reactivation requires manual cleanup of the course structure. Based on Customer Influence Idea 267806.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Organizations with large content libraries can reclaim storage space and reduce iContent server volume by removing stale or unused content, improving system performance and maintainability.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Without enabling this feature, unused iContent files continue to consume storage. Admins should plan carefully before deleting, as it inactivates associated courses and affects learners with in-progress work.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/bulk-delete-unused-icontent-files-from-learning-administration.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d444d3e964564090b34e91058fed75a6.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-exp="enduser,admin" data-name="view recommended assignments and learning opportunities for development goals" data-csv-name="View Recommended Assignments and Learning Opportunities for Development Goals" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Enable" data-csv-desc="Users can now view assignments and learning opportunities that match the skills and attributes selected for their development goals, directly on their goal details page in an Opportunities to Grow section. Users can bookmark recommended items, mark them as not interested, link assignments to goals (shown in a Linked Assignments section, printable), and add learning opportunities through a Linked Learning section. A Go to Opportunity Marketplace link is also provided for broader exploration." data-csv-why="Connecting recommended learning and assignments to specific development goals helps employees pursue skill-focused career development within a structured and measurable framework." data-csv-risk="Users will not see skill-aligned learning recommendations on their development goals page, missing an opportunity to connect learning activity to career development objectives." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/a9c0ff1b31e540e7b272288136f809f4.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select View Recommended Assignments and Learning Opportunities for Development Goals for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">View Recommended Assignments and Learning Opportunities for Development Goals</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">New</span>
+              <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span><span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Users can now view assignments and learning opportunities that match the skills and attributes selected for their development goals, directly on their goal details page in an Opportunities to Grow section. Users can bookmark recommended items, mark them as not interested, link assignments to goals (shown in a Linked Assignments section, printable), and add learning opportunities through a Linked Learning section. A Go to Opportunity Marketplace link is also provided for broader exploration.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Connecting recommended learning and assignments to specific development goals helps employees pursue skill-focused career development within a structured and measurable framework.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Users will not see skill-aligned learning recommendations on their development goals page, missing an opportunity to connect learning activity to career development objectives.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/view-recommended-assignments-and-learning-opportunities-for-development-goals.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/a9c0ff1b31e540e7b272288136f809f4.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="auto-purge archived connector input files" data-csv-name="Auto-Purge Archived Connector Input Files" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Archived connector input files are now automatically purged after 30 days by default, eliminating the need for manual retention configuration. When the Enable input file archive option is activated, the previously configurable Purge archived input files older than setting is removed. SAP recommends downloading the zip file of archived input files before the 30-day window closes for troubleshooting purposes." data-csv-why="Automatic purging of archived connector files reduces manual admin overhead and keeps the system lean, preventing accumulation of stale files that can impact performance." data-csv-risk="Without enabling the archive feature, connector input files are not archived and therefore not subject to auto-purge. If archiving is in use, the fixed 30-day window replaces any previously configured retention period." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/5fda2646b8574aad8be2d2dacec96b12.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Auto-Purge Archived Connector Input Files for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Auto-Purge Archived Connector Input Files</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Archived connector input files are now automatically purged after 30 days by default, eliminating the need for manual retention configuration. When the Enable input file archive option is activated, the previously configurable Purge archived input files older than setting is removed. SAP recommends downloading the zip file of archived input files before the 30-day window closes for troubleshooting purposes.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Automatic purging of archived connector files reduces manual admin overhead and keeps the system lean, preventing accumulation of stale files that can impact performance.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Without enabling the archive feature, connector input files are not archived and therefore not subject to auto-purge. If archiving is in use, the fixed 30-day window replaces any previously configured retention period.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/auto-purge-archived-connector-input-files.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/5fda2646b8574aad8be2d2dacec96b12.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="connectors now process user records with future termination dates" data-csv-name="Connectors Now Process User Records With Future Termination Dates" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="The User Connector - SF and User Connector now process active user records (NOTACTIVE = N) even when TERM_DTE is set to a future date. Previously these records were rejected, requiring manual removal of the termination date. A warning message appears in the Connector Run Details report, and the termination date in Learning is only updated once the user becomes inactive. The field mapping sfuser.field.mapping.data.TERM_DTE must be mapped to Platform column TERM_DTE." data-csv-why="Organizations can sync HR system records for employees on notice periods without manual workarounds, improving data accuracy and reducing connector maintenance effort." data-csv-risk="Without enabling this feature, user records with future termination dates will continue to be rejected during connector runs, requiring manual intervention to process them." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/677b348904ee47bea8e0245d8e6c0002.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Connectors Now Process User Records With Future Termination Dates for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Connectors Now Process User Records With Future Termination Dates</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The User Connector - SF and User Connector now process active user records (NOTACTIVE = N) even when TERM_DTE is set to a future date. Previously these records were rejected, requiring manual removal of the termination date. A warning message appears in the Connector Run Details report, and the termination date in Learning is only updated once the user becomes inactive. The field mapping sfuser.field.mapping.data.TERM_DTE must be mapped to Platform column TERM_DTE.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Organizations can sync HR system records for employees on notice periods without manual workarounds, improving data accuracy and reducing connector maintenance effort.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Without enabling this feature, user records with future termination dates will continue to be rejected during connector runs, requiring manual intervention to process them.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/connectors-now-process-user-records-with-future-termination-dates.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/677b348904ee47bea8e0245d8e6c0002.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="new advanced settings to manage zoom virtual learning sessions" data-csv-name="New Advanced Settings to Manage Zoom Virtual Learning Sessions" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Evaluate with SAP rep" data-csv-desc="Two new advanced settings have been introduced on the Advanced VLS Settings page (Classes > Agenda > Edit Time Slot) for Zoom servers: Allow Multiple Devices and Approval Type. These settings provide additional control over how Zoom virtual learning sessions are configured at the class time slot level, extending the options available to admins managing virtual instructor-led training via Zoom." data-csv-why="Organizations using Zoom for virtual instructor-led training gain finer control over session access and device policies, enabling better alignment with security and attendance requirements." data-csv-risk="Without configuring the new Zoom settings, the default Zoom behavior applies. Organizations with specific device or approval policies may need to configure these to meet their requirements." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/ba502e96859144f78cb8c30c4d6d567e.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select New Advanced Settings to Manage Zoom Virtual Learning Sessions for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">New Advanced Settings to Manage Zoom Virtual Learning Sessions</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec warn">Evaluate with SAP rep</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Two new advanced settings have been introduced on the Advanced VLS Settings page (Classes &gt; Agenda &gt; Edit Time Slot) for Zoom servers: Allow Multiple Devices and Approval Type. These settings provide additional control over how Zoom virtual learning sessions are configured at the class time slot level, extending the options available to admins managing virtual instructor-led training via Zoom.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Organizations using Zoom for virtual instructor-led training gain finer control over session access and device policies, enabling better alignment with security and attendance requirements.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Without configuring the new Zoom settings, the default Zoom behavior applies. Organizations with specific device or approval policies may need to configure these to meet their requirements.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/new-advanced-settings-to-manage-zoom-virtual-learning-sessions.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/ba502e96859144f78cb8c30c4d6d567e.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin,enduser" data-name="enhanced support for secondary instructors in virtual learning sessions" data-csv-name="Enhanced Support for Secondary Instructors in Virtual Learning Sessions" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Secondary instructors can now launch and manage assigned Virtual Learning Sessions (VLS) directly from the My Classes dashboard on the Learning home page, just like primary instructors, across Microsoft Teams, Zoom, and Cisco Webex. They now receive automatic email notifications with personalized meeting links and vCalendar invites. Attendance calculation now includes session activity from both primary and secondary instructors. Based on Customer Influence Ideas 284474 and 273147." data-csv-why="Secondary instructors can independently manage and participate in virtual sessions without relying on the primary instructor's account, improving operational flexibility for multi-instructor training." data-csv-risk="Without enabling this feature, secondary instructors continue to require the primary instructor's account to launch VLS, limiting their ability to independently manage sessions." data-csv-exp="Admin, End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/fc81ca65c36548f8a3ca6617c04d584f.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Enhanced Support for Secondary Instructors in Virtual Learning Sessions for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Enhanced Support for Secondary Instructors in Virtual Learning Sessions</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec ">Enable</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span><span class="badge badge-exp badge-exp-enduser">End User</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Secondary instructors can now launch and manage assigned Virtual Learning Sessions (VLS) directly from the My Classes dashboard on the Learning home page, just like primary instructors, across Microsoft Teams, Zoom, and Cisco Webex. They now receive automatic email notifications with personalized meeting links and vCalendar invites. Attendance calculation now includes session activity from both primary and secondary instructors. Based on Customer Influence Ideas 284474 and 273147.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Secondary instructors can independently manage and participate in virtual sessions without relying on the primary instructor's account, improving operational flexibility for multi-instructor training.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Without enabling this feature, secondary instructors continue to require the primary instructor's account to launch VLS, limiting their ability to independently manage sessions.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/enhanced-support-for-secondary-instructors-in-virtual-learning-sessions.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/fc81ca65c36548f8a3ca6617c04d584f.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="updated learning cross-domain proxlet" data-csv-name="Updated Learning Cross-Domain Proxlet" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Migrate to OAuth NOW" data-csv-desc="The cross-domain proxlet for SAP SuccessFactors Learning customers who host their own content has been updated to align with the Learning platform's upgrade to OpenJDK (Open Java Development Kit) version 21. Customers must first upgrade OpenJDK to version 21 on their content-hosting server, then download the latest 2025 cross-domain proxlet from Support Downloads." data-csv-why="Using the latest proxlet ensures compatibility with the platform's updated Java runtime, preventing potential content delivery issues for self-hosted learning content." data-csv-risk="Customers who do not update to the 2025 proxlet after the OpenJDK 21 upgrade may experience issues delivering self-hosted learning content. SAP recommends using the latest version for best results." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/8481af4422bc4a329a559513ace764ad.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Updated Learning Cross-Domain Proxlet for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Updated Learning Cross-Domain Proxlet</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec critical">Migrate to OAuth NOW</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The cross-domain proxlet for SAP SuccessFactors Learning customers who host their own content has been updated to align with the Learning platform's upgrade to OpenJDK (Open Java Development Kit) version 21. Customers must first upgrade OpenJDK to version 21 on their content-hosting server, then download the latest 2025 cross-domain proxlet from Support Downloads.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Using the latest proxlet ensures compatibility with the platform's updated Java runtime, preventing potential content delivery issues for self-hosted learning content.</p>
+            </div>
+            <div class="accordion-section risk-critical">
+              <h4>Risk of Inaction</h4>
+              <p>Customers who do not update to the 2025 proxlet after the OpenJDK 21 upgrade may experience issues delivering self-hosted learning content. SAP recommends using the latest version for best results.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/updated-learning-cross-domain-proxlet.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/8481af4422bc4a329a559513ace764ad.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="category-section" data-category="deprecation">
+      <div class="category-header">
+        <div class="category-dot" style="background:#CC0033"></div>
+        <h2>Deprecation</h2>
+        <span class="category-count">6 features &middot; End of Life</span>
+      </div>
+      <div class="feature-list">
+        <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="changed" data-action="action" data-exp="admin" data-name="deprecation of copy user" data-csv-name="Deprecation of Copy User" data-csv-cat="Deprecation" data-csv-type="Changed" data-csv-impact="Major" data-csv-rec="Contact Product Support" data-csv-desc="The Copy User functionality in SAP SuccessFactors Learning has been deleted as of November 15, 2025. The Copy User menu item has been removed from Learning Administration > People > Users > Actions > Copy. This feature was an artifact of legacy Plateau products and did not function correctly in the current SAP SuccessFactors Learning environment." data-csv-why="Removing a non-functional legacy feature reduces confusion and clutter in the admin UI, and prompts customers to adopt correct, supported methods for user creation and configuration." data-csv-risk="This feature has already been deleted as of November 15, 2025. Any workflows or processes relying on Copy User must already be replaced with alternative approaches." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/e093ec391f4f44eda56052aac8d2f57d.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Deprecation of Copy User for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Deprecation of Copy User</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec warn">Contact Product Support</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The Copy User functionality in SAP SuccessFactors Learning has been deleted as of November 15, 2025. The Copy User menu item has been removed from Learning Administration &gt; People &gt; Users &gt; Actions &gt; Copy. This feature was an artifact of legacy Plateau products and did not function correctly in the current SAP SuccessFactors Learning environment.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Removing a non-functional legacy feature reduces confusion and clutter in the admin UI, and prompts customers to adopt correct, supported methods for user creation and configuration.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>This feature has already been deleted as of November 15, 2025. Any workflows or processes relying on Copy User must already be replaced with alternative approaches.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/deprecation-of-copy-user.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/e093ec391f4f44eda56052aac8d2f57d.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="changed" data-action="action" data-exp="enduser,admin,manager" data-name="the legacy learning home page is deleted" data-csv-name="The Legacy Learning Home Page is Deleted" data-csv-cat="Deprecation" data-csv-type="Changed" data-csv-impact="Major" data-csv-rec="Prepare for Horizon" data-csv-desc="The legacy Learning home page was deleted on November 14, 2025. Legacy custom pages created in Landing Page Settings and the legacy manager view have also been removed. Only custom pages built using the new Custom Pages builder remain available for learners. This deletion is part of SAP's universal rollout of the new Learning home page experience." data-csv-why="Completing the retirement of the legacy experience ensures SAP can focus engineering resources on the modern Learning home page and removes a dual-maintenance burden." data-csv-risk="Any custom pages built on the legacy Landing Page Settings infrastructure are no longer accessible. Organizations that have not migrated their custom pages to the new Custom Pages builder must do so immediately." data-csv-exp="End User, Admin, Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f2a7e7ac3b6a40ed9ace4d63202dbe47.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select The Legacy Learning Home Page is Deleted for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">The Legacy Learning Home Page is Deleted</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec critical">Prepare for Horizon</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span><span class="badge badge-exp badge-exp-admin">Admin</span><span class="badge badge-exp badge-exp-manager">Manager</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The legacy Learning home page was deleted on November 14, 2025. Legacy custom pages created in Landing Page Settings and the legacy manager view have also been removed. Only custom pages built using the new Custom Pages builder remain available for learners. This deletion is part of SAP's universal rollout of the new Learning home page experience.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Completing the retirement of the legacy experience ensures SAP can focus engineering resources on the modern Learning home page and removes a dual-maintenance burden.</p>
+            </div>
+            <div class="accordion-section risk-critical">
+              <h4>Risk of Inaction</h4>
+              <p>Any custom pages built on the legacy Landing Page Settings infrastructure are no longer accessible. Organizations that have not migrated their custom pages to the new Custom Pages builder must do so immediately.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/the-legacy-learning-home-page-is-deleted.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f2a7e7ac3b6a40ed9ace4d63202dbe47.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="deprecation" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="deprecation of free-of-charge subscriptions" data-csv-name="Deprecation of Free-of-Charge Subscriptions" data-csv-cat="Deprecation" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Evaluate with SAP rep" data-csv-desc="The ability to create a free-of-charge subscription to override all pricing within a library is deprecated and will be deleted on May 14, 2027. This feature is not actively used by customers in production and is not supported by the enhanced search feature, which is a core component of the new Learning home page. SAP changed the deletion date multiple times; the current target is May 14, 2027." data-csv-why="Organizations using free-of-charge subscriptions for pricing overrides need to identify and migrate to supported pricing and access control mechanisms before the May 2027 deletion date." data-csv-risk="Customers still relying on free-of-charge subscriptions will lose this functionality on May 14, 2027. SAP does not fix bugs or deliver patches for this feature following the End of Maintenance date." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/517d6ec5a5ed460b8ce27d3cf5951560.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Deprecation of Free-of-Charge Subscriptions for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Deprecation of Free-of-Charge Subscriptions</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec warn">Evaluate with SAP rep</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The ability to create a free-of-charge subscription to override all pricing within a library is deprecated and will be deleted on May 14, 2027. This feature is not actively used by customers in production and is not supported by the enhanced search feature, which is a core component of the new Learning home page. SAP changed the deletion date multiple times; the current target is May 14, 2027.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Organizations using free-of-charge subscriptions for pricing overrides need to identify and migrate to supported pricing and access control mechanisms before the May 2027 deletion date.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Customers still relying on free-of-charge subscriptions will lose this functionality on May 14, 2027. SAP does not fix bugs or deliver patches for this feature following the End of Maintenance date.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/deprecation-of-free-of-charge-subscriptions.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/517d6ec5a5ed460b8ce27d3cf5951560.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="deprecation" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="deprecation of successfactors learning token server" data-csv-name="Deprecation of SuccessFactors Learning Token Server" data-csv-cat="Deprecation" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Migrate to OAuth NOW" data-csv-desc="The SuccessFactors Learning token server is deprecated and will be deleted on November 20, 2026. The Learning token server uses HTTP basic authentication (Client ID and Secret), which is less secure than the platform token server's support for SAML Assertion Based token requests. Customers should migrate integrations to OAuth 2.0 or OpenID Connect authentication using the platform token server." data-csv-why="The platform token server provides more secure authentication mechanisms (SAML Assertion Based) compared to the legacy Learning token server, reducing security risk for API integrations." data-csv-risk="Integrations using the Learning token server for authentication will stop working after November 20, 2026. Organizations must plan and execute migration to OAuth 2.0 or OpenID Connect before the deletion date." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/527174fdddc64102910258133d32b2ae.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Deprecation of SuccessFactors Learning Token Server for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Deprecation of SuccessFactors Learning Token Server</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec critical">Migrate to OAuth NOW</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The SuccessFactors Learning token server is deprecated and will be deleted on November 20, 2026. The Learning token server uses HTTP basic authentication (Client ID and Secret), which is less secure than the platform token server's support for SAML Assertion Based token requests. Customers should migrate integrations to OAuth 2.0 or OpenID Connect authentication using the platform token server.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>The platform token server provides more secure authentication mechanisms (SAML Assertion Based) compared to the legacy Learning token server, reducing security risk for API integrations.</p>
+            </div>
+            <div class="accordion-section risk-critical">
+              <h4>Risk of Inaction</h4>
+              <p>Integrations using the Learning token server for authentication will stop working after November 20, 2026. Organizations must plan and execute migration to OAuth 2.0 or OpenID Connect before the deletion date.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/deprecation-of-successfactors-learning-token-server.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/527174fdddc64102910258133d32b2ae.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="deprecation" data-impact="minor" data-type="changed" data-action="action" data-exp="admin,enduser" data-name="deprecation of legacy learning search" data-csv-name="Deprecation of Legacy Learning Search" data-csv-cat="Deprecation" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Prepare for Horizon" data-csv-desc="The legacy Learning search experience will reach End of Maintenance on November 14, 2025 and will be deleted on May 14, 2027. The legacy search is replaced by the enhanced search feature in the new Learning home page, which has been available to all customers including vSaaS since 2H 2025. When deleted, legacy search-related Library Configuration Settings (with three exceptions) will also be removed from the application." data-csv-why="Organizations that have customized legacy search configuration settings need to audit which settings will become unsupported and plan their transition to the enhanced search configuration model." data-csv-risk="Customers still relying on legacy search configuration settings (beyond the three exceptions) will see those settings ignored once enhanced search is universal, and the settings will be deleted from the application in May 2027." data-csv-exp="Admin, End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/302b6334085a40b1a6d6ecdc8f5d5319.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Deprecation of Legacy Learning Search for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Deprecation of Legacy Learning Search</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec critical">Prepare for Horizon</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span><span class="badge badge-exp badge-exp-enduser">End User</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>The legacy Learning search experience will reach End of Maintenance on November 14, 2025 and will be deleted on May 14, 2027. The legacy search is replaced by the enhanced search feature in the new Learning home page, which has been available to all customers including vSaaS since 2H 2025. When deleted, legacy search-related Library Configuration Settings (with three exceptions) will also be removed from the application.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Organizations that have customized legacy search configuration settings need to audit which settings will become unsupported and plan their transition to the enhanced search configuration model.</p>
+            </div>
+            <div class="accordion-section risk-critical">
+              <h4>Risk of Inaction</h4>
+              <p>Customers still relying on legacy search configuration settings (beyond the three exceptions) will see those settings ignored once enhanced search is universal, and the settings will be deleted from the application in May 2027.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/deprecation-of-legacy-learning-search.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/302b6334085a40b1a6d6ecdc8f5d5319.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card" data-cat="deprecation" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="deprecation of support for webex training center" data-csv-name="Deprecation of Support for Webex Training Center" data-csv-cat="Deprecation" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Contact Product Support" data-csv-desc="Support for Webex Training Center as a Virtual Learning Session (VLS) vendor in SAP SuccessFactors Learning will reach End of Maintenance on November 14, 2025 and will be deleted on November 13, 2026. Webex Training Center uses XML APIs, which Webex itself is ending support for. After the End of Maintenance date, SAP will not fix issues arising from Webex Training Center limitations." data-csv-why="Customers using Webex Training Center for instructor-led virtual sessions face a hard deadline of November 2026 to migrate, after which the VLS configuration will no longer function in SAP SuccessFactors Learning." data-csv-risk="Customers who do not migrate away from Webex Training Center before November 13, 2026 will lose the ability to create and run virtual learning sessions using that connector, disrupting instructor-led training delivery." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/41fa1e7ac19042eb88d62cddb40267ea.html?version=cloud&locale=en-US">
+        <label class="feature-checkbox-label" onclick="event.stopPropagation()">
+          <input type="checkbox" class="feature-checkbox" aria-label="Select Deprecation of Support for Webex Training Center for export">
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
+          <div class="feature-card-left">
+            <div class="feature-name">Deprecation of Support for Webex Training Center</div>
+            <div class="feature-meta">
+              <span class="badge badge-rec warn">Contact Product Support</span>
+              <span class="badge badge-type">Changed</span>
+              <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
+            </div>
+          </div>
+          <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        </div>
+        <div class="feature-card-body" aria-hidden="true">
+          <div class="feature-card-body-inner">
+            <div class="accordion-section">
+              <h4>What is this feature?</h4>
+              <p>Support for Webex Training Center as a Virtual Learning Session (VLS) vendor in SAP SuccessFactors Learning will reach End of Maintenance on November 14, 2025 and will be deleted on November 13, 2026. Webex Training Center uses XML APIs, which Webex itself is ending support for. After the End of Maintenance date, SAP will not fix issues arising from Webex Training Center limitations.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Why should we care?</h4>
+              <p>Customers using Webex Training Center for instructor-led virtual sessions face a hard deadline of November 2026 to migrate, after which the VLS configuration will no longer function in SAP SuccessFactors Learning.</p>
+            </div>
+            <div class="accordion-section">
+              <h4>Risk of Inaction</h4>
+              <p>Customers who do not migrate away from Webex Training Center before November 13, 2026 will lose the ability to create and run virtual learning sessions using that connector, disrupting instructor-led training delivery.</p>
+            </div>
+            <div class="accordion-actions">
+              <a href="features/deprecation-of-support-for-webex-training-center.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/41fa1e7ac19042eb88d62cddb40267ea.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faqSection">
+      <h2 class="faq-section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-0">
+            <span class="faq-question">What does 'Universal' mean?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-0" aria-hidden="true">
+            <p>Universal features are enabled automatically for all customers. No admin action is required — they will appear in your system after the release goes live.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-1">
+            <span class="faq-question">What does 'Opt-In' mean?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-1" aria-hidden="true">
+            <p>Opt-In features are available but must be manually enabled by a system administrator. Review each feature and decide whether to enable it for your organization.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-2">
+            <span class="faq-question">What does 'Deprecation' mean?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-2" aria-hidden="true">
+            <p>Deprecation means a feature is being removed or has reached end of life. Migration or alternative action is typically required before the removal deadline.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-3">
+            <span class="faq-question">When do these changes go live?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-3" aria-hidden="true">
+            <p>Preview environments receive the update on October 17, 2025. Production systems go live November 14–15, 2025. The Token Server hard-delete deadline is November 20, 2026.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-4">
+            <span class="faq-question">What is the Token Server deprecation?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-4" aria-hidden="true">
+            <p>The SAP SuccessFactors Learning Token Server will be permanently deleted on November 20, 2026. Any integrations still using legacy token-based authentication will break. All organizations must complete migration to OAuth 2.0 before this date. This is the highest-priority action item in this release.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-5">
+            <span class="faq-question">How should our team use this site?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-5" aria-hidden="true">
+            <p>Start by reviewing the alert banner and critical deprecations. Then use the filters to focus on features that require action. Review each relevant feature with your team, paying attention to the 'Risk of Inaction' section. Share this site with system admins, learning admins, and integration teams.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-6">
+            <span class="faq-question">Who should review these features?</span>
+            <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer" id="faq-6" aria-hidden="true">
+            <p>System administrators, learning administrators, integration and development teams, and any business stakeholders responsible for the SAP SuccessFactors Learning module.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testing Strategy Section -->
+    <section class="testing-section" id="testingStrategy">
+      <h2 class="section-title">Testing Strategy</h2>
+      <p class="section-intro">SAP provides a 4&ndash;5 week preview window before each production release. For 2H 2025, the preview environment is available <strong>October 17, 2025</strong>, with production going live <strong>November 14&ndash;15, 2025</strong> &mdash; giving your team a <strong>28-calendar-day (20 business-day) testing window</strong>. Use this time to validate new features, regression-test existing configurations, and prepare communications.</p>
+
+      <div class="testing-phases">
+        <div class="testing-phase">
+          <div class="phase-header">
+            <span class="phase-number">1</span>
+            <h3>Pre-Release Preparation</h3>
+            <span class="phase-timing">Before October 17</span>
+          </div>
+          <ul class="phase-steps">
+            <li>Review all features on this site and identify those relevant to your organization</li>
+            <li>Prioritize features by filtering on <strong>Action Required</strong> &mdash; these need decisions before go-live</li>
+            <li>Ensure your preview (test) environment is aligned with production &mdash; <a href="https://community.sap.com/t5/human-capital-management-blog-posts-by-members/best-practices-and-risks-of-not-aligning-sap-successfactors-preview-and/ba-p/14092225" target="_blank" rel="noopener">SAP recommends refreshing preview at least once annually</a></li>
+            <li>Identify test owners: system admins, learning admins, integration teams, and business process owners</li>
+            <li>Document your current configurations and key business processes for regression comparison</li>
+          </ul>
+        </div>
+
+        <div class="testing-phase">
+          <div class="phase-header">
+            <span class="phase-number">2</span>
+            <h3>Preview Environment Testing</h3>
+            <span class="phase-timing">October 17 &ndash; November 13</span>
+          </div>
+          <ul class="phase-steps">
+            <li><strong>Validate Universal features</strong> &mdash; these are automatically enabled; confirm they work as expected with your configuration</li>
+            <li><strong>Evaluate Opt-In features</strong> &mdash; enable in preview, test, and decide whether to activate for production</li>
+            <li><strong>Regression-test core workflows</strong> &mdash; SAP recommends testing end-to-end business processes, not just isolated features (<a href="https://www.effectivepeople.com/blog/hr-strategy/master-release-management-in-sap-successfactors-tips-and-best-practices" target="_blank" rel="noopener">Effective People</a>)</li>
+            <li><strong>Test integrations</strong> &mdash; verify all API connections, especially if using the Learning Token Server (migration to OAuth 2.0 is required before November 20, 2026)</li>
+            <li><strong>Validate roles and permissions</strong> &mdash; confirm role-based permissions are correctly configured for any new features</li>
+            <li>Test across experiences: verify End User, Admin, and Manager views using the Experience filter on this site</li>
+          </ul>
+        </div>
+
+        <div class="testing-phase">
+          <div class="phase-header">
+            <span class="phase-number">3</span>
+            <h3>Stakeholder Review &amp; Sign-Off</h3>
+            <span class="phase-timing">November 1 &ndash; November 13</span>
+          </div>
+          <ul class="phase-steps">
+            <li>Share test results with business process owners for validation</li>
+            <li>Document decisions on Opt-In features: enable, defer, or decline</li>
+            <li>Coordinate with HR, IT, security, and payroll teams on cross-module impacts (<a href="https://community.sap.com/t5/human-capital-management-blog-posts-by-members/best-practices-and-risks-of-not-aligning-sap-successfactors-preview-and/ba-p/14092225" target="_blank" rel="noopener">SAP Community</a>)</li>
+            <li>Prepare internal communications and training materials for end users</li>
+          </ul>
+        </div>
+
+        <div class="testing-phase">
+          <div class="phase-header">
+            <span class="phase-number">4</span>
+            <h3>Post-Production Validation</h3>
+            <span class="phase-timing">November 14&ndash;15 onward</span>
+          </div>
+          <ul class="phase-steps">
+            <li>Verify production deployment &mdash; SAP delivers releases regionally over the weekend to minimize disruption (<a href="https://zalaris.com/consulting/resources/blog/sap-successfactors-release-schedule-2026-everything-you-need-to-know" target="_blank" rel="noopener">Zalaris</a>)</li>
+            <li>Run smoke tests on critical workflows immediately after go-live</li>
+            <li>Monitor for release-introduced issues &mdash; note that some bugs may not be addressed until the 1H 2026 release</li>
+            <li>Submit SAP support cases promptly for any issues found in production</li>
+          </ul>
+        </div>
+
+        <div class="testing-phase critical-phase">
+          <div class="phase-header">
+            <span class="phase-number">!</span>
+            <h3>Token Server Migration</h3>
+            <span class="phase-timing">Complete before Nov 20, 2026</span>
+          </div>
+          <ul class="phase-steps">
+            <li>The SAP SuccessFactors Learning Token Server will be <strong>permanently deleted on November 20, 2026</strong></li>
+            <li>All integrations using legacy token-based authentication must migrate to OAuth 2.0</li>
+            <li>Begin migration planning immediately &mdash; test OAuth 2.0 connections in preview before production cutover</li>
+            <li>Coordinate with integration vendors and internal development teams</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="testing-resources">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="https://help.sap.com/docs/successfactors-release-information/discovering-successfactors-changes-with-what-s-new-viewer-60550f77db4f4f7a877944080c45ae35/sap-successfactors-what-s-new-viewer" target="_blank" rel="noopener">SAP SuccessFactors What&rsquo;s New Viewer</a> &mdash; official tool for filtering and reviewing release changes</li>
+          <li><a href="https://pages.community.sap.com/topics/successfactors/product-release-road-map" target="_blank" rel="noopener">SAP SuccessFactors Product Release Road Map</a> &mdash; official release schedule and roadmap</li>
+          <li><a href="https://community.sap.com/t5/human-capital-management-blog-posts-by-members/best-practices-and-risks-of-not-aligning-sap-successfactors-preview-and/ba-p/14092225" target="_blank" rel="noopener">Preview &amp; Production Alignment Best Practices</a> &mdash; SAP Community guidance on environment sync</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>SAP SuccessFactors Learning &middot; 2H 2025 Release Strategy &middot; Internal Use Only</div>
+    <div class="footer-dates">Last updated: November 2025 &middot; Preview: Oct 17 &middot; Production: Nov 14&ndash;15</div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
+
+  <script>
+    (function() {
+      var TOTAL_FEATURES = 32;
+      var CSV_FILENAME = '2H_2025_Release_Features_Export.csv';
+
+      // ===== Alert Banner =====
+      var alertBanner = document.getElementById('alertBanner');
+      var alertDismiss = document.getElementById('alertDismiss');
+      var alertLink = document.getElementById('alertLink');
+      
+      if (alertDismiss) {
+        alertDismiss.addEventListener('click', function() {
+          alertBanner.style.display = 'none';
+        });
+      }
+      
+      if (alertLink) {
+        alertLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          // Activate deprecation filter
+          document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+          document.querySelector('.filter-btn[data-filter="deprecation"]').classList.add('active');
+          applyFilters();
+          document.getElementById('filterBar').scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+
+      // ===== Stat Card Clicks =====
+      document.querySelectorAll('.stat-card').forEach(function(card) {
+        card.addEventListener('click', function() {
+          var cat = card.dataset.cat;
+          document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+          var targetBtn = document.querySelector('.filter-btn[data-filter="' + cat + '"]');
+          if (targetBtn) targetBtn.classList.add('active');
+          applyFilters();
+          document.getElementById('filterBar').scrollIntoView({ behavior: 'smooth' });
+        });
+        card.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+        });
+      });
+
+      // ===== Filter Logic (AND combination) =====
+      var filterBtns = document.querySelectorAll('.filter-btn');
+      var filterImpact = document.getElementById('filterImpact');
+      var filterType = document.getElementById('filterType');
+      var filterAction = document.getElementById('filterAction');
+      var filterExp = document.getElementById('filterExp');
+      var searchInput = document.getElementById('searchInput');
+      var filterCount = document.getElementById('filterCount');
+      var filterReset = document.getElementById('filterReset');
+      var allCards = document.querySelectorAll('.feature-card');
+      var allSections = document.querySelectorAll('.category-section');
+
+      filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          applyFilters();
+        });
+      });
+
+      filterImpact.addEventListener('change', applyFilters);
+      filterType.addEventListener('change', applyFilters);
+      filterAction.addEventListener('change', applyFilters);
+      filterExp.addEventListener('change', applyFilters);
+      searchInput.addEventListener('input', applyFilters);
+
+      filterReset.addEventListener('click', function(e) {
+        e.preventDefault();
+        filterBtns.forEach(function(b) { b.classList.remove('active'); });
+        document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+        filterImpact.value = 'all';
+        filterType.value = 'all';
+        filterAction.value = 'all';
+        filterExp.value = 'all';
+        searchInput.value = '';
+        applyFilters();
+      });
+
+      function applyFilters() {
+        var activeCat = document.querySelector('.filter-btn.active');
+        var catVal = activeCat ? activeCat.dataset.filter : 'all';
+        var impactVal = filterImpact.value;
+        var typeVal = filterType.value;
+        var actionVal = filterAction.value;
+        var expVal = filterExp.value;
+        var searchVal = searchInput.value.toLowerCase().trim();
+        var visibleCount = 0;
+
+        allCards.forEach(function(card) {
+          var show = true;
+          if (catVal !== 'all' && card.dataset.cat !== catVal) show = false;
+          if (impactVal !== 'all' && card.dataset.impact !== impactVal) show = false;
+          if (typeVal !== 'all' && card.dataset.type !== typeVal) show = false;
+          if (actionVal !== 'all' && card.dataset.action !== actionVal) show = false;
+          if (expVal !== 'all' && !(card.dataset.exp || '').split(',').includes(expVal)) show = false;
+          if (searchVal && !(card.dataset.name || '').includes(searchVal)) show = false;
+          card.style.display = show ? '' : 'none';
+          if (show) visibleCount++;
+        });
+
+        // Show/hide category sections based on visible cards
+        allSections.forEach(function(sec) {
+          var hasVisible = Array.from(sec.querySelectorAll('.feature-card')).some(function(c) {
+            return c.style.display !== 'none';
+          });
+          sec.style.display = hasVisible ? '' : 'none';
+        });
+
+        filterCount.textContent = 'Showing ' + visibleCount + ' of ' + TOTAL_FEATURES + ' features';
+      }
+
+      // ===== Accordion Expand/Collapse on Feature Cards =====
+      document.querySelectorAll('.feature-card-header').forEach(function(hdr) {
+        hdr.addEventListener('click', function() {
+          var card = hdr.closest('.feature-card');
+          var body = card.querySelector('.feature-card-body');
+          var isOpen = hdr.getAttribute('aria-expanded') === 'true';
+
+          if (isOpen) {
+            hdr.setAttribute('aria-expanded', 'false');
+            body.setAttribute('aria-hidden', 'true');
+            card.classList.remove('expanded');
+          } else {
+            hdr.setAttribute('aria-expanded', 'true');
+            body.setAttribute('aria-hidden', 'false');
+            card.classList.add('expanded');
+          }
+        });
+
+        hdr.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hdr.click(); }
+        });
+      });
+
+      // ===== FAQ Accordion =====
+      document.querySelectorAll('.faq-trigger').forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+          var item = trigger.closest('.faq-item');
+          var answer = item.querySelector('.faq-answer');
+          var isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+          if (isOpen) {
+            trigger.setAttribute('aria-expanded', 'false');
+            answer.setAttribute('aria-hidden', 'true');
+            item.classList.remove('open');
+          } else {
+            trigger.setAttribute('aria-expanded', 'true');
+            answer.setAttribute('aria-hidden', 'false');
+            item.classList.add('open');
+          }
+        });
+      });
+
+      // ===== Back to Top Button =====
+      var backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // ===== CSV Export with Selectable Checkboxes =====
+      var allCheckboxes = document.querySelectorAll('.feature-checkbox');
+      var selectAllCb = document.getElementById('selectAllCheckbox');
+      var exportCount = document.getElementById('exportCount');
+      var exportCSVBtn = document.getElementById('exportCSVBtn');
+      var exportClearBtn = document.getElementById('exportClearBtn');
+      var exportBar = document.getElementById('exportBar');
+
+      function updateExportState() {
+        var checked = document.querySelectorAll('.feature-checkbox:checked');
+        var count = checked.length;
+        exportCount.textContent = count + ' selected';
+        exportCSVBtn.disabled = count === 0;
+        var btt = document.getElementById('backToTop');
+        if (count > 0) {
+          exportBar.classList.add('has-selection');
+          exportBar.classList.add('visible');
+          if (btt) btt.style.bottom = '88px';
+        } else {
+          exportBar.classList.remove('has-selection');
+          exportBar.classList.remove('visible');
+          if (btt) btt.style.bottom = '';
+        }
+        // Update select-all state
+        var visibleBoxes = Array.from(allCheckboxes).filter(function(cb) {
+          return cb.closest('.feature-card').style.display !== 'none';
+        });
+        var visibleChecked = visibleBoxes.filter(function(cb) { return cb.checked; });
+        selectAllCb.checked = visibleBoxes.length > 0 && visibleChecked.length === visibleBoxes.length;
+        selectAllCb.indeterminate = visibleChecked.length > 0 && visibleChecked.length < visibleBoxes.length;
+      }
+
+      allCheckboxes.forEach(function(cb) {
+        cb.addEventListener('change', updateExportState);
+      });
+
+      selectAllCb.addEventListener('change', function() {
+        var isChecked = selectAllCb.checked;
+        Array.from(allCheckboxes).forEach(function(cb) {
+          if (cb.closest('.feature-card').style.display !== 'none') {
+            cb.checked = isChecked;
+          }
+        });
+        updateExportState();
+      });
+
+      exportClearBtn.addEventListener('click', function() {
+        allCheckboxes.forEach(function(cb) { cb.checked = false; });
+        selectAllCb.checked = false;
+        selectAllCb.indeterminate = false;
+        updateExportState();
+      });
+
+      function csvEscape(val) {
+        if (!val) return '';
+        val = String(val);
+        if (val.indexOf(',') !== -1 || val.indexOf('"') !== -1 || val.indexOf('\n') !== -1) {
+          return '"' + val.replace(/"/g, '""') + '"';
+        }
+        return val;
+      }
+
+      exportCSVBtn.addEventListener('click', function() {
+        var checked = document.querySelectorAll('.feature-checkbox:checked');
+        if (checked.length === 0) return;
+
+        var headers = ['Feature Name','Category','Type','Impact','Recommendation','Experience','Description','Why It Matters','Risk of Inaction','SAP Documentation Link'];
+        var rows = [headers.map(csvEscape).join(',')];
+
+        checked.forEach(function(cb) {
+          var card = cb.closest('.feature-card');
+          var row = [
+            card.dataset.csvName || '',
+            card.dataset.csvCat || '',
+            card.dataset.csvType || '',
+            card.dataset.csvImpact || '',
+            card.dataset.csvRec || '',
+            card.dataset.csvExp || '',
+            card.dataset.csvDesc || '',
+            card.dataset.csvWhy || '',
+            card.dataset.csvRisk || '',
+            card.dataset.csvLink || ''
+          ];
+          rows.push(row.map(csvEscape).join(','));
+        });
+
+        var csvContent = rows.join('\n');
+        var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement('a');
+        link.href = url;
+        link.download = CSV_FILENAME;
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      });
+    })();
+  </script>
+</body>
+</html>
