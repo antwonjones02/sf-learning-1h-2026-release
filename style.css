@@ -734,7 +734,7 @@ img { max-width: 100%; display: block; }
 .feature-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-3);
 }
 
 .feature-card {
@@ -1869,7 +1869,7 @@ img { max-width: 100%; display: block; }
 .category-section.collapsed .category-header { border-bottom: none; border-radius: 0; }
 
 .category-body-inner {
-  padding: var(--space-3);
+  padding: var(--space-4);
   background: var(--gray-50);
 }
 
