@@ -326,20 +326,20 @@ img { max-width: 100%; display: block; }
 
 .timeline-track {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
-  padding: var(--space-3) 0;
+  padding: var(--space-4) 0 var(--space-3);
 }
 
 .timeline-track::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
+  top: 11px;
+  left: 8%;
+  right: 8%;
   height: 3px;
-  background: var(--gray-100);
-  transform: translateY(-50%);
+  background: var(--gray-200);
+  border-radius: 2px;
 }
 
 .timeline-node {
@@ -595,6 +595,82 @@ img { max-width: 100%; display: block; }
 .feature-card[data-cat="optin"] { border-left-color: var(--optin); }
 .feature-card[data-cat="premium"] { border-left-color: var(--premium); }
 .feature-card[data-cat="deprecation"] { border-left-color: var(--deprecation); }
+
+/* Experience badges */
+.badge-exp {
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.badge-exp-enduser {
+  background: #EEF2FF;
+  color: #4338CA;
+}
+.badge-exp-admin {
+  background: #FDF2F8;
+  color: #9D174D;
+}
+.badge-exp-manager {
+  background: #ECFDF5;
+  color: #065F46;
+}
+
+/* SAP Documentation link */
+.sap-doc-link {
+  font-size: var(--text-sm);
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 4px 0;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.sap-doc-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.accordion-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  margin-top: var(--space-2);
+}
+
+/* SAP link on detail pages */
+.sap-link-bar {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  background: var(--gray-50);
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-100);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.sap-link-bar a {
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+.sap-link-bar a:hover { text-decoration: underline; }
+.sap-link-bar .sap-link-label {
+  font-size: var(--text-xs);
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+/* Experience tags on detail page */
+.experience-tags {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
 
 .feature-card-header {
   display: flex;
@@ -1107,6 +1183,173 @@ img { max-width: 100%; display: block; }
 .back-top-link:hover {
   color: var(--navy);
   text-decoration: none;
+}
+
+/* ===== TESTING STRATEGY ===== */
+.testing-section {
+  max-width: 800px;
+  margin: var(--space-12) auto;
+  padding-top: var(--space-8);
+  border-top: 2px solid var(--gray-100);
+}
+
+.testing-section .section-title {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--gray-700);
+  margin-bottom: var(--space-4);
+}
+
+.testing-section .section-intro {
+  font-size: var(--text-base);
+  color: var(--gray-500);
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+}
+
+.testing-phases {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.testing-phase {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.testing-phase.critical-phase {
+  border-color: var(--red);
+  border-width: 2px;
+  background: #FFF5F7;
+}
+
+.phase-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.phase-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+}
+
+.critical-phase .phase-number {
+  background: var(--red);
+}
+
+.phase-header h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 0;
+  flex: 1;
+}
+
+.phase-timing {
+  font-size: var(--text-xs);
+  color: var(--gray-400);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.phase-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.phase-steps li {
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  line-height: 1.7;
+  padding: var(--space-2) 0;
+  padding-left: var(--space-5);
+  position: relative;
+  border-bottom: 1px solid var(--gray-50);
+}
+
+.phase-steps li:last-child {
+  border-bottom: none;
+}
+
+.phase-steps li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 6px;
+  height: 6px;
+  background: var(--navy);
+  border-radius: 50%;
+}
+
+.critical-phase .phase-steps li::before {
+  background: var(--red);
+}
+
+.phase-steps a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.phase-steps a:hover {
+  text-decoration: underline;
+}
+
+.testing-resources {
+  margin-top: var(--space-8);
+  padding: var(--space-5);
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-100);
+}
+
+.testing-resources h3 {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--gray-700);
+  margin-bottom: var(--space-3);
+}
+
+.testing-resources ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.testing-resources li {
+  font-size: var(--text-sm);
+  padding: var(--space-2) 0;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+.testing-resources a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.testing-resources a:hover {
+  text-decoration: underline;
 }
 
 /* ===== FOOTER ===== */

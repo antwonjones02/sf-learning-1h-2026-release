@@ -124,6 +124,15 @@
             <option value="noaction">No Action Required</option>
           </select>
         </div>
+        <div class="filter-select-group">
+          <label class="filter-select-label" for="filterExp">Experience</label>
+          <select id="filterExp" class="filter-select">
+            <option value="all">All</option>
+            <option value="enduser">End User</option>
+            <option value="admin">Admin</option>
+            <option value="manager">Manager</option>
+          </select>
+        </div>
         <input type="text" class="search-input" placeholder="Search features&hellip;" id="searchInput">
         <span class="filter-count" id="filterCount">Showing 54 of 54 features</span>
         <a href="#" class="filter-reset" id="filterReset">Reset Filters</a>
@@ -138,7 +147,7 @@
         <span class="category-count">10 features &middot; Automatically On</span>
       </div>
       <div class="feature-list">
-        <div class="feature-card" data-cat="universal" data-impact="minor" data-type="new" data-action="noaction" data-name="keyword search on view all pages">
+        <div class="feature-card" data-cat="universal" data-impact="minor" data-type="new" data-action="noaction" data-exp="enduser" data-name="keyword search on view all pages">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Keyword Search on View All Pages</div>
@@ -146,6 +155,7 @@
               <span class="badge badge-rec ">No action required</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -164,11 +174,14 @@
               <h4>Risk of Inaction</h4>
               <p>No action needed — this is automatically enabled. No risk.</p>
             </div>
-            <a href="features/keyword-search-on-view-all-pages.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/keyword-search-on-view-all-pages.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/477c23006a59476fae497d16e3839acb.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-name="multiple employments rest api enhancements">
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="multiple employments rest api enhancements">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Multiple Employments REST API Enhancements</div>
@@ -176,6 +189,7 @@
               <span class="badge badge-rec ">No action required</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -194,11 +208,14 @@
               <h4>Risk of Inaction</h4>
               <p>No action needed — automatically applied. Existing integrations continue to work.</p>
             </div>
-            <a href="features/multiple-employments-rest-api-enhancements.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/multiple-employments-rest-api-enhancements.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f9d2b98dd626428b98728a31fd1172de.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="noaction" data-name="curricula status in mobile apps">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="noaction" data-exp="enduser,admin" data-name="curricula status in mobile apps">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Curricula Status in Mobile Apps</div>
@@ -206,6 +223,7 @@
               <span class="badge badge-rec ">No action required</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span><span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -224,11 +242,14 @@
               <h4>Risk of Inaction</h4>
               <p>No action needed — automatically enabled for mobile users.</p>
             </div>
-            <a href="features/curricula-status-in-mobile-apps.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/curricula-status-in-mobile-apps.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/cbdec2e2efc743ed9c9e0f1f9cd4fa9f.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-name="manager actions and sf-182 access in team view">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin,manager" data-name="manager actions and sf-182 access in team view">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Manager Actions and SF-182 Access in Team View</div>
@@ -236,6 +257,7 @@
               <span class="badge badge-rec ">Communicate to managers</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span><span class="badge badge-exp badge-exp-manager">Manager</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -254,11 +276,14 @@
               <h4>Risk of Inaction</h4>
               <p>No action needed — automatically enabled. Managers will see new capabilities immediately.</p>
             </div>
-            <a href="features/manager-actions-and-sf-182-access-in-team-view.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/manager-actions-and-sf-182-access-in-team-view.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d3dcd1741e9d4a78876d2aaa9097262c.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-name="pre-calculated program completion data in reports">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin,manager" data-name="pre-calculated program completion data in reports">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Pre-Calculated Program Completion Data in Reports</div>
@@ -266,6 +291,7 @@
               <span class="badge badge-rec warn">Update legacy reports</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span><span class="badge badge-exp badge-exp-manager">Manager</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -284,11 +310,14 @@
               <h4>Risk of Inaction</h4>
               <p>No action needed — automatically enabled. Begin transitioning any reports that use the legacy operator.</p>
             </div>
-            <a href="features/pre-calculated-program-completion-data-in-reports.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/pre-calculated-program-completion-data-in-reports.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/4b6ec73a2ebb449580269944fc930ad9.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-name="team view role selection changes">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="manager" data-name="team view role selection changes">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Team View Role Selection Changes</div>
@@ -296,6 +325,7 @@
               <span class="badge badge-rec ">Communicate to managers</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-manager">Manager</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -314,11 +344,14 @@
               <h4>Risk of Inaction</h4>
               <p>No action needed — automatically applied. The new interface replaces the old one.</p>
             </div>
-            <a href="features/team-view-role-selection-changes.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/team-view-role-selection-changes.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/ac61e68684df4240963237791e133be5.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-name="validated learning apps for android">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="enduser" data-name="validated learning apps for android">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Validated Learning Apps for Android</div>
@@ -326,6 +359,7 @@
               <span class="badge badge-rec ">Enable for regulated teams</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -344,11 +378,14 @@
               <h4>Risk of Inaction</h4>
               <p>No action needed — automatically available in app stores.</p>
             </div>
-            <a href="features/validated-learning-apps-for-android.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/validated-learning-apps-for-android.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d731489ed2f64a899bfad584df4883b5.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-name="removal of new learning experience banner in mobile">
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser" data-name="removal of new learning experience banner in mobile">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Removal of New Learning Experience Banner in Mobile</div>
@@ -356,6 +393,7 @@
               <span class="badge badge-rec ">No action required</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -374,11 +412,14 @@
               <h4>Risk of Inaction</h4>
               <p>No action needed — automatically applied.</p>
             </div>
-            <a href="features/removal-of-new-learning-experience-banner-in-mobile.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/removal-of-new-learning-experience-banner-in-mobile.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/b79681a0f3ad433d8ad4202ec08fc234.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-name="new manage super admin access tool">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin" data-name="new manage super admin access tool">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">New Manage Super Admin Access Tool</div>
@@ -386,6 +427,7 @@
               <span class="badge badge-rec ">Train admin team</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -404,11 +446,14 @@
               <h4>Risk of Inaction</h4>
               <p>No action needed — automatically applied. Admins should familiarize themselves with the new tool location.</p>
             </div>
-            <a href="features/new-manage-super-admin-access-tool.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/new-manage-super-admin-access-tool.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/594e3e17ea49443897956475eebebc08.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-name="minor visual changes in 1h 2026">
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser,admin" data-name="minor visual changes in 1h 2026">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Minor Visual Changes in 1H 2026</div>
@@ -416,6 +461,7 @@
               <span class="badge badge-rec ">No action required</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span><span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -434,7 +480,10 @@
               <h4>Risk of Inaction</h4>
               <p>No action needed — automatically applied.</p>
             </div>
-            <a href="features/minor-visual-changes-in-1h-2026.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/minor-visual-changes-in-1h-2026.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/3922f18e1f8645d6b91a23f527725aa9.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
@@ -448,7 +497,7 @@
         <span class="category-count">15 features &middot; Customer Configured</span>
       </div>
       <div class="feature-list">
-        <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-name="quick access to learning details on home page">
+        <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="enduser" data-name="quick access to learning details on home page">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Quick Access to Learning Details on Home Page</div>
@@ -456,6 +505,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -474,11 +524,14 @@
               <h4>Risk of Inaction</h4>
               <p>Learners continue navigating away from the home page to see details — more clicks, more friction, lower engagement.</p>
             </div>
-            <a href="features/quick-access-to-learning-details-on-home-page.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/quick-access-to-learning-details-on-home-page.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f0dc2ba00ae348e78e8e4d969bd10e13.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="reset e-signature pin on learning home page">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser" data-name="reset e-signature pin on learning home page">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Reset E-Signature PIN on Learning Home Page</div>
@@ -486,6 +539,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -504,11 +558,14 @@
               <h4>Risk of Inaction</h4>
               <p>Learners who forget their PIN remain blocked until an admin manually resets it. Delays compliance completion.</p>
             </div>
-            <a href="features/reset-e-signature-pin-on-learning-home-page.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/reset-e-signature-pin-on-learning-home-page.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f0dc2ba00ae348e78e8e4d969bd10e13.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="major" data-type="changed" data-action="action" data-name="redesigned program and curricula pages">
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="changed" data-action="action" data-exp="enduser" data-name="redesigned program and curricula pages">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Redesigned Program and Curricula Pages</div>
@@ -516,6 +573,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -534,11 +592,14 @@
               <h4>Risk of Inaction</h4>
               <p>Learners remain on the older, less intuitive interface. Missed opportunity to improve engagement with structured learning paths.</p>
             </div>
-            <a href="features/redesigned-program-and-curricula-pages.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/redesigned-program-and-curricula-pages.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/61597b1158794793a319d603ac9fdb66.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-name="setting to require manager for task observation">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="manager" data-name="setting to require manager for task observation">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Setting to Require Manager for Task Observation</div>
@@ -546,6 +607,7 @@
               <span class="badge badge-rec ">Enable for regulated roles</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-manager">Manager</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -564,11 +626,14 @@
               <h4>Risk of Inaction</h4>
               <p>Anyone with observer access can validate tasks — potentially undermining compliance rigor in regulated workflows.</p>
             </div>
-            <a href="features/setting-to-require-manager-for-task-observation.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/setting-to-require-manager-for-task-observation.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/df4095459a524b298d786e4a62c9dba3.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="prerequisite and approval enforcement for programs">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="prerequisite and approval enforcement for programs">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Prerequisite and Approval Enforcement for Programs</div>
@@ -576,6 +641,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -594,11 +660,14 @@
               <h4>Risk of Inaction</h4>
               <p>Learners can bypass prerequisites within programs, undermining the intended learning path design.</p>
             </div>
-            <a href="features/prerequisite-and-approval-enforcement-for-programs.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/prerequisite-and-approval-enforcement-for-programs.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f48d1b6e58f04f0d8e9bf33df5e126c5.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="enhanced retraining experience for curricula">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser" data-name="enhanced retraining experience for curricula">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Enhanced Retraining Experience for Curricula</div>
@@ -606,6 +675,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -624,11 +694,14 @@
               <h4>Risk of Inaction</h4>
               <p>Retraining visibility remains limited. Higher risk of missed retraining deadlines and compliance gaps.</p>
             </div>
-            <a href="features/enhanced-retraining-experience-for-curricula.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/enhanced-retraining-experience-for-curricula.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/2a4c2d35c8974f18a3a72fc6e5c56e3c.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="major" data-type="changed" data-action="action" data-name="enhancements to external learning events">
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="changed" data-action="action" data-exp="admin" data-name="enhancements to external learning events">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Enhancements to External Learning Events</div>
@@ -636,6 +709,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -654,11 +728,14 @@
               <h4>Risk of Inaction</h4>
               <p>External learning records remain basic. Organization loses visibility into the full scope of employee development.</p>
             </div>
-            <a href="features/enhancements-to-external-learning-events.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/enhancements-to-external-learning-events.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/4f3e64da0fa545fda602842195c20735.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="add open content network items to default library">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="add open content network items to default library">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Add Open Content Network Items to Default Library</div>
@@ -666,6 +743,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -684,11 +762,14 @@
               <h4>Risk of Inaction</h4>
               <p>OCN items land without library assignment, requiring manual sorting. Content becomes harder to govern and discover.</p>
             </div>
-            <a href="features/add-open-content-network-items-to-default-library.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/add-open-content-network-items-to-default-library.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/9ddc1e25e6b944749e3743e7981050e4.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="credit hours in open content network odata api">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="credit hours in open content network odata api">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Credit Hours in Open Content Network OData API</div>
@@ -696,6 +777,7 @@
               <span class="badge badge-rec ">Enable if using credit hours</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -714,11 +796,14 @@
               <h4>Risk of Inaction</h4>
               <p>Credit hours must be manually entered for OCN content. Time-consuming and error-prone.</p>
             </div>
-            <a href="features/credit-hours-in-open-content-network-odata-api.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/credit-hours-in-open-content-network-odata-api.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/5f085b1d97ca4e71892fc128ae684ef5.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="set duration for online items in bulk">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="set duration for online items in bulk">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Set Duration for Online Items in Bulk</div>
@@ -726,6 +811,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -744,11 +830,14 @@
               <h4>Risk of Inaction</h4>
               <p>Duration updates remain one-at-a-time. Heavy administrative burden for large catalogs.</p>
             </div>
-            <a href="features/set-duration-for-online-items-in-bulk.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/set-duration-for-online-items-in-bulk.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/bca3ac0668984199879033f9558a3da6.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="retain item details in curricula during revisions">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser,admin" data-name="retain item details in curricula during revisions">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Retain Item Details in Curricula During Revisions</div>
@@ -756,6 +845,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span><span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -774,11 +864,14 @@
               <h4>Risk of Inaction</h4>
               <p>Item revisions may still clear assignment data within curricula, creating compliance tracking gaps.</p>
             </div>
-            <a href="features/retain-item-details-in-curricula-during-revisions.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/retain-item-details-in-curricula-during-revisions.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f4b6b3d834194e259383c50494c3befb.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-name="assisted skills association with ocn items — ga">
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-exp="admin" data-name="assisted skills association with ocn items — ga">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Assisted Skills Association With OCN Items — GA</div>
@@ -786,6 +879,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -804,11 +898,14 @@
               <h4>Risk of Inaction</h4>
               <p>Skills must be manually tagged to OCN items — impractical at scale. Skills-based recommendations remain incomplete.</p>
             </div>
-            <a href="features/assisted-skills-association-with-ocn-items-ga.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/assisted-skills-association-with-ocn-items-ga.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/e1dbfa3f709b4e63bf26c8b3e6db12be.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-name="mobile app support for observer search">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="enduser" data-name="mobile app support for observer search">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Mobile App Support for Observer Search</div>
@@ -816,6 +913,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -834,11 +932,14 @@
               <h4>Risk of Inaction</h4>
               <p>Mobile learners cannot assign observers, forcing them to use desktop for this step.</p>
             </div>
-            <a href="features/mobile-app-support-for-observer-search.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/mobile-app-support-for-observer-search.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/a2dbc62f71c9436285e833e3e22d8d76.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-name="data anonymization for external learners in instance refresh">
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-exp="enduser,admin" data-name="data anonymization for external learners in instance refresh">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Data Anonymization for External Learners in Instance Refresh</div>
@@ -846,6 +947,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span><span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -864,11 +966,14 @@
               <h4>Risk of Inaction</h4>
               <p>External learner PII may persist in non-production instances, creating compliance and privacy exposure.</p>
             </div>
-            <a href="features/data-anonymization-for-external-learners-in-instance-refresh.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/data-anonymization-for-external-learners-in-instance-refresh.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/e759e8819b004a71a8f2bcbd3b1b690e.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-name="enhancements to analytic cards on home page">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser,admin" data-name="enhancements to analytic cards on home page">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Enhancements to Analytic Cards on Home Page</div>
@@ -876,6 +981,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span><span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -894,7 +1000,10 @@
               <h4>Risk of Inaction</h4>
               <p>Leadership misses a quick engagement metric. Admins have less control over the home page experience.</p>
             </div>
-            <a href="features/enhancements-to-analytic-cards-on-home-page.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/enhancements-to-analytic-cards-on-home-page.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/bb6cac2cf6334604b16027cefd7c4d84.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
@@ -908,7 +1017,7 @@
         <span class="category-count">4 features &middot; Restricted / Licensed</span>
       </div>
       <div class="feature-list">
-        <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-name="ai-assisted ratings for inferred skills">
+        <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-exp="admin" data-name="ai-assisted ratings for inferred skills">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">AI-Assisted Ratings for Inferred Skills</div>
@@ -916,6 +1025,7 @@
               <span class="badge badge-rec warn">Evaluate with SAP rep</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -934,11 +1044,14 @@
               <h4>Risk of Inaction</h4>
               <p>Skills are tagged without proficiency levels — limiting the precision of skills-based recommendations and gap analysis.</p>
             </div>
-            <a href="features/ai-assisted-ratings-for-inferred-skills.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/ai-assisted-ratings-for-inferred-skills.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/7dcdb01a55fa47968046723467708dd0.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="premium" data-impact="major" data-type="changed" data-action="action" data-name="review ai-inferred skills before associating">
+      <div class="feature-card" data-cat="premium" data-impact="major" data-type="changed" data-action="action" data-exp="admin" data-name="review ai-inferred skills before associating">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Review AI-Inferred Skills Before Associating</div>
@@ -946,6 +1059,7 @@
               <span class="badge badge-rec warn">Evaluate with SAP rep</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -964,11 +1078,14 @@
               <h4>Risk of Inaction</h4>
               <p>No ability to leverage AI for skills tagging. Manual tagging remains the only option — slow and inconsistent.</p>
             </div>
-            <a href="features/review-ai-inferred-skills-before-associating.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/review-ai-inferred-skills-before-associating.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/51ae7a1e3cef492cb602243788191b6d.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-name="updates to extended ai locales">
+      <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-exp="enduser,admin" data-name="updates to extended ai locales">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Updates to Extended AI Locales</div>
@@ -976,6 +1093,7 @@
               <span class="badge badge-rec warn">Evaluate with SAP rep</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span><span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -994,11 +1112,14 @@
               <h4>Risk of Inaction</h4>
               <p>Content translation remains manual for unsupported locales. Higher cost and slower time-to-market for global content.</p>
             </div>
-            <a href="features/updates-to-extended-ai-locales.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/updates-to-extended-ai-locales.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d9a180847a0b4c4d93b0423dcad06a25.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-name="person-centric experience for multiple employments">
+      <div class="feature-card" data-cat="premium" data-impact="major" data-type="new" data-action="action" data-exp="enduser" data-name="person-centric experience for multiple employments">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Person-Centric Experience for Multiple Employments</div>
@@ -1006,6 +1127,7 @@
               <span class="badge badge-rec warn">Contact Product Support</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1024,7 +1146,10 @@
               <h4>Risk of Inaction</h4>
               <p>Employees with multiple roles continue to see fragmented learning records. Higher admin burden to reconcile.</p>
             </div>
-            <a href="features/person-centric-experience-for-multiple-employments.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/person-centric-experience-for-multiple-employments.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d6c2b6aaada9451b930d88fc429fee20.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1038,7 +1163,7 @@
         <span class="category-count">5 features &middot; End of Life</span>
       </div>
       <div class="feature-list">
-        <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-name="horizon visual theme opt-in setting — deleted">
+        <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-exp="enduser,admin" data-name="horizon visual theme opt-in setting — deleted">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Horizon Visual Theme Opt-In Setting — Deleted</div>
@@ -1046,6 +1171,7 @@
               <span class="badge badge-rec critical">Prepare for Horizon</span>
               <span class="badge badge-type">Deprecated</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span><span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1064,11 +1190,14 @@
               <h4>Risk of Inaction</h4>
               <p>No choice — this is automatic. Organizations still on the legacy theme will be migrated.</p>
             </div>
-            <a href="features/horizon-visual-theme-opt-in-setting-deleted.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/horizon-visual-theme-opt-in-setting-deleted.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/70c23c2b0500429ca17c9b148adc16dc.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="deprecation" data-impact="critical" data-type="deprecated" data-action="action" data-name="deprecation of successfactors learning token server">
+      <div class="feature-card" data-cat="deprecation" data-impact="critical" data-type="deprecated" data-action="action" data-exp="admin" data-name="deprecation of successfactors learning token server">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Deprecation of SuccessFactors Learning Token Server</div>
@@ -1076,6 +1205,7 @@
               <span class="badge badge-rec critical">Migrate to OAuth NOW</span>
               <span class="badge badge-type">Deprecated</span>
               <span class="badge badge-impact critical">Critical</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1094,11 +1224,14 @@
               <h4>Risk of Inaction</h4>
               <p>Critical: All integrations using the legacy token server will fail after November 20, 2026.</p>
             </div>
-            <a href="features/deprecation-of-successfactors-learning-token-server.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/deprecation-of-successfactors-learning-token-server.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/527174fdddc64102910258133d32b2ae.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-name="deprecation of free-of-charge subscriptions">
+      <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-exp="admin" data-name="deprecation of free-of-charge subscriptions">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Deprecation of Free-of-Charge Subscriptions</div>
@@ -1106,6 +1239,7 @@
               <span class="badge badge-rec warn">Plan migration</span>
               <span class="badge badge-type">Deprecated</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1124,11 +1258,14 @@
               <h4>Risk of Inaction</h4>
               <p>Pricing overrides will stop working in May 2027. Plan now to avoid disruption.</p>
             </div>
-            <a href="features/deprecation-of-free-of-charge-subscriptions.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/deprecation-of-free-of-charge-subscriptions.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/517d6ec5a5ed460b8ce27d3cf5951560.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-name="deprecation of legacy learning search">
+      <div class="feature-card" data-cat="deprecation" data-impact="major" data-type="deprecated" data-action="action" data-exp="enduser,admin" data-name="deprecation of legacy learning search">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Deprecation of Legacy Learning Search</div>
@@ -1136,6 +1273,7 @@
               <span class="badge badge-rec ">Enable Enhanced Search</span>
               <span class="badge badge-type">Deprecated</span>
               <span class="badge badge-impact major">Major</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span><span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1154,11 +1292,14 @@
               <h4>Risk of Inaction</h4>
               <p>Legacy search will be removed in May 2027. Begin transition to Enhanced Search now.</p>
             </div>
-            <a href="features/deprecation-of-legacy-learning-search.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/deprecation-of-legacy-learning-search.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/302b6334085a40b1a6d6ecdc8f5d5319.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="deprecation" data-impact="critical" data-type="deprecated" data-action="action" data-name="deprecation of webex training center support">
+      <div class="feature-card" data-cat="deprecation" data-impact="critical" data-type="deprecated" data-action="action" data-exp="admin" data-name="deprecation of webex training center support">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Deprecation of Webex Training Center Support</div>
@@ -1166,6 +1307,7 @@
               <span class="badge badge-rec critical">Migrate VLS vendor</span>
               <span class="badge badge-type">Deprecated</span>
               <span class="badge badge-impact critical">Critical</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1184,7 +1326,10 @@
               <h4>Risk of Inaction</h4>
               <p>Virtual learning sessions using Webex Training Center will stop working after November 2026.</p>
             </div>
-            <a href="features/deprecation-of-webex-training-center-support.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/deprecation-of-webex-training-center-support.html" class="view-details-link">View Full Details &rarr;</a>
+              <a href="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/41fa1e7ac19042eb88d62cddb40267ea.html?version=cloud&locale=en-US" class="sap-doc-link" target="_blank" rel="noopener">SAP Documentation &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1201,7 +1346,7 @@
       </div>
       <p class="additional-note">The following features were identified from SAP&rsquo;s official release documentation but were not included in the original release notes extract. They are listed here for awareness.</p>
       <div class="feature-list">
-        <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-name="connectors now process future termination dates">
+        <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="connectors now process future termination dates">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Connectors Now Process Future Termination Dates</div>
@@ -1209,6 +1354,7 @@
               <span class="badge badge-rec ">No action required</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1227,11 +1373,14 @@
               <h4>Risk of Inaction</h4>
               <p>No action needed — automatically applied.</p>
             </div>
-            <a href="features/connectors-now-process-future-termination-dates.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/connectors-now-process-future-termination-dates.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-name="sender display name update for notification emails">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="sender display name update for notification emails">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Sender Display Name Update for Notification Emails</div>
@@ -1239,6 +1388,7 @@
               <span class="badge badge-rec ">No action required</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1257,11 +1407,14 @@
               <h4>Risk of Inaction</h4>
               <p>No action needed — automatically applied.</p>
             </div>
-            <a href="features/sender-display-name-update-for-notification-emails.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/sender-display-name-update-for-notification-emails.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-name="learning permissions delivered for later release">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="learning permissions delivered for later release">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Learning Permissions Delivered for Later Release</div>
@@ -1269,6 +1422,7 @@
               <span class="badge badge-rec ">No action required</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1287,11 +1441,14 @@
               <h4>Risk of Inaction</h4>
               <p>No action needed — do not modify these permissions prematurely.</p>
             </div>
-            <a href="features/learning-permissions-delivered-for-later-release.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/learning-permissions-delivered-for-later-release.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-name="search results improvement for german compound words">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser" data-name="search results improvement for german compound words">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Search Results Improvement for German Compound Words</div>
@@ -1299,6 +1456,7 @@
               <span class="badge badge-rec ">No action required</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1317,11 +1475,14 @@
               <h4>Risk of Inaction</h4>
               <p>No action needed — automatically applied.</p>
             </div>
-            <a href="features/search-results-improvement-for-german-compound-words.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/search-results-improvement-for-german-compound-words.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="enhanced support for secondary instructors in vls">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="enhanced support for secondary instructors in vls">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Enhanced Support for Secondary Instructors in VLS</div>
@@ -1329,6 +1490,7 @@
               <span class="badge badge-rec ">Enable if using VLS</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1347,11 +1509,14 @@
               <h4>Risk of Inaction</h4>
               <p>Secondary instructor management remains limited, requiring workarounds for co-facilitated sessions.</p>
             </div>
-            <a href="features/enhanced-support-for-secondary-instructors-in-vls.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/enhanced-support-for-secondary-instructors-in-vls.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-name="new advanced settings for zoom vls">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="admin" data-name="new advanced settings for zoom vls">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">New Advanced Settings for Zoom VLS</div>
@@ -1359,6 +1524,7 @@
               <span class="badge badge-rec ">Enable if using Zoom</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1377,11 +1543,14 @@
               <h4>Risk of Inaction</h4>
               <p>Zoom session management remains basic. May require manual workarounds for specific settings.</p>
             </div>
-            <a href="features/new-advanced-settings-for-zoom-vls.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/new-advanced-settings-for-zoom-vls.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-name="configuration to hide enhanced search filters">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="enduser,admin" data-name="configuration to hide enhanced search filters">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Configuration to Hide Enhanced Search Filters</div>
@@ -1389,6 +1558,7 @@
               <span class="badge badge-rec ">Enable selectively</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span><span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1407,11 +1577,14 @@
               <h4>Risk of Inaction</h4>
               <p>All filters remain visible, potentially cluttering the search experience with unused options.</p>
             </div>
-            <a href="features/configuration-to-hide-enhanced-search-filters.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/configuration-to-hide-enhanced-search-filters.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="employments tab visible with system default role">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="employments tab visible with system default role">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Employments Tab Visible with System Default Role</div>
@@ -1419,6 +1592,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1437,11 +1611,14 @@
               <h4>Risk of Inaction</h4>
               <p>Users on the default role cannot see employment data — potential support tickets and confusion.</p>
             </div>
-            <a href="features/employments-tab-visible-with-system-default-role.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/employments-tab-visible-with-system-default-role.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="enhanced visibility for custom page content">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="enhanced visibility for custom page content">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Enhanced Visibility for Custom Page Content</div>
@@ -1449,6 +1626,7 @@
               <span class="badge badge-rec ">Enable if using custom pages</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1467,11 +1645,14 @@
               <h4>Risk of Inaction</h4>
               <p>Custom content remains less visible. Lower engagement with organization-specific learning resources.</p>
             </div>
-            <a href="features/enhanced-visibility-for-custom-page-content.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/enhanced-visibility-for-custom-page-content.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="enhancements to user merge process">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="enhancements to user merge process">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Enhancements to User Merge Process</div>
@@ -1479,6 +1660,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1497,11 +1679,14 @@
               <h4>Risk of Inaction</h4>
               <p>User merges may still encounter edge cases that require manual intervention.</p>
             </div>
-            <a href="features/enhancements-to-user-merge-process.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/enhancements-to-user-merge-process.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="auto-purge archived connector input files">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="auto-purge archived connector input files">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Auto-Purge Archived Connector Input Files</div>
@@ -1509,6 +1694,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1527,11 +1713,14 @@
               <h4>Risk of Inaction</h4>
               <p>Archived files continue to pile up, consuming storage and making troubleshooting harder.</p>
             </div>
-            <a href="features/auto-purge-archived-connector-input-files.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/auto-purge-archived-connector-input-files.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="bulk delete unused icontent files">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="bulk delete unused icontent files">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Bulk Delete Unused iContent Files</div>
@@ -1539,6 +1728,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1557,11 +1747,14 @@
               <h4>Risk of Inaction</h4>
               <p>Unused content files accumulate, consuming storage and cluttering the admin interface.</p>
             </div>
-            <a href="features/bulk-delete-unused-icontent-files.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/bulk-delete-unused-icontent-files.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-name="change assignment due dates from team view">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="manager" data-name="change assignment due dates from team view">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Change Assignment Due Dates from Team View</div>
@@ -1569,6 +1762,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-manager">Manager</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1587,11 +1781,14 @@
               <h4>Risk of Inaction</h4>
               <p>Managers must submit requests to admins for due date changes. Slower, more friction.</p>
             </div>
-            <a href="features/change-assignment-due-dates-from-team-view.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/change-assignment-due-dates-from-team-view.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-name="class withdrawal directly from team view">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="manager" data-name="class withdrawal directly from team view">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Class Withdrawal Directly from Team View</div>
@@ -1599,6 +1796,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-manager">Manager</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1617,11 +1815,14 @@
               <h4>Risk of Inaction</h4>
               <p>Managers must navigate elsewhere or contact admin to withdraw team members from classes.</p>
             </div>
-            <a href="features/class-withdrawal-directly-from-team-view.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/class-withdrawal-directly-from-team-view.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="team view display enhancements">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="manager" data-name="team view display enhancements">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Team View Display Enhancements</div>
@@ -1629,6 +1830,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-manager">Manager</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1647,11 +1849,14 @@
               <h4>Risk of Inaction</h4>
               <p>Managers remain on the older, less refined Team View interface.</p>
             </div>
-            <a href="features/team-view-display-enhancements.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/team-view-display-enhancements.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-name="support for integer and decimal custom fields">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="admin" data-name="support for integer and decimal custom fields">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Support for Integer and Decimal Custom Fields</div>
@@ -1659,6 +1864,7 @@
               <span class="badge badge-rec ">Enable if needed</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1677,11 +1883,14 @@
               <h4>Risk of Inaction</h4>
               <p>Numeric data must be stored as text — limiting sorting, filtering, and reporting capabilities.</p>
             </div>
-            <a href="features/support-for-integer-and-decimal-custom-fields.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/support-for-integer-and-decimal-custom-fields.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-name="upcoming classes in enhanced search">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="enduser" data-name="upcoming classes in enhanced search">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Upcoming Classes in Enhanced Search</div>
@@ -1689,6 +1898,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-enduser">End User</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1707,11 +1917,14 @@
               <h4>Risk of Inaction</h4>
               <p>Learners must navigate to individual class pages to see schedules — more friction.</p>
             </div>
-            <a href="features/upcoming-classes-in-enhanced-search.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/upcoming-classes-in-enhanced-search.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="updated learning cross-domain proxlet">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="updated learning cross-domain proxlet">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Updated Learning Cross-Domain Proxlet</div>
@@ -1719,6 +1932,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1737,11 +1951,14 @@
               <h4>Risk of Inaction</h4>
               <p>Potential compatibility issues with cross-domain features in future releases.</p>
             </div>
-            <a href="features/updated-learning-cross-domain-proxlet.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/updated-learning-cross-domain-proxlet.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-name="custom cards in new learning experience — ios and android">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="new" data-action="action" data-exp="admin" data-name="custom cards in new learning experience — ios and android">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Custom Cards in New Learning Experience — iOS and Android</div>
@@ -1749,6 +1966,7 @@
               <span class="badge badge-rec ">Enable if using custom cards</span>
               <span class="badge badge-type">New</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-admin">Admin</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1767,11 +1985,14 @@
               <h4>Risk of Inaction</h4>
               <p>Mobile learners miss organization-specific cards and content shown to desktop users.</p>
             </div>
-            <a href="features/custom-cards-in-new-learning-experience-ios-and-android.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/custom-cards-in-new-learning-experience-ios-and-android.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-name="manager ability to remove items — user settings page">
+      <div class="feature-card" data-cat="additional" data-impact="minor" data-type="changed" data-action="action" data-exp="manager" data-name="manager ability to remove items — user settings page">
         <div class="feature-card-header" role="button" aria-expanded="false" tabindex="0">
           <div class="feature-card-left">
             <div class="feature-name">Manager Ability to Remove Items — User Settings Page</div>
@@ -1779,6 +2000,7 @@
               <span class="badge badge-rec ">Enable</span>
               <span class="badge badge-type">Changed</span>
               <span class="badge badge-impact ">Minor</span>
+              <span class="badge badge-exp badge-exp-manager">Manager</span>
             </div>
           </div>
           <div class="feature-card-chevron"><svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1797,7 +2019,10 @@
               <h4>Risk of Inaction</h4>
               <p>Configuration remains in the previous, less intuitive location.</p>
             </div>
-            <a href="features/manager-ability-to-remove-items-user-settings-page.html" class="view-details-link">View Full Details &rarr;</a>
+            <div class="accordion-actions">
+              <a href="features/manager-ability-to-remove-items-user-settings-page.html" class="view-details-link">View Full Details &rarr;</a>
+              
+            </div>
           </div>
         </div>
       </div>
@@ -1882,6 +2107,96 @@
         </div>
       </div>
     </section>
+
+    <!-- Testing Strategy Section -->
+    <section class="testing-section" id="testingStrategy">
+      <h2 class="section-title">Testing Strategy</h2>
+      <p class="section-intro">SAP provides a 4&ndash;5 week preview window before each production release. For 1H 2026, the preview environment is available <strong>April 13, 2026</strong>, with production going live <strong>May 15&ndash;16, 2026</strong> &mdash; giving your team a <strong>32-calendar-day (25 business-day) testing window</strong>. Use this time to validate new features, regression-test existing configurations, and prepare communications.</p>
+
+      <div class="testing-phases">
+        <div class="testing-phase">
+          <div class="phase-header">
+            <span class="phase-number">1</span>
+            <h3>Pre-Release Preparation</h3>
+            <span class="phase-timing">Before April 13</span>
+          </div>
+          <ul class="phase-steps">
+            <li>Review all features on this site and identify those relevant to your organization</li>
+            <li>Prioritize features by filtering on <strong>Action Required</strong> &mdash; these need decisions before go-live</li>
+            <li>Ensure your preview (test) environment is aligned with production &mdash; <a href="https://community.sap.com/t5/human-capital-management-blog-posts-by-members/best-practices-and-risks-of-not-aligning-sap-successfactors-preview-and/ba-p/14092225" target="_blank" rel="noopener">SAP recommends refreshing preview at least once annually</a></li>
+            <li>Identify test owners: system admins, learning admins, integration teams, and business process owners</li>
+            <li>Document your current configurations and key business processes for regression comparison</li>
+          </ul>
+        </div>
+
+        <div class="testing-phase">
+          <div class="phase-header">
+            <span class="phase-number">2</span>
+            <h3>Preview Environment Testing</h3>
+            <span class="phase-timing">April 13 &ndash; May 14</span>
+          </div>
+          <ul class="phase-steps">
+            <li><strong>Validate Universal features</strong> &mdash; these are automatically enabled; confirm they work as expected with your configuration</li>
+            <li><strong>Evaluate Opt-In features</strong> &mdash; enable in preview, test, and decide whether to activate for production</li>
+            <li><strong>Regression-test core workflows</strong> &mdash; SAP recommends testing end-to-end business processes, not just isolated features (<a href="https://www.effectivepeople.com/blog/hr-strategy/master-release-management-in-sap-successfactors-tips-and-best-practices" target="_blank" rel="noopener">Effective People</a>)</li>
+            <li><strong>Test integrations</strong> &mdash; verify all API connections, especially if using the Learning Token Server (migration to OAuth 2.0 is required before November 20, 2026)</li>
+            <li><strong>Validate roles and permissions</strong> &mdash; confirm role-based permissions are correctly configured for any new features</li>
+            <li>Test across experiences: verify End User, Admin, and Manager views using the Experience filter on this site</li>
+          </ul>
+        </div>
+
+        <div class="testing-phase">
+          <div class="phase-header">
+            <span class="phase-number">3</span>
+            <h3>Stakeholder Review &amp; Sign-Off</h3>
+            <span class="phase-timing">May 1 &ndash; May 14</span>
+          </div>
+          <ul class="phase-steps">
+            <li>Share test results with business process owners for validation</li>
+            <li>Document decisions on Opt-In features: enable, defer, or decline</li>
+            <li>Coordinate with HR, IT, security, and payroll teams on cross-module impacts (<a href="https://community.sap.com/t5/human-capital-management-blog-posts-by-members/best-practices-and-risks-of-not-aligning-sap-successfactors-preview-and/ba-p/14092225" target="_blank" rel="noopener">SAP Community</a>)</li>
+            <li>Prepare internal communications and training materials for end users</li>
+          </ul>
+        </div>
+
+        <div class="testing-phase">
+          <div class="phase-header">
+            <span class="phase-number">4</span>
+            <h3>Post-Production Validation</h3>
+            <span class="phase-timing">May 15&ndash;16 onward</span>
+          </div>
+          <ul class="phase-steps">
+            <li>Verify production deployment &mdash; SAP delivers releases regionally over the weekend to minimize disruption (<a href="https://zalaris.com/consulting/resources/blog/sap-successfactors-release-schedule-2026-everything-you-need-to-know" target="_blank" rel="noopener">Zalaris</a>)</li>
+            <li>Run smoke tests on critical workflows immediately after go-live</li>
+            <li>Monitor for release-introduced issues &mdash; note that some bugs may not be addressed until the 2H 2026 release (<a href="https://hr-path.com/en/blog/best-practices-for-sap-successfactors-release-management/2021/09/28/" target="_blank" rel="noopener">HR Path</a>)</li>
+            <li>Submit SAP support cases promptly for any issues found in production</li>
+          </ul>
+        </div>
+
+        <div class="testing-phase critical-phase">
+          <div class="phase-header">
+            <span class="phase-number">!</span>
+            <h3>Token Server Migration</h3>
+            <span class="phase-timing">Complete before Nov 20, 2026</span>
+          </div>
+          <ul class="phase-steps">
+            <li>The SAP SuccessFactors Learning Token Server will be <strong>permanently deleted on November 20, 2026</strong></li>
+            <li>All integrations using legacy token-based authentication must migrate to OAuth 2.0</li>
+            <li>Begin migration planning immediately &mdash; test OAuth 2.0 connections in preview before production cutover</li>
+            <li>Coordinate with integration vendors and internal development teams</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="testing-resources">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="https://help.sap.com/docs/successfactors-release-information/discovering-successfactors-changes-with-what-s-new-viewer-60550f77db4f4f7a877944080c45ae35/sap-successfactors-what-s-new-viewer" target="_blank" rel="noopener">SAP SuccessFactors What&rsquo;s New Viewer</a> &mdash; official tool for filtering and reviewing release changes</li>
+          <li><a href="https://pages.community.sap.com/topics/successfactors/product-release-road-map" target="_blank" rel="noopener">SAP SuccessFactors Product Release Road Map</a> &mdash; official release schedule and roadmap</li>
+          <li><a href="https://community.sap.com/t5/human-capital-management-blog-posts-by-members/best-practices-and-risks-of-not-aligning-sap-successfactors-preview-and/ba-p/14092225" target="_blank" rel="noopener">Preview &amp; Production Alignment Best Practices</a> &mdash; SAP Community guidance on environment sync</li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -1936,6 +2251,7 @@
       var filterImpact = document.getElementById('filterImpact');
       var filterType = document.getElementById('filterType');
       var filterAction = document.getElementById('filterAction');
+      var filterExp = document.getElementById('filterExp');
       var searchInput = document.getElementById('searchInput');
       var filterCount = document.getElementById('filterCount');
       var filterReset = document.getElementById('filterReset');
@@ -1953,6 +2269,7 @@
       filterImpact.addEventListener('change', applyFilters);
       filterType.addEventListener('change', applyFilters);
       filterAction.addEventListener('change', applyFilters);
+      filterExp.addEventListener('change', applyFilters);
       searchInput.addEventListener('input', applyFilters);
 
       filterReset.addEventListener('click', function(e) {
@@ -1962,6 +2279,7 @@
         filterImpact.value = 'all';
         filterType.value = 'all';
         filterAction.value = 'all';
+        filterExp.value = 'all';
         searchInput.value = '';
         applyFilters();
       });
@@ -1972,6 +2290,7 @@
         var impactVal = filterImpact.value;
         var typeVal = filterType.value;
         var actionVal = filterAction.value;
+        var expVal = filterExp.value;
         var searchVal = searchInput.value.toLowerCase().trim();
         var visibleCount = 0;
 
@@ -1981,6 +2300,7 @@
           if (impactVal !== 'all' && card.dataset.impact !== impactVal) show = false;
           if (typeVal !== 'all' && card.dataset.type !== typeVal) show = false;
           if (actionVal !== 'all' && card.dataset.action !== actionVal) show = false;
+          if (expVal !== 'all' && !(card.dataset.exp || '').split(',').includes(expVal)) show = false;
           if (searchVal && !(card.dataset.name || '').includes(searchVal)) show = false;
           card.style.display = show ? '' : 'none';
           if (show) visibleCount++;
