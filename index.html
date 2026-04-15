@@ -1723,17 +1723,19 @@
 
         var toProd = daysUntil(PRODUCTION);
 
+        var dayWord = function(n) { return n === 1 ? 'day' : 'days'; };
+
         if (now < PREVIEW_START) {
           // Pre-preview
           var toPreview = daysUntil(PREVIEW_START);
           numEl.textContent = toPreview;
-          labelEl.innerHTML = 'days until preview opens &middot; <strong>Apr 13</strong>';
+          labelEl.innerHTML = dayWord(toPreview) + ' until preview opens &middot; <strong>Apr 13</strong>';
           if (statusEl) statusEl.textContent = 'Pre-release';
           if (dotEl) dotEl.style.background = '#FFD27A';
         } else if (toProd > 0) {
           // In preview window (where we are today)
           numEl.textContent = toProd;
-          labelEl.innerHTML = 'days to production &middot; <strong>May 15</strong>';
+          labelEl.innerHTML = dayWord(toProd) + ' to production &middot; <strong>May 15</strong>';
           if (statusEl) statusEl.textContent = 'Preview live';
         } else if (toProd === 0) {
           numEl.textContent = 'Now';
@@ -1745,7 +1747,7 @@
           var toSunset = daysUntil(TOKEN_SUNSET);
           if (toSunset > 0) {
             numEl.textContent = toSunset;
-            labelEl.innerHTML = 'days until Token Server sunset &middot; <strong>Nov 20</strong>';
+            labelEl.innerHTML = dayWord(toSunset) + ' until Token Server sunset &middot; <strong>Nov 20</strong>';
           } else {
             numEl.textContent = 'Live';
             numEl.classList.add('is-short');

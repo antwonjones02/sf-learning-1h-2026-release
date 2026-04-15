@@ -258,7 +258,7 @@ img { max-width: 100%; display: block; }
   position: relative;
   background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 60%, #004080 100%);
   color: var(--white);
-  padding: var(--space-16) var(--space-6);
+  padding: var(--space-12) var(--space-6);
   text-align: center;
   overflow: hidden;
 }
@@ -282,12 +282,12 @@ img { max-width: 100%; display: block; }
 .hero-inner {
   position: relative;
   z-index: 1;
-  max-width: 760px;
+  max-width: 820px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-8);
+  gap: var(--space-6);
 }
 
 /* ---- Glass-pill base shared by eyebrow and countdown ---- */
@@ -355,17 +355,20 @@ img { max-width: 100%; display: block; }
 .hero-copy {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--space-5);
-  max-width: 680px;
 }
 
 .hero-title {
-  font-size: var(--text-4xl);
+  /* Fluid scale sized so the headline fits on a single line from ~720px
+     upward, capping at ~64px on ultra-wide screens. */
+  font-size: clamp(2rem, 4.5vw, 4rem);
   font-weight: 800;
   letter-spacing: -0.025em;
-  line-height: 1.1;
+  line-height: 1.08;
   margin: 0;
   color: var(--white);
+  white-space: nowrap;
 }
 
 .hero-title-accent {
@@ -375,10 +378,11 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-subtitle {
-  font-size: var(--text-lg);
-  color: rgba(255,255,255,0.78);
-  line-height: 1.55;
+  font-size: var(--text-xl);
+  color: rgba(255,255,255,0.8);
+  line-height: 1.5;
   margin: 0;
+  max-width: 620px;
 }
 
 /* ---- Bottom pill: live countdown ---- */
@@ -388,7 +392,7 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-countdown-num {
-  font-size: var(--text-2xl);
+  font-size: var(--text-3xl);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -399,13 +403,13 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-countdown-num.is-short {
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   letter-spacing: 0;
 }
 
 .hero-countdown-label {
-  font-size: var(--text-sm);
-  color: rgba(255,255,255,0.7);
+  font-size: var(--text-base);
+  color: rgba(255,255,255,0.72);
   letter-spacing: 0.01em;
 }
 
@@ -418,15 +422,20 @@ img { max-width: 100%; display: block; }
 /* Tablet / wrapped-header zone: the site header wraps around 768–900px
    so we need our own hero breakpoint here to keep breathing room. */
 @media (max-width: 900px) {
-  .hero { padding: var(--space-12) var(--space-6); }
+  .hero { padding: var(--space-10) var(--space-6); }
   .hero-inner { gap: var(--space-6); }
-  .hero-title { font-size: 2.25rem; }
+}
+
+/* Below ~720px the full 38-character headline can no longer fit on one line,
+   so allow wrapping and rescale the type to a mobile-appropriate size. */
+@media (max-width: 720px) {
+  .hero-title { white-space: normal; font-size: clamp(1.75rem, 6vw, 2.5rem); }
+  .hero-subtitle { font-size: var(--text-lg); }
 }
 
 @media (max-width: 600px) {
-  .hero { padding: var(--space-10) var(--space-4); }
+  .hero { padding: var(--space-8) var(--space-4); }
   .hero-inner { gap: var(--space-5); }
-  .hero-title { font-size: 1.75rem; letter-spacing: -0.02em; }
   .hero-subtitle { font-size: var(--text-base); }
   .hero-eyebrow { font-size: 0.7rem; padding: 6px var(--space-3); gap: var(--space-2); }
   .hero-countdown { padding: var(--space-3) var(--space-4); flex-wrap: wrap; justify-content: center; }
