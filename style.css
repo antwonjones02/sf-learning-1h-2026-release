@@ -247,24 +247,29 @@ img { max-width: 100%; display: block; }
 .release-opt.active .release-opt-label { color: var(--navy); }
 .release-opt.active .release-opt-sub   { color: var(--red);  }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO SECTION =====
+   Composition: two glass pills bracket an editorial headline.
+   - Top pill  = live status + release code
+   - Headline  = restrained, editorial
+   - Subtitle  = one amber accent on the ship date (the data that matters)
+   - Bottom pill = live countdown to production (or Token Server sunset post-launch)
+*/
 .hero {
   position: relative;
   background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 60%, #004080 100%);
   color: var(--white);
-  padding: var(--space-16) var(--space-6) var(--space-14);
+  padding: var(--space-16) var(--space-6);
   text-align: center;
   overflow: hidden;
 }
 
-/* Subtle warm aurora glow behind the headline — editorial accent */
+/* Subtle dual-radial aurora (amber + steel) behind the content */
 .hero-glow {
   position: absolute;
-  top: -30%;
+  top: -25%;
   left: 50%;
-  width: 960px;
-  max-width: 120%;
-  height: 640px;
+  width: min(1100px, 120%);
+  height: 700px;
   transform: translateX(-50%);
   background:
     radial-gradient(ellipse at 50% 40%, rgba(255,210,122,0.18) 0%, rgba(255,210,122,0) 55%),
@@ -279,31 +284,40 @@ img { max-width: 100%; display: block; }
   z-index: 1;
   max-width: 760px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
 }
 
-/* Live-status eyebrow chip */
-.hero-eyebrow {
+/* ---- Glass-pill base shared by eyebrow and countdown ---- */
+.hero-eyebrow,
+.hero-countdown {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-3);
-  padding: 6px 14px;
   border-radius: 999px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ---- Top pill: status + release code ---- */
+.hero-eyebrow {
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
   font-size: var(--text-xs);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.85);
-  margin-bottom: var(--space-6);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  margin: 0;
 }
 
 .hero-status {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
   color: #7DE2A6;
 }
 
@@ -328,7 +342,7 @@ img { max-width: 100%; display: block; }
 
 .hero-eyebrow-sep {
   width: 1px;
-  height: 12px;
+  height: var(--space-3);
   background: rgba(255,255,255,0.22);
 }
 
@@ -337,12 +351,21 @@ img { max-width: 100%; display: block; }
   font-variant-numeric: tabular-nums;
 }
 
+/* ---- Editorial copy stack ---- */
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 680px;
+}
+
 .hero-title {
   font-size: var(--text-4xl);
   font-weight: 800;
   letter-spacing: -0.025em;
   line-height: 1.1;
-  margin-bottom: var(--space-4);
+  margin: 0;
+  color: var(--white);
 }
 
 .hero-title-accent {
@@ -354,49 +377,61 @@ img { max-width: 100%; display: block; }
 .hero-subtitle {
   font-size: var(--text-lg);
   color: rgba(255,255,255,0.78);
-  line-height: 1.5;
-  margin-bottom: var(--space-8);
+  line-height: 1.55;
+  margin: 0;
 }
 
-/* Compact countdown — the one piece of live data that isn't duplicated below */
+/* ---- Bottom pill: live countdown ---- */
 .hero-countdown {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 12px;
-  padding-top: var(--space-6);
-  border-top: 1px solid rgba(255,255,255,0.12);
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-6);
 }
 
 .hero-countdown-num {
-  font-size: 2.5rem;
+  font-size: var(--text-2xl);
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   line-height: 1;
   color: var(--white);
   font-variant-numeric: tabular-nums;
+  min-width: 1.5ch;
+  text-align: right;
 }
 
 .hero-countdown-num.is-short {
-  font-size: var(--text-2xl);
-  letter-spacing: -0.01em;
+  font-size: var(--text-lg);
+  letter-spacing: 0;
 }
 
 .hero-countdown-label {
   font-size: var(--text-sm);
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.7);
   letter-spacing: 0.01em;
 }
 
 .hero-countdown-label strong {
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.95);
   font-weight: 600;
 }
 
+/* ---- Responsive ---- */
+/* Tablet / wrapped-header zone: the site header wraps around 768–900px
+   so we need our own hero breakpoint here to keep breathing room. */
+@media (max-width: 900px) {
+  .hero { padding: var(--space-12) var(--space-6); }
+  .hero-inner { gap: var(--space-6); }
+  .hero-title { font-size: 2.25rem; }
+}
+
 @media (max-width: 600px) {
-  .hero { padding: var(--space-12) var(--space-4) var(--space-10); }
-  .hero-title { font-size: 2rem; }
-  .hero-countdown-num { font-size: 2rem; }
-  .hero-eyebrow { font-size: 0.7rem; padding: 5px 12px; }
+  .hero { padding: var(--space-10) var(--space-4); }
+  .hero-inner { gap: var(--space-5); }
+  .hero-title { font-size: 1.75rem; letter-spacing: -0.02em; }
+  .hero-subtitle { font-size: var(--text-base); }
+  .hero-eyebrow { font-size: 0.7rem; padding: 6px var(--space-3); gap: var(--space-2); }
+  .hero-countdown { padding: var(--space-3) var(--space-4); flex-wrap: wrap; justify-content: center; }
+  .hero-title-accent { white-space: normal; }
+  .hero-glow { height: 500px; top: -20%; }
 }
 
 /* ===== ALERT BANNER ===== */
