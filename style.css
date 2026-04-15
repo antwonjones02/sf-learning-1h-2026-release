@@ -2258,6 +2258,12 @@ body:has(#exportBar) { padding-bottom: 72px; }
   color: var(--gray-500);
   max-width: 680px;
 }
+.exec-section-note {
+  display: inline;
+  font-size: var(--text-sm);
+  color: var(--gray-400);
+  font-style: italic;
+}
 
 /* ===== Must-Act Action Cards ===== */
 .exec-action-grid {
