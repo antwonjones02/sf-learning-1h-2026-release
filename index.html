@@ -158,7 +158,7 @@
     </div>
 
     <!-- Export Toolbar -->
-    <div class="export-bar" id="exportBar">
+    <div class="export-bar visible" id="exportBar">
       <div class="export-bar-left">
         <label class="export-select-all-label" onclick="event.stopPropagation()">
           <input type="checkbox" id="selectAllCheckbox" aria-label="Select all visible features">
@@ -1855,6 +1855,46 @@
         applyFilters();
       });
 
+      // ===== URL state (shareable filters) =====
+      var URL_KEYS = ['cat', 'impact', 'type', 'action', 'exp', 'q'];
+
+      function writeUrlState(state) {
+        var params = new URLSearchParams();
+        URL_KEYS.forEach(function(k) {
+          var v = state[k];
+          if (v && v !== 'all' && v !== '') params.set(k, v);
+        });
+        var qs = params.toString();
+        var newUrl = window.location.pathname + (qs ? '?' + qs : '') + window.location.hash;
+        // Use replaceState so the back button isn't polluted by every keystroke.
+        window.history.replaceState(null, '', newUrl);
+      }
+
+      function readUrlState() {
+        var params = new URLSearchParams(window.location.search);
+        var state = {};
+        URL_KEYS.forEach(function(k) {
+          if (params.has(k)) state[k] = params.get(k);
+        });
+        return state;
+      }
+
+      function applyUrlStateToControls() {
+        var state = readUrlState();
+        if (state.cat) {
+          var btn = document.querySelector('.filter-btn[data-filter="' + state.cat + '"]');
+          if (btn) {
+            filterBtns.forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+          }
+        }
+        if (state.impact && filterImpact.querySelector('option[value="' + state.impact + '"]')) filterImpact.value = state.impact;
+        if (state.type && filterType.querySelector('option[value="' + state.type + '"]')) filterType.value = state.type;
+        if (state.action && filterAction.querySelector('option[value="' + state.action + '"]')) filterAction.value = state.action;
+        if (state.exp && filterExp.querySelector('option[value="' + state.exp + '"]')) filterExp.value = state.exp;
+        if (state.q) searchInput.value = state.q;
+      }
+
       function applyFilters() {
         var activeCat = document.querySelector('.filter-btn.active');
         var catVal = activeCat ? activeCat.dataset.filter : 'all';
@@ -1865,6 +1905,15 @@
         var searchVal = searchInput.value.toLowerCase().trim();
         var visibleCount = 0;
 
+        writeUrlState({
+          cat: catVal,
+          impact: impactVal,
+          type: typeVal,
+          action: actionVal,
+          exp: expVal,
+          q: searchInput.value.trim()
+        });
+
         allCards.forEach(function(card) {
           var show = true;
           if (catVal !== 'all' && card.dataset.cat !== catVal) show = false;
@@ -1872,7 +1921,16 @@
           if (typeVal !== 'all' && card.dataset.type !== typeVal) show = false;
           if (actionVal !== 'all' && card.dataset.action !== actionVal) show = false;
           if (expVal !== 'all' && !(card.dataset.exp || '').split(',').includes(expVal)) show = false;
-          if (searchVal && !(card.dataset.name || '').includes(searchVal)) show = false;
+          if (searchVal) {
+            var haystack = (
+              (card.dataset.name || '') + ' ' +
+              (card.dataset.csvDesc || '') + ' ' +
+              (card.dataset.csvWhy || '') + ' ' +
+              (card.dataset.csvRisk || '') + ' ' +
+              (card.dataset.csvRec || '')
+            ).toLowerCase();
+            if (!haystack.includes(searchVal)) show = false;
+          }
           card.style.display = show ? '' : 'none';
           if (show) visibleCount++;
         });
@@ -1956,17 +2014,13 @@
       function updateExportState() {
         var checked = document.querySelectorAll('.feature-checkbox:checked');
         var count = checked.length;
-        exportCount.textContent = count + ' selected';
+        exportCount.textContent = count === 0 ? 'None selected' : count + ' selected';
         exportCSVBtn.disabled = count === 0;
-        var btt = document.getElementById('backToTop');
+        // Export bar is always visible; only the styling changes when items are selected.
         if (count > 0) {
           exportBar.classList.add('has-selection');
-          exportBar.classList.add('visible');
-          if (btt) btt.style.bottom = '88px';
         } else {
           exportBar.classList.remove('has-selection');
-          exportBar.classList.remove('visible');
-          if (btt) btt.style.bottom = '';
         }
         // Update select-all state
         var visibleBoxes = Array.from(allCheckboxes).filter(function(cb) {
@@ -2043,6 +2097,11 @@
         document.body.removeChild(link);
         URL.revokeObjectURL(url);
       });
+
+      // ===== Init: hydrate filters from URL params on first load =====
+      applyUrlStateToControls();
+      applyFilters();
+      updateExportState();
     })();
   </script>
 </body>

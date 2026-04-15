@@ -1136,7 +1136,7 @@ img { max-width: 100%; display: block; }
 /* ===== BACK TO TOP BUTTON ===== */
 .back-to-top {
   position: fixed;
-  bottom: 32px;
+  bottom: 88px;
   right: 32px;
   width: 44px;
   height: 44px;
@@ -1648,6 +1648,10 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===== CSV EXPORT: TOOLBAR ===== */
+/* Reserve space at page bottom so persistent toolbar doesn't cover content.
+   Scoped via :has() so feature detail pages (no #exportBar) are unaffected. */
+body:has(#exportBar) { padding-bottom: 72px; }
+
 .export-bar {
   position: fixed;
   bottom: 0;
@@ -1662,13 +1666,12 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   gap: var(--space-4);
   box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
-  transform: translateY(100%);
-  transition: all 0.3s ease;
+  transform: translateY(0);
+  transition: background 0.3s ease, border-top-color 0.3s ease;
 }
 
-.export-bar.visible {
-  transform: translateY(0);
-}
+/* Legacy class — kept so existing JS refs are harmless; bar is always visible now. */
+.export-bar.visible { transform: translateY(0); }
 
 .export-bar.has-selection {
   background: var(--navy);
@@ -1997,6 +2000,8 @@ img { max-width: 100%; display: block; }
     font-size: var(--text-xs);
   }
 
+  body:has(#exportBar) { padding-bottom: 140px; }
+
   .export-bar {
     padding: 10px 16px;
     flex-direction: column;
@@ -2046,7 +2051,7 @@ img { max-width: 100%; display: block; }
   }
 
   .back-to-top {
-    bottom: 20px;
+    bottom: 156px;
     right: 20px;
     width: 40px;
     height: 40px;
