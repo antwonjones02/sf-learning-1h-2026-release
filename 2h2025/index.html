@@ -37,15 +37,23 @@
 
   <!-- Hero Section -->
   <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-inner">
-      <h1 class="hero-title">2H 2025 Release Strategy</h1>
-      <p class="hero-subtitle">32 features across 3 categories.</p>
-      <div class="hero-pills">
-        <span class="hero-pill pill-action">18 require action</span>
-        <span class="hero-pill-sep">&middot;</span>
-        <span class="hero-pill pill-new">11 new features</span>
-        <span class="hero-pill-sep">&middot;</span>
-        <span class="hero-pill pill-dep">6 deprecations</span>
+      <div class="hero-eyebrow">
+        <span class="hero-status" role="status">
+          <span class="hero-status-dot hero-status-dot-static" aria-hidden="true"></span>
+          <span class="hero-status-text">Live in production</span>
+        </span>
+        <span class="hero-eyebrow-sep" aria-hidden="true"></span>
+        <span class="hero-release-code">2H&nbsp;2025</span>
+      </div>
+      <div class="hero-copy">
+        <h1 class="hero-title">Your Fall 2025 release, delivered.</h1>
+        <p class="hero-subtitle">32 updates across three tracks, shipped <span class="hero-title-accent">Nov&nbsp;14&ndash;15,&nbsp;2025</span>.</p>
+      </div>
+      <div class="hero-countdown" id="heroCountdown">
+        <span class="hero-countdown-num" id="heroDaysSinceShip">152</span>
+        <span class="hero-countdown-label" id="heroCountdownLabel">days in production &middot; <strong>shipped Nov 14</strong></span>
       </div>
     </div>
   </section>
@@ -61,7 +69,7 @@
 
   <main class="container">
     <!-- Summary Stats -->
-    <div class="stats-grid">
+    <div class="stats-grid stats-grid-3">
       <div class="stat-card" data-cat="universal" role="button" tabindex="0" aria-label="Filter to Universal features">
         <div class="stat-number">19</div>
         <div class="stat-label">Universal</div>
@@ -1593,6 +1601,21 @@
     (function() {
       var TOTAL_FEATURES = 32;
       var CSV_FILENAME = '2H_2025_Release_Features_Export.csv';
+
+      // ===== Hero: live 'days in production' counter =====
+      (function initHeroDaysSinceShip() {
+        var numEl   = document.getElementById('heroDaysSinceShip');
+        var labelEl = document.getElementById('heroCountdownLabel');
+        if (!numEl || !labelEl) return;
+
+        var SHIP_DATE = new Date(2025, 10, 14); // Nov 14, 2025
+        var now = new Date();
+        var daysSince = Math.max(0, Math.floor((now - SHIP_DATE) / 86400000));
+        var dayWord = daysSince === 1 ? 'day' : 'days';
+
+        numEl.textContent = daysSince;
+        labelEl.innerHTML = dayWord + ' in production &middot; <strong>shipped Nov 14</strong>';
+      })();
 
       // ===== Alert Banner =====
       var alertBanner = document.getElementById('alertBanner');

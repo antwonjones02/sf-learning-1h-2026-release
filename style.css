@@ -330,6 +330,12 @@ img { max-width: 100%; display: block; }
   animation: heroPulse 2.2s ease-out infinite;
 }
 
+/* Static variant for past / already-shipped releases: no pulse, soft glow. */
+.hero-status-dot-static {
+  animation: none;
+  box-shadow: 0 0 8px rgba(125, 226, 166, 0.45);
+}
+
 @keyframes heroPulse {
   0%   { box-shadow: 0 0 0 0 rgba(125, 226, 166, 0.55); }
   70%  { box-shadow: 0 0 0 9px rgba(125, 226, 166, 0); }
@@ -510,6 +516,12 @@ img { max-width: 100%; display: block; }
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-4);
   margin-bottom: var(--space-8);
+}
+
+/* Past-release pages have 3 categories instead of 4. Distribute the 3 cards
+   evenly across the full container width. */
+.stats-grid.stats-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .stat-card {
