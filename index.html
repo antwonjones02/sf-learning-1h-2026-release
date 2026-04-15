@@ -38,15 +38,21 @@
 
   <!-- Hero Section -->
   <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-inner">
-      <h1 class="hero-title">1H 2026 Release Strategy</h1>
-      <p class="hero-subtitle">34 features across 4 categories.</p>
-      <div class="hero-pills">
-        <span class="hero-pill pill-action">29 require action</span>
-        <span class="hero-pill-sep">&middot;</span>
-        <span class="hero-pill pill-new">15 new features</span>
-        <span class="hero-pill-sep">&middot;</span>
-        <span class="hero-pill pill-dep">5 deprecations</span>
+      <div class="hero-eyebrow">
+        <span class="hero-status" role="status">
+          <span class="hero-status-dot" aria-hidden="true"></span>
+          <span class="hero-status-text" id="heroStatusText">Preview live</span>
+        </span>
+        <span class="hero-eyebrow-sep" aria-hidden="true"></span>
+        <span class="hero-release-code">1H&nbsp;2026</span>
+      </div>
+      <h1 class="hero-title">Your Spring 2026 release, <span class="hero-title-accent">at a glance</span>.</h1>
+      <p class="hero-subtitle">34 updates across four tracks, rolling out May 15&ndash;16.</p>
+      <div class="hero-countdown" id="heroCountdown">
+        <span class="hero-countdown-num" id="heroDaysToProd">30</span>
+        <span class="hero-countdown-label" id="heroCountdownLabel">days to production</span>
       </div>
     </div>
   </section>
@@ -1695,6 +1701,57 @@
     (function() {
       var TOTAL_FEATURES = 34;
       var CSV_FILENAME = '1H_2026_Release_Features_Export.csv';
+
+      // ===== Hero: live countdown to production =====
+      (function initHeroCountdown() {
+        var numEl   = document.getElementById('heroDaysToProd');
+        var labelEl = document.getElementById('heroCountdownLabel');
+        var statusEl = document.getElementById('heroStatusText');
+        var dotEl   = document.querySelector('.hero-status-dot');
+        if (!numEl || !labelEl) return;
+
+        // Key dates for this release
+        var PREVIEW_START = new Date(2026, 3, 13); // Apr 13, 2026
+        var PRODUCTION   = new Date(2026, 4, 15); // May 15, 2026
+        var TOKEN_SUNSET = new Date(2026, 10, 20); // Nov 20, 2026
+
+        var now = new Date();
+        var DAY_MS = 86400000;
+        var daysUntil = function(d) { return Math.ceil((d - now) / DAY_MS); };
+
+        var toProd = daysUntil(PRODUCTION);
+
+        if (now < PREVIEW_START) {
+          // Pre-preview
+          var toPreview = daysUntil(PREVIEW_START);
+          numEl.textContent = toPreview;
+          labelEl.innerHTML = 'days until preview opens &middot; <strong>Apr 13</strong>';
+          if (statusEl) statusEl.textContent = 'Pre-release';
+          if (dotEl) dotEl.style.background = '#FFD27A';
+        } else if (toProd > 0) {
+          // In preview window (where we are today)
+          numEl.textContent = toProd;
+          labelEl.innerHTML = 'days to production &middot; <strong>May 15</strong>';
+          if (statusEl) statusEl.textContent = 'Preview live';
+        } else if (toProd === 0) {
+          numEl.textContent = 'Now';
+          numEl.classList.add('is-short');
+          labelEl.textContent = 'Production going live today';
+          if (statusEl) statusEl.textContent = 'Launch day';
+        } else {
+          // Post-launch: pivot to Token Server sunset countdown if still ahead
+          var toSunset = daysUntil(TOKEN_SUNSET);
+          if (toSunset > 0) {
+            numEl.textContent = toSunset;
+            labelEl.innerHTML = 'days until Token Server sunset &middot; <strong>Nov 20</strong>';
+          } else {
+            numEl.textContent = 'Live';
+            numEl.classList.add('is-short');
+            labelEl.textContent = 'Release complete';
+          }
+          if (statusEl) statusEl.textContent = 'In production';
+        }
+      })();
 
       // ===== Alert Banner =====
       var alertBanner = document.getElementById('alertBanner');
