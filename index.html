@@ -63,14 +63,14 @@
   <main class="container">
     <!-- Summary Stats -->
     <div class="stats-grid">
-      <div class="stat-card" data-cat="universal" role="button" tabindex="0" aria-label="Filter to Universal features">
+      <div class="stat-card" data-cat="universal" role="button" tabindex="0" aria-label="Filter to Required features">
         <div class="stat-number">10</div>
-        <div class="stat-label">Universal</div>
+        <div class="stat-label">Required</div>
         <div class="stat-sublabel">Automatically On</div>
       </div>
-      <div class="stat-card" data-cat="optin" role="button" tabindex="0" aria-label="Filter to Opt-In features">
+      <div class="stat-card" data-cat="optin" role="button" tabindex="0" aria-label="Filter to Optional features">
         <div class="stat-number">15</div>
-        <div class="stat-label">Opt-In</div>
+        <div class="stat-label">Optional</div>
         <div class="stat-sublabel">Customer Configured</div>
       </div>
       <div class="stat-card" data-cat="premium" role="button" tabindex="0" aria-label="Filter to Premium features">
@@ -111,8 +111,8 @@
     <div class="filter-bar" id="filterBar">
       <div class="filter-row filter-row-cats">
         <button class="filter-btn active" data-filter="all">All (34)</button>
-        <button class="filter-btn" data-filter="universal">Universal (10)</button>
-        <button class="filter-btn" data-filter="optin">Opt-In (15)</button>
+        <button class="filter-btn" data-filter="universal">Required (10)</button>
+        <button class="filter-btn" data-filter="optin">Optional (15)</button>
         <button class="filter-btn" data-filter="premium">Premium (4)</button>
         <button class="filter-btn" data-filter="deprecation">Deprecation (5)</button>
       </div>
@@ -181,11 +181,11 @@
     <section class="category-section" data-category="universal">
       <div class="category-header">
         <div class="category-dot" style="background:#1B7340"></div>
-        <h2>Universal</h2>
+        <h2>Required</h2>
         <span class="category-count">10 features &middot; Automatically On</span>
       </div>
       <div class="feature-list">
-        <div class="feature-card" data-cat="universal" data-impact="minor" data-type="new" data-action="noaction" data-exp="enduser" data-name="keyword search on view all pages" data-csv-name="Keyword Search on View All Pages" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Learners can now search their learning activities (assignments, task observations, training requests, surveys, and bookmarks) by title or ID on the View All pages. Filtering by learning type is also supported." data-csv-why="Reduces time learners spend scrolling through long lists to find specific assignments. Improves self-service and reduces help desk tickets." data-csv-risk="No action needed, this is automatically enabled. No risk." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/477c23006a59476fae497d16e3839acb.html?version=cloud&locale=en-US">
+        <div class="feature-card" data-cat="universal" data-impact="minor" data-type="new" data-action="noaction" data-exp="enduser" data-name="keyword search on view all pages" data-csv-name="Keyword Search on View All Pages" data-csv-cat="Required" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Learners can now search their learning activities (assignments, task observations, training requests, surveys, and bookmarks) by title or ID on the View All pages. Filtering by learning type is also supported." data-csv-why="Reduces time learners spend scrolling through long lists to find specific assignments. Improves self-service and reduces help desk tickets." data-csv-risk="No action needed, this is automatically enabled. No risk." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/477c23006a59476fae497d16e3839acb.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Keyword Search on View All Pages for export">
           <span class="checkbox-custom"></span>
@@ -223,7 +223,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="multiple employments rest api enhancements" data-csv-name="Multiple Employments REST API Enhancements" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="The Multiple Employments REST API now provides structured responses, supports $select for retrieving specific fields, and introduces the actingAs parameter." data-csv-why="Enables more efficient integrations for organizations with employees who hold multiple roles. Reduces data transfer overhead." data-csv-risk="No action needed, automatically applied. Existing integrations continue to work." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f9d2b98dd626428b98728a31fd1172de.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="admin" data-name="multiple employments rest api enhancements" data-csv-name="Multiple Employments REST API Enhancements" data-csv-cat="Required" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="The Multiple Employments REST API now provides structured responses, supports $select for retrieving specific fields, and introduces the actingAs parameter." data-csv-why="Enables more efficient integrations for organizations with employees who hold multiple roles. Reduces data transfer overhead." data-csv-risk="No action needed, automatically applied. Existing integrations continue to work." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f9d2b98dd626428b98728a31fd1172de.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Multiple Employments REST API Enhancements for export">
           <span class="checkbox-custom"></span>
@@ -261,7 +261,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="noaction" data-exp="enduser,admin" data-name="curricula status in mobile apps" data-csv-name="Curricula Status in Mobile Apps" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="No action required" data-csv-desc="Learners can now view their curricula assignments and track compliance status directly in the SAP SuccessFactors Mobile iOS and Android apps." data-csv-why="Frontline and field workers who primarily use mobile can now monitor their compliance status on the go, reducing overdue assignments." data-csv-risk="No action needed, automatically enabled for mobile users." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/cbdec2e2efc743ed9c9e0f1f9cd4fa9f.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="noaction" data-exp="enduser,admin" data-name="curricula status in mobile apps" data-csv-name="Curricula Status in Mobile Apps" data-csv-cat="Required" data-csv-type="New" data-csv-impact="Major" data-csv-rec="No action required" data-csv-desc="Learners can now view their curricula assignments and track compliance status directly in the SAP SuccessFactors Mobile iOS and Android apps." data-csv-why="Frontline and field workers who primarily use mobile can now monitor their compliance status on the go, reducing overdue assignments." data-csv-risk="No action needed, automatically enabled for mobile users." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/cbdec2e2efc743ed9c9e0f1f9cd4fa9f.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Curricula Status in Mobile Apps for export">
           <span class="checkbox-custom"></span>
@@ -299,7 +299,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin,manager" data-name="manager actions and sf-182 access in team view" data-csv-name="Manager Actions and SF-182 Access in Team View" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Communicate to managers" data-csv-desc="Managers can now register team members for learning, perform withdrawal and removal actions, and access SF-182 requests, reports, and curricula status directly from Team View." data-csv-why="Streamlines the manager experience and increases manager engagement in team development. Reduces administrative friction." data-csv-risk="No action needed, automatically enabled. Managers will see new capabilities immediately." data-csv-exp="Admin, Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d3dcd1741e9d4a78876d2aaa9097262c.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin,manager" data-name="manager actions and sf-182 access in team view" data-csv-name="Manager Actions and SF-182 Access in Team View" data-csv-cat="Required" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Communicate to managers" data-csv-desc="Managers can now register team members for learning, perform withdrawal and removal actions, and access SF-182 requests, reports, and curricula status directly from Team View." data-csv-why="Streamlines the manager experience and increases manager engagement in team development. Reduces administrative friction." data-csv-risk="No action needed, automatically enabled. Managers will see new capabilities immediately." data-csv-exp="Admin, Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d3dcd1741e9d4a78876d2aaa9097262c.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Manager Actions and SF-182 Access in Team View for export">
           <span class="checkbox-custom"></span>
@@ -337,7 +337,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin,manager" data-name="pre-calculated program completion data in reports" data-csv-name="Pre-Calculated Program Completion Data in Reports" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Update legacy reports" data-csv-desc="Administrators can now access pre-calculated program completion percentages in Data Extract Services. The legacy GetProgramCompletionPercentage operator is deprecated." data-csv-why="Significantly faster and more reliable reporting on program completion. Eliminates performance issues with large program reports." data-csv-risk="No action needed, automatically enabled. Begin transitioning any reports that use the legacy operator." data-csv-exp="Admin, Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/4b6ec73a2ebb449580269944fc930ad9.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin,manager" data-name="pre-calculated program completion data in reports" data-csv-name="Pre-Calculated Program Completion Data in Reports" data-csv-cat="Required" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Update legacy reports" data-csv-desc="Administrators can now access pre-calculated program completion percentages in Data Extract Services. The legacy GetProgramCompletionPercentage operator is deprecated." data-csv-why="Significantly faster and more reliable reporting on program completion. Eliminates performance issues with large program reports." data-csv-risk="No action needed, automatically enabled. Begin transitioning any reports that use the legacy operator." data-csv-exp="Admin, Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/4b6ec73a2ebb449580269944fc930ad9.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Pre-Calculated Program Completion Data in Reports for export">
           <span class="checkbox-custom"></span>
@@ -375,7 +375,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="manager" data-name="team view role selection changes" data-csv-name="Team View Role Selection Changes" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Communicate to managers" data-csv-desc="Managers can now switch between available roles (such as Alternate Manager or HR Business Partner) using a new tab-based interface on the Team View page." data-csv-why="Improves usability for managers who oversee teams in multiple capacities. Cleaner interface reduces confusion." data-csv-risk="No action needed, automatically applied. The new interface replaces the old one." data-csv-exp="Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/ac61e68684df4240963237791e133be5.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="manager" data-name="team view role selection changes" data-csv-name="Team View Role Selection Changes" data-csv-cat="Required" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Communicate to managers" data-csv-desc="Managers can now switch between available roles (such as Alternate Manager or HR Business Partner) using a new tab-based interface on the Team View page." data-csv-why="Improves usability for managers who oversee teams in multiple capacities. Cleaner interface reduces confusion." data-csv-risk="No action needed, automatically applied. The new interface replaces the old one." data-csv-exp="Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/ac61e68684df4240963237791e133be5.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Team View Role Selection Changes for export">
           <span class="checkbox-custom"></span>
@@ -413,7 +413,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="enduser" data-name="validated learning apps for android" data-csv-name="Validated Learning Apps for Android" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Enable for regulated teams" data-csv-desc="The SAP Validated Learning and SAP Validated Learning Preview apps are now available for Android mobile devices." data-csv-why="Extends compliance-grade mobile learning to a much larger user base. Critical for organizations in life sciences, manufacturing, and other regulated sectors." data-csv-risk="No action needed, automatically available in app stores." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d731489ed2f64a899bfad584df4883b5.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="enduser" data-name="validated learning apps for android" data-csv-name="Validated Learning Apps for Android" data-csv-cat="Required" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Enable for regulated teams" data-csv-desc="The SAP Validated Learning and SAP Validated Learning Preview apps are now available for Android mobile devices." data-csv-why="Extends compliance-grade mobile learning to a much larger user base. Critical for organizations in life sciences, manufacturing, and other regulated sectors." data-csv-risk="No action needed, automatically available in app stores." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/d731489ed2f64a899bfad584df4883b5.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Validated Learning Apps for Android for export">
           <span class="checkbox-custom"></span>
@@ -451,7 +451,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser" data-name="removal of new learning experience banner in mobile" data-csv-name="Removal of New Learning Experience Banner in Mobile" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="The New Learning Experience switch and informational banner have been removed from the mobile apps." data-csv-why="Signals that the new Learning experience is now the standard. Cleaner mobile interface with less visual clutter." data-csv-risk="No action needed, automatically applied." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/b79681a0f3ad433d8ad4202ec08fc234.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser" data-name="removal of new learning experience banner in mobile" data-csv-name="Removal of New Learning Experience Banner in Mobile" data-csv-cat="Required" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="The New Learning Experience switch and informational banner have been removed from the mobile apps." data-csv-why="Signals that the new Learning experience is now the standard. Cleaner mobile interface with less visual clutter." data-csv-risk="No action needed, automatically applied." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/b79681a0f3ad433d8ad4202ec08fc234.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Removal of New Learning Experience Banner in Mobile for export">
           <span class="checkbox-custom"></span>
@@ -489,7 +489,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin" data-name="new manage super admin access tool" data-csv-name="New Manage Super Admin Access Tool" data-csv-cat="Universal" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Train admin team" data-csv-desc="Administrators can now manage super admins for both Learning and Platform from a unified access management page. The old tool is split into two: Manage Super Admin Access and Manage RBP Admin Access." data-csv-why="Simplifies security administration and provides clearer separation between super admin and RBP admin functions." data-csv-risk="No action needed, automatically applied. Admins should familiarize themselves with the new tool location." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/594e3e17ea49443897956475eebebc08.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="universal" data-impact="major" data-type="new" data-action="action" data-exp="admin" data-name="new manage super admin access tool" data-csv-name="New Manage Super Admin Access Tool" data-csv-cat="Required" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Train admin team" data-csv-desc="Administrators can now manage super admins for both Learning and Platform from a unified access management page. The old tool is split into two: Manage Super Admin Access and Manage RBP Admin Access." data-csv-why="Simplifies security administration and provides clearer separation between super admin and RBP admin functions." data-csv-risk="No action needed, automatically applied. Admins should familiarize themselves with the new tool location." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/594e3e17ea49443897956475eebebc08.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select New Manage Super Admin Access Tool for export">
           <span class="checkbox-custom"></span>
@@ -527,7 +527,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser,admin" data-name="minor visual changes in 1h 2026" data-csv-name="Minor Visual Changes in 1H 2026" data-csv-cat="Universal" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Numerous minor visual enhancements across the platform to align with SAP's updated design system." data-csv-why="Creates a more consistent and polished user experience across the platform." data-csv-risk="No action needed, automatically applied." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/3922f18e1f8645d6b91a23f527725aa9.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="universal" data-impact="minor" data-type="changed" data-action="noaction" data-exp="enduser,admin" data-name="minor visual changes in 1h 2026" data-csv-name="Minor Visual Changes in 1H 2026" data-csv-cat="Required" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="No action required" data-csv-desc="Numerous minor visual enhancements across the platform to align with SAP's updated design system." data-csv-why="Creates a more consistent and polished user experience across the platform." data-csv-risk="No action needed, automatically applied." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/3922f18e1f8645d6b91a23f527725aa9.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Minor Visual Changes in 1H 2026 for export">
           <span class="checkbox-custom"></span>
@@ -571,11 +571,11 @@
     <section class="category-section" data-category="optin">
       <div class="category-header">
         <div class="category-dot" style="background:#2070B0"></div>
-        <h2>Opt-In</h2>
+        <h2>Optional</h2>
         <span class="category-count">15 features &middot; Customer Configured</span>
       </div>
       <div class="feature-list">
-        <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="enduser" data-name="quick access to learning details on home page" data-csv-name="Quick Access to Learning Details on Home Page" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Learners can view additional learning details for courses, programs, classes, and curricula directly on the Learning home page without navigating to the details page." data-csv-why="Reduces navigation clicks and helps learners make faster decisions about what to take next. Improves the self-service learning experience." data-csv-risk="Learners continue navigating away from the home page to see details, more clicks, more friction, lower engagement." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f0dc2ba00ae348e78e8e4d969bd10e13.html?version=cloud&locale=en-US">
+        <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="enduser" data-name="quick access to learning details on home page" data-csv-name="Quick Access to Learning Details on Home Page" data-csv-cat="Optional" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Learners can view additional learning details for courses, programs, classes, and curricula directly on the Learning home page without navigating to the details page." data-csv-why="Reduces navigation clicks and helps learners make faster decisions about what to take next. Improves the self-service learning experience." data-csv-risk="Learners continue navigating away from the home page to see details, more clicks, more friction, lower engagement." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f0dc2ba00ae348e78e8e4d969bd10e13.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Quick Access to Learning Details on Home Page for export">
           <span class="checkbox-custom"></span>
@@ -613,7 +613,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser" data-name="reset e-signature pin on learning home page" data-csv-name="Reset E-Signature PIN on Learning Home Page" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Learners can securely reset their e-signature PIN using a Forgot My PIN option directly from the Learning home page." data-csv-why="Reduces admin workload from PIN reset tickets. Unblocks learners who are stuck on compliance-critical e-signature activities." data-csv-risk="Learners who forget their PIN remain blocked until an admin manually resets it. Delays compliance completion." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f0dc2ba00ae348e78e8e4d969bd10e13.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser" data-name="reset e-signature pin on learning home page" data-csv-name="Reset E-Signature PIN on Learning Home Page" data-csv-cat="Optional" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Learners can securely reset their e-signature PIN using a Forgot My PIN option directly from the Learning home page." data-csv-why="Reduces admin workload from PIN reset tickets. Unblocks learners who are stuck on compliance-critical e-signature activities." data-csv-risk="Learners who forget their PIN remain blocked until an admin manually resets it. Delays compliance completion." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f0dc2ba00ae348e78e8e4d969bd10e13.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Reset E-Signature PIN on Learning Home Page for export">
           <span class="checkbox-custom"></span>
@@ -651,7 +651,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="major" data-type="changed" data-action="action" data-exp="enduser" data-name="redesigned program and curricula pages" data-csv-name="Redesigned Program and Curricula Pages" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Major" data-csv-rec="Enable" data-csv-desc="Learners can access a redesigned interface to view program details, curriculum details, and curricula status from the Learning home page." data-csv-why="Improves the learner experience for programs and curricula, which are often the most complex learning structures. Better visibility into progress." data-csv-risk="Learners remain on the older, less intuitive interface. Missed opportunity to improve engagement with structured learning paths." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/61597b1158794793a319d603ac9fdb66.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="changed" data-action="action" data-exp="enduser" data-name="redesigned program and curricula pages" data-csv-name="Redesigned Program and Curricula Pages" data-csv-cat="Optional" data-csv-type="Changed" data-csv-impact="Major" data-csv-rec="Enable" data-csv-desc="Learners can access a redesigned interface to view program details, curriculum details, and curricula status from the Learning home page." data-csv-why="Improves the learner experience for programs and curricula, which are often the most complex learning structures. Better visibility into progress." data-csv-risk="Learners remain on the older, less intuitive interface. Missed opportunity to improve engagement with structured learning paths." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/61597b1158794793a319d603ac9fdb66.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Redesigned Program and Curricula Pages for export">
           <span class="checkbox-custom"></span>
@@ -689,7 +689,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="manager" data-name="setting to require manager for task observation" data-csv-name="Setting to Require Manager for Task Observation" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable for regulated roles" data-csv-desc="A new task checklist setting requires task observations to be completed by the learner's primary manager." data-csv-why="Strengthens compliance controls by ensuring the right person validates task completion. Critical for regulated environments." data-csv-risk="Anyone with observer access can validate tasks, potentially undermining compliance rigor in regulated workflows." data-csv-exp="Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/df4095459a524b298d786e4a62c9dba3.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="manager" data-name="setting to require manager for task observation" data-csv-name="Setting to Require Manager for Task Observation" data-csv-cat="Optional" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable for regulated roles" data-csv-desc="A new task checklist setting requires task observations to be completed by the learner's primary manager." data-csv-why="Strengthens compliance controls by ensuring the right person validates task completion. Critical for regulated environments." data-csv-risk="Anyone with observer access can validate tasks, potentially undermining compliance rigor in regulated workflows." data-csv-exp="Manager" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/df4095459a524b298d786e4a62c9dba3.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Setting to Require Manager for Task Observation for export">
           <span class="checkbox-custom"></span>
@@ -727,7 +727,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="prerequisite and approval enforcement for programs" data-csv-name="Prerequisite and Approval Enforcement for Programs" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Administrators can now enforce item-level prerequisites and approvals for courses within programs." data-csv-why="Ensures learners complete required steps in order. Prevents skipping ahead in structured development paths." data-csv-risk="Learners can bypass prerequisites within programs, undermining the intended learning path design." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f48d1b6e58f04f0d8e9bf33df5e126c5.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="prerequisite and approval enforcement for programs" data-csv-name="Prerequisite and Approval Enforcement for Programs" data-csv-cat="Optional" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Administrators can now enforce item-level prerequisites and approvals for courses within programs." data-csv-why="Ensures learners complete required steps in order. Prevents skipping ahead in structured development paths." data-csv-risk="Learners can bypass prerequisites within programs, undermining the intended learning path design." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f48d1b6e58f04f0d8e9bf33df5e126c5.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Prerequisite and Approval Enforcement for Programs for export">
           <span class="checkbox-custom"></span>
@@ -765,7 +765,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser" data-name="enhanced retraining experience for curricula" data-csv-name="Enhanced Retraining Experience for Curricula" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="The retraining experience for curriculum requirements on the Learning home page has been enhanced with clear compliance visibility and easier tracking." data-csv-why="Compliance-critical retraining becomes more transparent. Reduces overdue retraining by making it harder to miss." data-csv-risk="Retraining visibility remains limited. Higher risk of missed retraining deadlines and compliance gaps." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/2a4c2d35c8974f18a3a72fc6e5c56e3c.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser" data-name="enhanced retraining experience for curricula" data-csv-name="Enhanced Retraining Experience for Curricula" data-csv-cat="Optional" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="The retraining experience for curriculum requirements on the Learning home page has been enhanced with clear compliance visibility and easier tracking." data-csv-why="Compliance-critical retraining becomes more transparent. Reduces overdue retraining by making it harder to miss." data-csv-risk="Retraining visibility remains limited. Higher risk of missed retraining deadlines and compliance gaps." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/2a4c2d35c8974f18a3a72fc6e5c56e3c.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Enhanced Retraining Experience for Curricula for export">
           <span class="checkbox-custom"></span>
@@ -803,7 +803,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="major" data-type="changed" data-action="action" data-exp="admin" data-name="enhancements to external learning events" data-csv-name="Enhancements to External Learning Events" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Major" data-csv-rec="Enable" data-csv-desc="New fields have been added to the External Event entity, allowing learners, managers, and administrators to capture more comprehensive information when logging external learning." data-csv-why="Creates a more complete picture of employee development, including learning that happens outside the LMS." data-csv-risk="External learning records remain basic. Organization loses visibility into the full scope of employee development." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/4f3e64da0fa545fda602842195c20735.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="changed" data-action="action" data-exp="admin" data-name="enhancements to external learning events" data-csv-name="Enhancements to External Learning Events" data-csv-cat="Optional" data-csv-type="Changed" data-csv-impact="Major" data-csv-rec="Enable" data-csv-desc="New fields have been added to the External Event entity, allowing learners, managers, and administrators to capture more comprehensive information when logging external learning." data-csv-why="Creates a more complete picture of employee development, including learning that happens outside the LMS." data-csv-risk="External learning records remain basic. Organization loses visibility into the full scope of employee development." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/4f3e64da0fa545fda602842195c20735.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Enhancements to External Learning Events for export">
           <span class="checkbox-custom"></span>
@@ -841,7 +841,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="add open content network items to default library" data-csv-name="Add Open Content Network Items to Default Library" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Administrators can configure a default library for each Open Content Network (OCN) provider to automatically assign imported items to a specific library." data-csv-why="Reduces administrative effort and ensures consistent content organization. Makes third-party content easier to find and manage." data-csv-risk="OCN items land without library assignment, requiring manual sorting. Content becomes harder to govern and discover." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/9ddc1e25e6b944749e3743e7981050e4.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="add open content network items to default library" data-csv-name="Add Open Content Network Items to Default Library" data-csv-cat="Optional" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Administrators can configure a default library for each Open Content Network (OCN) provider to automatically assign imported items to a specific library." data-csv-why="Reduces administrative effort and ensures consistent content organization. Makes third-party content easier to find and manage." data-csv-risk="OCN items land without library assignment, requiring manual sorting. Content becomes harder to govern and discover." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/9ddc1e25e6b944749e3743e7981050e4.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Add Open Content Network Items to Default Library for export">
           <span class="checkbox-custom"></span>
@@ -879,7 +879,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="credit hours in open content network odata api" data-csv-name="Credit Hours in Open Content Network OData API" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable if using credit hours" data-csv-desc="The OCN OData API now supports creditHours when posting OCN items to SAP SuccessFactors Learning." data-csv-why="Enables accurate credit tracking for professional development and continuing education requirements." data-csv-risk="Credit hours must be manually entered for OCN content. Time-consuming and error-prone." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/5f085b1d97ca4e71892fc128ae684ef5.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="credit hours in open content network odata api" data-csv-name="Credit Hours in Open Content Network OData API" data-csv-cat="Optional" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable if using credit hours" data-csv-desc="The OCN OData API now supports creditHours when posting OCN items to SAP SuccessFactors Learning." data-csv-why="Enables accurate credit tracking for professional development and continuing education requirements." data-csv-risk="Credit hours must be manually entered for OCN content. Time-consuming and error-prone." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/5f085b1d97ca4e71892fc128ae684ef5.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Credit Hours in Open Content Network OData API for export">
           <span class="checkbox-custom"></span>
@@ -917,7 +917,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="set duration for online items in bulk" data-csv-name="Set Duration for Online Items in Bulk" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Administrators can now add or update duration for multiple online learning items at once through the Item Connector." data-csv-why="Saves significant admin time when managing large content libraries. Ensures duration data is consistent for reporting." data-csv-risk="Duration updates remain one-at-a-time. Heavy administrative burden for large catalogs." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/bca3ac0668984199879033f9558a3da6.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="admin" data-name="set duration for online items in bulk" data-csv-name="Set Duration for Online Items in Bulk" data-csv-cat="Optional" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Administrators can now add or update duration for multiple online learning items at once through the Item Connector." data-csv-why="Saves significant admin time when managing large content libraries. Ensures duration data is consistent for reporting." data-csv-risk="Duration updates remain one-at-a-time. Heavy administrative burden for large catalogs." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/bca3ac0668984199879033f9558a3da6.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Set Duration for Online Items in Bulk for export">
           <span class="checkbox-custom"></span>
@@ -955,7 +955,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser,admin" data-name="retain item details in curricula during revisions" data-csv-name="Retain Item Details in Curricula During Revisions" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Initial and retraining assignment data for items in a curriculum is now preserved during item revisions through the Item Connector." data-csv-why="Prevents loss of compliance-critical data during routine content updates. Protects training history integrity." data-csv-risk="Item revisions may still clear assignment data within curricula, creating compliance tracking gaps." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f4b6b3d834194e259383c50494c3befb.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser,admin" data-name="retain item details in curricula during revisions" data-csv-name="Retain Item Details in Curricula During Revisions" data-csv-cat="Optional" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Initial and retraining assignment data for items in a curriculum is now preserved during item revisions through the Item Connector." data-csv-why="Prevents loss of compliance-critical data during routine content updates. Protects training history integrity." data-csv-risk="Item revisions may still clear assignment data within curricula, creating compliance tracking gaps." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/f4b6b3d834194e259383c50494c3befb.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Retain Item Details in Curricula During Revisions for export">
           <span class="checkbox-custom"></span>
@@ -993,7 +993,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-exp="admin" data-name="assisted skills association with ocn items (ga" data-csv-name="Assisted Skills Association With OCN Items) GA" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Enable" data-csv-desc="The AI-assisted skills association feature for Open Content Network items, previously in early adoption, is now generally available." data-csv-why="Scales skills tagging across large third-party content libraries. Enables skills-based learning recommendations." data-csv-risk="Skills must be manually tagged to OCN items, impractical at scale. Skills-based recommendations remain incomplete." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/e1dbfa3f709b4e63bf26c8b3e6db12be.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-exp="admin" data-name="assisted skills association with ocn items (ga" data-csv-name="Assisted Skills Association With OCN Items) GA" data-csv-cat="Optional" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Enable" data-csv-desc="The AI-assisted skills association feature for Open Content Network items, previously in early adoption, is now generally available." data-csv-why="Scales skills tagging across large third-party content libraries. Enables skills-based learning recommendations." data-csv-risk="Skills must be manually tagged to OCN items, impractical at scale. Skills-based recommendations remain incomplete." data-csv-exp="Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/e1dbfa3f709b4e63bf26c8b3e6db12be.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Assisted Skills Association With OCN Items, GA for export">
           <span class="checkbox-custom"></span>
@@ -1031,7 +1031,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="enduser" data-name="mobile app support for observer search" data-csv-name="Mobile App Support for Observer Search" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Learners can now search for and add task observers directly in the SAP SuccessFactors Mobile iOS and Android apps." data-csv-why="Unblocks mobile-first learners who need to complete task observations in the field." data-csv-risk="Mobile learners cannot assign observers, forcing them to use desktop for this step." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/a2dbc62f71c9436285e833e3e22d8d76.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="new" data-action="action" data-exp="enduser" data-name="mobile app support for observer search" data-csv-name="Mobile App Support for Observer Search" data-csv-cat="Optional" data-csv-type="New" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="Learners can now search for and add task observers directly in the SAP SuccessFactors Mobile iOS and Android apps." data-csv-why="Unblocks mobile-first learners who need to complete task observations in the field." data-csv-risk="Mobile learners cannot assign observers, forcing them to use desktop for this step." data-csv-exp="End User" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/a2dbc62f71c9436285e833e3e22d8d76.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Mobile App Support for Observer Search for export">
           <span class="checkbox-custom"></span>
@@ -1069,7 +1069,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-exp="enduser,admin" data-name="data anonymization for external learners in instance refresh" data-csv-name="Data Anonymization for External Learners in Instance Refresh" data-csv-cat="Opt-In" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Enable" data-csv-desc="Administrators can now anonymize Learning data for external learners during instance refresh operations to protect personally identifiable information in non-production instances." data-csv-why="Strengthens data privacy compliance (GDPR, CCPA) by ensuring PII is not exposed in test environments." data-csv-risk="External learner PII may persist in non-production instances, creating compliance and privacy exposure." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/e759e8819b004a71a8f2bcbd3b1b690e.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="optin" data-impact="major" data-type="new" data-action="action" data-exp="enduser,admin" data-name="data anonymization for external learners in instance refresh" data-csv-name="Data Anonymization for External Learners in Instance Refresh" data-csv-cat="Optional" data-csv-type="New" data-csv-impact="Major" data-csv-rec="Enable" data-csv-desc="Administrators can now anonymize Learning data for external learners during instance refresh operations to protect personally identifiable information in non-production instances." data-csv-why="Strengthens data privacy compliance (GDPR, CCPA) by ensuring PII is not exposed in test environments." data-csv-risk="External learner PII may persist in non-production instances, creating compliance and privacy exposure." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/e759e8819b004a71a8f2bcbd3b1b690e.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Data Anonymization for External Learners in Instance Refresh for export">
           <span class="checkbox-custom"></span>
@@ -1107,7 +1107,7 @@
           </div>
         </div>
       </div>
-      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser,admin" data-name="enhancements to analytic cards on home page" data-csv-name="Enhancements to Analytic Cards on Home Page" data-csv-cat="Opt-In" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="New enhancements to analytic cards include a Total Learning Hours card and new administration options for managing cards on the latest home page." data-csv-why="Gives leaders quick visibility into learning engagement metrics without running reports." data-csv-risk="Leadership misses a quick engagement metric. Admins have less control over the home page experience." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/bb6cac2cf6334604b16027cefd7c4d84.html?version=cloud&locale=en-US">
+      <div class="feature-card" data-cat="optin" data-impact="minor" data-type="changed" data-action="action" data-exp="enduser,admin" data-name="enhancements to analytic cards on home page" data-csv-name="Enhancements to Analytic Cards on Home Page" data-csv-cat="Optional" data-csv-type="Changed" data-csv-impact="Minor" data-csv-rec="Enable" data-csv-desc="New enhancements to analytic cards include a Total Learning Hours card and new administration options for managing cards on the latest home page." data-csv-why="Gives leaders quick visibility into learning engagement metrics without running reports." data-csv-risk="Leadership misses a quick engagement metric. Admins have less control over the home page experience." data-csv-exp="End User, Admin" data-csv-link="https://help.sap.com/docs/PRODUCTS/8e0d540f96474717bbf18df51e54e522/bb6cac2cf6334604b16027cefd7c4d84.html?version=cloud&locale=en-US">
         <label class="feature-checkbox-label" onclick="event.stopPropagation()">
           <input type="checkbox" class="feature-checkbox" aria-label="Select Enhancements to Analytic Cards on Home Page for export">
           <span class="checkbox-custom"></span>
@@ -1516,20 +1516,20 @@
       <div class="faq-list">
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false" aria-controls="faq-0">
-            <span class="faq-question">What does 'Universal' mean?</span>
+            <span class="faq-question">What does 'Required' mean?</span>
             <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
           </button>
           <div class="faq-answer" id="faq-0" aria-hidden="true">
-            <p>Universal features are enabled automatically for all customers. No admin action is required, they will appear in your system after the release goes live.</p>
+            <p>Required features are enabled automatically for all customers. No admin action is required, they will appear in your system after the release goes live.</p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false" aria-controls="faq-1">
-            <span class="faq-question">What does 'Opt-In' mean?</span>
+            <span class="faq-question">What does 'Optional' mean?</span>
             <span class="faq-toggle"><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
           </button>
           <div class="faq-answer" id="faq-1" aria-hidden="true">
-            <p>Opt-In features are available but must be manually enabled by a system administrator. Review each feature and decide whether to enable it for your organization.</p>
+            <p>Optional features are available but must be manually enabled by a system administrator. Review each feature and decide whether to enable it for your organization.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -1617,8 +1617,8 @@
             <span class="phase-timing">April 13 &ndash; May 14</span>
           </div>
           <ul class="phase-steps">
-            <li><strong>Validate Universal features</strong>, these are automatically enabled; confirm they work as expected with your configuration</li>
-            <li><strong>Evaluate Opt-In features</strong>, enable in preview, test, and decide whether to activate for production</li>
+            <li><strong>Validate Required features</strong>, these are automatically enabled; confirm they work as expected with your configuration</li>
+            <li><strong>Evaluate Optional features</strong>, enable in preview, test, and decide whether to activate for production</li>
             <li><strong>Regression-test core workflows</strong>, SAP recommends testing end-to-end business processes, not just isolated features</li>
             <li><strong>Test integrations</strong>, verify all API connections, especially if using the Learning Token Server (migration to OAuth 2.0 is required before November 20, 2026)</li>
             <li><strong>Validate roles and permissions</strong>, confirm role-based permissions are correctly configured for any new features</li>
@@ -1634,7 +1634,7 @@
           </div>
           <ul class="phase-steps">
             <li>Share test results with business process owners for validation</li>
-            <li>Document decisions on Opt-In features: enable, defer, or decline</li>
+            <li>Document decisions on Optional features: enable, defer, or decline</li>
             <li>Coordinate with HR, IT, security, and payroll teams on cross-module impacts (<a href="https://community.sap.com/t5/human-capital-management-blog-posts-by-members/best-practices-and-risks-of-not-aligning-sap-successfactors-preview-and/ba-p/14092225" target="_blank" rel="noopener">SAP Community</a>)</li>
             <li>Prepare internal communications and training materials for end users</li>
           </ul>
