@@ -2167,6 +2167,13 @@ body:has(#exportBar) { padding-bottom: 72px; }
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
+.exec-headline .exec-headline-ai {
+  background: linear-gradient(90deg, #C4B5FD 0%, #A78BFA 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
 .exec-deck {
   font-size: var(--text-lg);
   line-height: 1.55;
@@ -2659,6 +2666,7 @@ body:has(#exportBar) { padding-bottom: 72px; }
   .exec-page { background: var(--white); }
   .exec-hero { color: var(--gray-700); background: none !important; padding: var(--space-6) 0; }
   .exec-headline span { -webkit-text-fill-color: var(--red); color: var(--red); }
+  .exec-headline .exec-headline-ai { -webkit-text-fill-color: #7C3AED; color: #7C3AED; }
   .exec-eyebrow, .exec-deck { color: var(--gray-500); }
   .exec-tldr-card { background: #F5F6F8; border: 1px solid var(--gray-200); color: var(--gray-700); }
   .exec-tldr-num { color: var(--navy) !important; }
