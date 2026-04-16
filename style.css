@@ -2843,16 +2843,113 @@ body:has(#exportBar) { padding-bottom: 72px; }
   .exec-questions li { flex-direction: column; gap: var(--space-3); }
 }
 
-/* ===== Print styles for the exec page ===== */
+/* ===== Print styles for the exec page =====
+   Design goal: the PDF should look AS RICH as the web page. Keep gradients,
+   colored accents, tinted sections, and brand navy. Only strip truly
+   interactive elements (hover CTAs, nav links).
+   Chrome flag required: --print-background (without it all backgrounds vanish).
+*/
 @media print {
+  /* Force Chrome to honour every background color, gradient, and image */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  @page {
+    size: letter;
+    margin: 0.6in 0.65in 0.85in 0.65in;
+  }
+
+  /* ---- Remove interactive-only chrome ---- */
+  .delta-topband,
+  .site-header,
+  .exec-back-to-full,
+  .exec-footer-cta,
+  .exec-tldr-cta { display: none !important; }
+
+  /* ---- Page body ---- */
   .exec-page { background: var(--white); }
-  .exec-hero { color: var(--gray-700); background: none !important; padding: var(--space-6) 0; }
-  .exec-headline span { -webkit-text-fill-color: var(--red); color: var(--red); }
-  .exec-eyebrow, .exec-deck { color: var(--gray-500); }
-  .exec-tldr-card { background: #F5F6F8; border: 1px solid var(--gray-200); color: var(--gray-700); }
-  .exec-tldr-num { color: var(--navy) !important; }
-  .exec-tldr-label, .exec-tldr-sub { color: var(--gray-700); }
-  .exec-tldr-cta { display: none; }
-  .site-header, .exec-back-to-full, .exec-footer-cta, .delta-topband { display: none; }
-  .exec-section, .exec-action-card, .exec-audience, .exec-value, .exec-questions li { break-inside: avoid; }
+
+  /* ---- HERO: preserve the navy gradient (Chrome prints gradients fine) ---- */
+  .exec-hero {
+    background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 60%, #004080 100%) !important;
+    color: var(--white) !important;
+    padding: var(--space-10) var(--space-6) var(--space-8);
+  }
+  .exec-eyebrow   { color: rgba(255,255,255,0.75) !important; }
+  .exec-headline  { color: var(--white) !important; }
+  .exec-headline span {
+    -webkit-text-fill-color: #FF7B61 !important;
+    color: #FF7B61 !important;
+  }
+  .exec-deck { color: rgba(255,255,255,0.85) !important; }
+
+  /* ---- TL;DR cards: frosted glass on dark hero — use solid tint for print ---- */
+  .exec-tldr { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+  .exec-tldr-card {
+    background: rgba(255,255,255,0.10) !important;
+    border: 1px solid rgba(255,255,255,0.22) !important;
+    color: var(--white) !important;
+    break-inside: avoid;
+  }
+  .exec-tldr-required .exec-tldr-num { color: #7DE2A6 !important; }
+  .exec-tldr-optional .exec-tldr-num { color: #7FB7E6 !important; }
+  .exec-tldr-ai       .exec-tldr-num { color: #FFD27A !important; }
+  .exec-tldr-action   .exec-tldr-num { color: #FF8A8A !important; }
+  .exec-tldr-label { color: var(--white) !important; }
+  .exec-tldr-sub   { color: rgba(255,255,255,0.72) !important; }
+
+  /* ---- Section kickers: keep the coloured pills ---- */
+  .exec-section-kicker {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---- Action cards: keep red urgency border ---- */
+  .exec-action-card {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+  .exec-action-tag {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---- Audience cards ---- */
+  .exec-audience {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  /* ---- Value grid ---- */
+  .exec-value {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  /* ---- Reassure section: keep the green tint ---- */
+  .exec-reassure {
+    break-inside: avoid;
+  }
+
+  /* ---- Timeline ---- */
+  .exec-cal-item { break-inside: avoid; }
+
+  /* ---- Questions ---- */
+  .exec-questions li { break-inside: avoid; }
+  .exec-q-num {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---- Sections ---- */
+  .exec-section { break-inside: avoid; }
+
+  /* ---- Footer: keep it clean ---- */
+  .site-footer {
+    border-top: 1px solid var(--gray-200);
+    margin-top: var(--space-8);
+  }
+  .footer-logo { max-height: 28px; }
 }
