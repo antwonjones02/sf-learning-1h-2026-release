@@ -247,63 +247,207 @@ img { max-width: 100%; display: block; }
 .release-opt.active .release-opt-label { color: var(--navy); }
 .release-opt.active .release-opt-sub   { color: var(--red);  }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO SECTION =====
+   Composition: two glass pills bracket an editorial headline.
+   - Top pill  = live status + release code
+   - Headline  = restrained, editorial
+   - Subtitle  = one amber accent on the ship date (the data that matters)
+   - Bottom pill = live countdown to production (or Token Server sunset post-launch)
+*/
 .hero {
+  position: relative;
   background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 60%, #004080 100%);
   color: var(--white);
-  padding: var(--space-16) var(--space-6) var(--space-12);
+  padding: var(--space-12) var(--space-6);
   text-align: center;
+  overflow: hidden;
+}
+
+/* Subtle dual-radial aurora (amber + steel) behind the content */
+.hero-glow {
+  position: absolute;
+  top: -25%;
+  left: 50%;
+  width: min(1100px, 120%);
+  height: 700px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(255,210,122,0.18) 0%, rgba(255,210,122,0) 55%),
+    radial-gradient(ellipse at 35% 70%, rgba(127,183,230,0.14) 0%, rgba(127,183,230,0) 60%);
+  filter: blur(2px);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero-inner {
-  max-width: 740px;
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+/* ---- Glass-pill base shared by eyebrow and countdown ---- */
+.hero-eyebrow,
+.hero-countdown {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ---- Top pill: status + release code ---- */
+.hero-eyebrow {
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin: 0;
+}
+
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: #7DE2A6;
+}
+
+.hero-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #7DE2A6;
+  box-shadow: 0 0 0 0 rgba(125, 226, 166, 0.55);
+  animation: heroPulse 2.2s ease-out infinite;
+}
+
+/* Static variant for past / already-shipped releases: no pulse, soft glow. */
+.hero-status-dot-static {
+  animation: none;
+  box-shadow: 0 0 8px rgba(125, 226, 166, 0.45);
+}
+
+@keyframes heroPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(125, 226, 166, 0.55); }
+  70%  { box-shadow: 0 0 0 9px rgba(125, 226, 166, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(125, 226, 166, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-status-dot { animation: none; }
+}
+
+.hero-eyebrow-sep {
+  width: 1px;
+  height: var(--space-3);
+  background: rgba(255,255,255,0.22);
+}
+
+.hero-release-code {
+  color: rgba(255,255,255,0.7);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- Editorial copy stack ---- */
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
 }
 
 .hero-title {
-  font-size: var(--text-4xl);
+  /* Fluid scale sized so the headline fits on a single line from ~720px
+     upward, capping at ~64px on ultra-wide screens. */
+  font-size: clamp(2rem, 4.5vw, 4rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: var(--space-4);
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  margin: 0;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.hero-title-accent {
+  color: #FFD27A;
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 .hero-subtitle {
-  font-size: var(--text-lg);
-  color: rgba(255,255,255,0.75);
+  font-size: var(--text-xl);
+  color: rgba(255,255,255,0.8);
   line-height: 1.5;
-  margin-bottom: var(--space-8);
+  margin: 0;
+  max-width: 620px;
 }
 
-.hero-pills {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ---- Bottom pill: live countdown ---- */
+.hero-countdown {
   gap: var(--space-3);
-  flex-wrap: wrap;
+  padding: var(--space-3) var(--space-6);
 }
 
-.hero-pill {
-  display: inline-flex;
-  align-items: center;
-  font-size: var(--text-sm);
-  font-weight: 600;
-  padding: 6px 16px;
-  border-radius: 6px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.18);
+.hero-countdown-num {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
   color: var(--white);
-  backdrop-filter: blur(4px);
+  font-variant-numeric: tabular-nums;
+  min-width: 1.5ch;
+  text-align: right;
 }
 
-.hero-pill-sep {
-  color: rgba(255,255,255,0.35);
-  font-size: var(--text-lg);
+.hero-countdown-num.is-short {
+  font-size: var(--text-xl);
+  letter-spacing: 0;
 }
 
-.pill-action { border: 1px solid rgba(255,200,50,0.35); background: rgba(255,200,50,0.12); }
-.pill-new { border: 1px solid rgba(100,200,150,0.35); background: rgba(100,200,150,0.12); }
-.pill-dep { border: 1px solid rgba(255,100,100,0.35); background: rgba(255,100,100,0.12); }
+.hero-countdown-label {
+  font-size: var(--text-base);
+  color: rgba(255,255,255,0.72);
+  letter-spacing: 0.01em;
+}
+
+.hero-countdown-label strong {
+  color: rgba(255,255,255,0.95);
+  font-weight: 600;
+}
+
+/* ---- Responsive ---- */
+/* Tablet / wrapped-header zone: the site header wraps around 768–900px
+   so we need our own hero breakpoint here to keep breathing room. */
+@media (max-width: 900px) {
+  .hero { padding: var(--space-10) var(--space-6); }
+  .hero-inner { gap: var(--space-6); }
+}
+
+/* Below ~720px the full 38-character headline can no longer fit on one line,
+   so allow wrapping and rescale the type to a mobile-appropriate size. */
+@media (max-width: 720px) {
+  .hero-title { white-space: normal; font-size: clamp(1.75rem, 6vw, 2.5rem); }
+  .hero-subtitle { font-size: var(--text-lg); }
+}
+
+@media (max-width: 600px) {
+  .hero { padding: var(--space-8) var(--space-4); }
+  .hero-inner { gap: var(--space-5); }
+  .hero-subtitle { font-size: var(--text-base); }
+  .hero-eyebrow { font-size: 0.7rem; padding: 6px var(--space-3); gap: var(--space-2); }
+  .hero-countdown { padding: var(--space-3) var(--space-4); flex-wrap: wrap; justify-content: center; }
+  .hero-title-accent { white-space: normal; }
+  .hero-glow { height: 500px; top: -20%; }
+}
 
 /* ===== ALERT BANNER ===== */
 .alert-banner {
@@ -372,6 +516,12 @@ img { max-width: 100%; display: block; }
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-4);
   margin-bottom: var(--space-8);
+}
+
+/* Past-release pages have 3 categories instead of 4. Distribute the 3 cards
+   evenly across the full container width. */
+.stats-grid.stats-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .stat-card {
@@ -2178,20 +2328,37 @@ body:has(#exportBar) { padding-bottom: 72px; }
 /* TL;DR cards */
 .exec-tldr {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--space-4);
 }
 .exec-tldr-card {
+  position: relative;
+  display: block;
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   backdrop-filter: blur(6px);
-  transition: transform var(--transition), background var(--transition);
+  transition: transform var(--transition), background var(--transition), border-color var(--transition), box-shadow var(--transition);
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
 }
 .exec-tldr-card:hover {
-  transform: translateY(-2px);
-  background: rgba(255,255,255,0.12);
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.28);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  text-decoration: none;
+  color: inherit;
+}
+.exec-tldr-card:focus-visible {
+  outline: 2px solid #FFD27A;
+  outline-offset: 3px;
+}
+.exec-tldr-card:active {
+  transform: translateY(-1px);
 }
 .exec-tldr-num {
   font-size: 3.5rem;
@@ -2200,9 +2367,11 @@ body:has(#exportBar) { padding-bottom: 72px; }
   letter-spacing: -0.03em;
   margin-bottom: var(--space-3);
 }
-.exec-tldr-action .exec-tldr-num { color: #FF8A8A; }
-.exec-tldr-time .exec-tldr-num   { color: #7DE2A6; }
-.exec-tldr-ai .exec-tldr-num     { color: #FFD27A; }
+.exec-tldr-action   .exec-tldr-num { color: #FF8A8A; }
+.exec-tldr-time     .exec-tldr-num { color: #7DE2A6; }
+.exec-tldr-required .exec-tldr-num { color: #7DE2A6; }
+.exec-tldr-optional .exec-tldr-num { color: #7FB7E6; }
+.exec-tldr-ai       .exec-tldr-num { color: #FFD27A; }
 .exec-tldr-label {
   font-size: var(--text-base);
   font-weight: 700;
@@ -2214,6 +2383,21 @@ body:has(#exportBar) { padding-bottom: 72px; }
   font-size: var(--text-sm);
   color: rgba(255,255,255,0.7);
   line-height: 1.45;
+}
+.exec-tldr-cta {
+  display: inline-block;
+  margin-top: var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  transition: color var(--transition), transform var(--transition);
+}
+.exec-tldr-card:hover .exec-tldr-cta,
+.exec-tldr-card:focus-visible .exec-tldr-cta {
+  color: rgba(255,255,255,1);
+  transform: translateX(2px);
 }
 
 /* ===== Container & Sections ===== */
@@ -2259,7 +2443,8 @@ body:has(#exportBar) { padding-bottom: 72px; }
   max-width: 680px;
 }
 .exec-section-note {
-  display: inline;
+  display: block;
+  margin-top: var(--space-2);
   font-size: var(--text-sm);
   color: var(--gray-400);
   font-style: italic;
@@ -2639,11 +2824,15 @@ body:has(#exportBar) { padding-bottom: 72px; }
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
-  .exec-tldr { grid-template-columns: 1fr; }
+  .exec-tldr { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .exec-action-grid { grid-template-columns: 1fr; }
   .exec-audience-grid { grid-template-columns: 1fr; }
   .exec-reassure-list { grid-template-columns: 1fr; }
   .exec-action-meta > div { grid-template-columns: 1fr; gap: 4px; }
+}
+
+@media (max-width: 520px) {
+  .exec-tldr { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
@@ -2654,15 +2843,113 @@ body:has(#exportBar) { padding-bottom: 72px; }
   .exec-questions li { flex-direction: column; gap: var(--space-3); }
 }
 
-/* ===== Print styles for the exec page ===== */
+/* ===== Print styles for the exec page =====
+   Design goal: the PDF should look AS RICH as the web page. Keep gradients,
+   colored accents, tinted sections, and brand navy. Only strip truly
+   interactive elements (hover CTAs, nav links).
+   Chrome flag required: --print-background (without it all backgrounds vanish).
+*/
 @media print {
+  /* Force Chrome to honour every background color, gradient, and image */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  @page {
+    size: letter;
+    margin: 0.6in 0.65in 0.85in 0.65in;
+  }
+
+  /* ---- Remove interactive-only chrome ---- */
+  .delta-topband,
+  .site-header,
+  .exec-back-to-full,
+  .exec-footer-cta,
+  .exec-tldr-cta { display: none !important; }
+
+  /* ---- Page body ---- */
   .exec-page { background: var(--white); }
-  .exec-hero { color: var(--gray-700); background: none !important; padding: var(--space-6) 0; }
-  .exec-headline span { -webkit-text-fill-color: var(--red); color: var(--red); }
-  .exec-eyebrow, .exec-deck { color: var(--gray-500); }
-  .exec-tldr-card { background: #F5F6F8; border: 1px solid var(--gray-200); color: var(--gray-700); }
-  .exec-tldr-num { color: var(--navy) !important; }
-  .exec-tldr-label, .exec-tldr-sub { color: var(--gray-700); }
-  .site-header, .exec-back-to-full, .exec-footer-cta, .delta-topband { display: none; }
-  .exec-section, .exec-action-card, .exec-audience, .exec-value, .exec-questions li { break-inside: avoid; }
+
+  /* ---- HERO: preserve the navy gradient (Chrome prints gradients fine) ---- */
+  .exec-hero {
+    background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 60%, #004080 100%) !important;
+    color: var(--white) !important;
+    padding: var(--space-10) var(--space-6) var(--space-8);
+  }
+  .exec-eyebrow   { color: rgba(255,255,255,0.75) !important; }
+  .exec-headline  { color: var(--white) !important; }
+  .exec-headline span {
+    -webkit-text-fill-color: #FF7B61 !important;
+    color: #FF7B61 !important;
+  }
+  .exec-deck { color: rgba(255,255,255,0.85) !important; }
+
+  /* ---- TL;DR cards: frosted glass on dark hero — use solid tint for print ---- */
+  .exec-tldr { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+  .exec-tldr-card {
+    background: rgba(255,255,255,0.10) !important;
+    border: 1px solid rgba(255,255,255,0.22) !important;
+    color: var(--white) !important;
+    break-inside: avoid;
+  }
+  .exec-tldr-required .exec-tldr-num { color: #7DE2A6 !important; }
+  .exec-tldr-optional .exec-tldr-num { color: #7FB7E6 !important; }
+  .exec-tldr-ai       .exec-tldr-num { color: #FFD27A !important; }
+  .exec-tldr-action   .exec-tldr-num { color: #FF8A8A !important; }
+  .exec-tldr-label { color: var(--white) !important; }
+  .exec-tldr-sub   { color: rgba(255,255,255,0.72) !important; }
+
+  /* ---- Section kickers: keep the coloured pills ---- */
+  .exec-section-kicker {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---- Action cards: keep red urgency border ---- */
+  .exec-action-card {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+  .exec-action-tag {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---- Audience cards ---- */
+  .exec-audience {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  /* ---- Value grid ---- */
+  .exec-value {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  /* ---- Reassure section: keep the green tint ---- */
+  .exec-reassure {
+    break-inside: avoid;
+  }
+
+  /* ---- Timeline ---- */
+  .exec-cal-item { break-inside: avoid; }
+
+  /* ---- Questions ---- */
+  .exec-questions li { break-inside: avoid; }
+  .exec-q-num {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---- Sections ---- */
+  .exec-section { break-inside: avoid; }
+
+  /* ---- Footer: keep it clean ---- */
+  .site-footer {
+    border-top: 1px solid var(--gray-200);
+    margin-top: var(--space-8);
+  }
+  .footer-logo { max-height: 28px; }
 }
