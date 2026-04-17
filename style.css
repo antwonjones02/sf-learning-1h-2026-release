@@ -256,7 +256,14 @@ img { max-width: 100%; display: block; }
 */
 .hero {
   position: relative;
-  background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 60%, #004080 100%);
+  background: linear-gradient(
+    160deg,
+    var(--navy-dark) 0%,
+    #002955 25%,
+    var(--navy) 50%,
+    #003A73 75%,
+    #004080 100%
+  );
   color: var(--white);
   padding: var(--space-12) var(--space-6);
   text-align: center;
@@ -2285,7 +2292,14 @@ body:has(#exportBar) { padding-bottom: 72px; }
 
 /* ===== Hero ===== */
 .exec-hero {
-  background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 60%, #004080 100%);
+  background: linear-gradient(
+    160deg,
+    var(--navy-dark) 0%,
+    #002955 25%,
+    var(--navy) 50%,
+    #003A73 75%,
+    #004080 100%
+  );
   color: var(--white);
   padding: var(--space-16) var(--space-6) var(--space-12);
 }
@@ -2875,7 +2889,14 @@ body:has(#exportBar) { padding-bottom: 72px; }
 
   /* ---- HERO: preserve the navy gradient (Chrome prints gradients fine) ---- */
   .exec-hero {
-    background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 60%, #004080 100%) !important;
+    background: linear-gradient(
+      160deg,
+      var(--navy-dark) 0%,
+      #002955 25%,
+      var(--navy) 50%,
+      #003A73 75%,
+      #004080 100%
+    ) !important;
     color: var(--white) !important;
     padding: var(--space-10) var(--space-6) var(--space-8);
   }
