@@ -2311,11 +2311,13 @@ body:has(#exportBar) { padding-bottom: 72px; }
   max-width: 960px;
 }
 .exec-headline span {
-  background: linear-gradient(90deg, #FFB347 0%, #FF7B61 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  white-space: nowrap;
+}
+.exec-headline .exec-headline-updates {
+  color: #7EC8FF;
+}
+.exec-headline .exec-headline-ai {
+  color: #C4B5FD;
 }
 .exec-deck {
   font-size: var(--text-lg);
@@ -2371,7 +2373,7 @@ body:has(#exportBar) { padding-bottom: 72px; }
 .exec-tldr-time     .exec-tldr-num { color: #7DE2A6; }
 .exec-tldr-required .exec-tldr-num { color: #7DE2A6; }
 .exec-tldr-optional .exec-tldr-num { color: #7FB7E6; }
-.exec-tldr-ai       .exec-tldr-num { color: #FFD27A; }
+.exec-tldr-ai       .exec-tldr-num { color: #C4B5FD; }
 .exec-tldr-label {
   font-size: var(--text-base);
   font-weight: 700;
@@ -2880,8 +2882,15 @@ body:has(#exportBar) { padding-bottom: 72px; }
   .exec-eyebrow   { color: rgba(255,255,255,0.75) !important; }
   .exec-headline  { color: var(--white) !important; }
   .exec-headline span {
-    -webkit-text-fill-color: #FF7B61 !important;
-    color: #FF7B61 !important;
+    white-space: nowrap;
+  }
+  .exec-headline .exec-headline-updates {
+    -webkit-text-fill-color: #7EC8FF !important;
+    color: #7EC8FF !important;
+  }
+  .exec-headline .exec-headline-ai {
+    -webkit-text-fill-color: #C4B5FD !important;
+    color: #C4B5FD !important;
   }
   .exec-deck { color: rgba(255,255,255,0.85) !important; }
 
@@ -2895,7 +2904,7 @@ body:has(#exportBar) { padding-bottom: 72px; }
   }
   .exec-tldr-required .exec-tldr-num { color: #7DE2A6 !important; }
   .exec-tldr-optional .exec-tldr-num { color: #7FB7E6 !important; }
-  .exec-tldr-ai       .exec-tldr-num { color: #FFD27A !important; }
+  .exec-tldr-ai       .exec-tldr-num { color: #C4B5FD !important; }
   .exec-tldr-action   .exec-tldr-num { color: #FF8A8A !important; }
   .exec-tldr-label { color: var(--white) !important; }
   .exec-tldr-sub   { color: rgba(255,255,255,0.72) !important; }
